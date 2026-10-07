@@ -1,0 +1,69 @@
+{
+  "name": "Rohith E",
+  "title": "Engineer | AI | Freelancer",
+  "subtitle": "Software Developer · Backend & Full-Stack",
+  "avatarUrl": "/assets/profile.png",
+  "heroVideoUrl": "/assets/hero-loop.mp4",
+  "heroBannerPoster": "/assets/hero-banner.png",
+  "bioIntro": "Third-year B.E. Artificial Intelligence & Data Science student at VSB Engineering College, Karur (CGPA: 8.00/10).",
+  "bioBullets": [
+    "Backend & full-stack development with Java, Spring Boot, React, TypeScript, SQL, and AWS.",
+    "Solved 315+ DSA problems on LeetCode (Shinchan_2007); AWS Certified Cloud Practitioner & Google AI Professional.",
+    "Delivered 3 production websites via Rohith Digital X including Cake Lover Namakkal (~30% reported revenue growth)."
+  ],
+  "currentlyBuilding": {
+    "name": "Virtual Labs — Engineering Learning Platform",
+    "url": "https://github.com/ROHITHELAYARAJA/Virtual-Labs",
+    "description": "Multi-tenant cloud engineering simulation platform for 500–600 students"
+  },
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/ROHITHELAYARAJA",
+      "icon": "github",
+      "color": "#181717",
+      "darkColor": "#EAEAEA"
+    },
+    {
+      "name": "LeetCode",
+      "url": "https://leetcode.com/Shinchan_2007",
+      "icon": "leetcode",
+      "color": "#FFA116",
+      "darkColor": "#FFA116"
+    },
+    {
+      "name": "Portfolio Live",
+      "url": "https://rohith-digital-x-xi.vercel.app",
+      "icon": "globe",
+      "color": "#0070F3",
+      "darkColor": "#38BDF8"
+    },
+    {
+      "name": "Anis Creation",
+      "url": "https://anis-creation.vercel.app",
+      "icon": "briefcase",
+      "color": "#EC4899",
+      "darkColor": "#F472B6"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:e.rohit3130@gmail.com",
+      "icon": "mail",
+      "color": "#EA4335",
+      "darkColor": "#EA4335"
+    }
+  ],
+  "layout": {
+    "defaultWindowSize": 100,
+    "fitMode": "fluid-fit-all",
+    "maxWidthPercent": 100,
+    "videoAspect": "1047/278"
+  },
+  "verifiedMilestones": [
+    "Merged PR #70 on abacusai/abacusai-bot upstream",
+    "12 Core Engineering Laboratories deployed in Virtual Labs",
+    "Blast AI Study Platform AWS Bedrock integration"
+  ],
+  "apiSource": "Portfolio Engine API Service (Source of Truth)",
+  "syncedAt": "2026-10-07T10:45:00Z"
+}

@@ -30,4 +30,5 @@ dist-ssr
 
 # Local tooling & caches
 .archify
+batch_push.ps1
 

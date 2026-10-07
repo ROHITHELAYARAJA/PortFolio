@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Panda Frames Inspection</title>
+  <style>
+    body { background: #18181b; color: #fff; font-family: monospace; padding: 20px; }
+    .frames { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 30px; }
+    .box { border: 1px dashed #ef4444; background: rgba(255,255,255,0.05); }
+    .anim-box { width: 52px; height: 110px; border: 2px solid #10b981; }
+  </style>
+</head>
+<body>
+  <h1>Panda Frames 0 to 7</h1>
+  <div class="frames" id="frames"></div>
+
+  <h2>Live Rolling Animation Preview</h2>
+  <div class="anim-box">
+    <svg id="liveSvg" width="52" height="110" viewBox="0 50 128 270">
+      <image href="/assets/panda-roll.png" width="1024" height="341" />
+    </svg>
+  </div>
+
+  <script>
+    const container = document.getElementById('frames');
+    for (let i = 0; i < 8; i++) {
+      const div = document.createElement('div');
+      div.className = 'box';
+      div.innerHTML = `
+        <div style="font-size:11px; padding:2px; text-align:center;">F${i}</div>
+        <svg width="64" height="135" viewBox="${i * 128} 50 128 270">
+          <image href="/assets/panda-roll.png" width="1024" height="341" />
+        </svg>
+      `;
+      container.appendChild(div);
+    }
+
+    let f = 0;
+    const svg = document.getElementById('liveSvg');
+    setInterval(() => {
+      f = (f + 1) % 8;
+      svg.setAttribute('viewBox', `${f * 128} 50 128 270`);
+    }, 120);
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "name": "Rohith E",
+  "title": "Engineer | AI | Freelancer",
+  "subtitle": "Software Developer / AI & ML Engineer",
+  "avatarUrl": "/assets/profile.png",
+  "heroVideoUrl": "/assets/hero-loop.mp4",
+  "heroBannerPoster": "/assets/hero-banner.png",
+  "bioIntro": "Software Developer. I love building, breaking, and shipping things.",
+  "bioBullets": [
+    "AI, open source, and developer tools excite me.",
+    "I believe actions speak louder than words, so I put my code where my mouth is.",
+    "Currently building Virtual Labs & Blast AI"
+  ],
+  "currentlyBuilding": {
+    "name": "Virtual Labs & Blast AI",
+    "url": "https://github.com/ROHITHELAYARAJA/Virtual-Labs",
+    "description": "Multi-tenant cloud engineering simulation platform"
+  },
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/rohith-elayaraja/",
+      "icon": "linkedin",
+      "color": "#0A66C2",
+      "darkColor": "#0A66C2"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/ROHITHELAYARAJA",
+      "icon": "github",
+      "color": "#181717",
+      "darkColor": "#EAEAEA"
+    },
+    {
+      "name": "LeetCode",
+      "url": "https://leetcode.com/u/ROHITHELAYARAJA/",
+      "icon": "leetcode",
+      "color": "#FFA116",
+      "darkColor": "#FFA116"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/",
+      "icon": "instagram",
+      "color": "#E4405F",
+      "darkColor": "#E4405F"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/",
+      "icon": "youtube",
+      "color": "#FF0000",
+      "darkColor": "#FF0000"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/",
+      "icon": "x",
+      "color": "#000000",
+      "darkColor": "#EAEAEA"
+    }
+  ],
+  "layout": {
+    "defaultWindowSize": 100,
+    "fitMode": "fluid-fit-all",
+    "maxWidthPercent": 100,
+    "videoAspect": "1047/278"
+  },
+  "verifiedMilestones": [
+    "Merged PR #70 on abacusai/abacusai-bot upstream",
+    "12 Core Engineering Laboratories deployed in Virtual Labs",
+    "Blast AI Study Platform AWS Bedrock integration"
+  ],
+  "apiSource": "Portfolio Engine API Service (Source of Truth)",
+  "syncedAt": "2026-10-07T10:45:00Z"
+}
