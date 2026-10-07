@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { MobileHeader } from './components/navigation/MobileHeader';
 import { DesktopSidebar } from './components/navigation/Sidebar';
 import { HeroVisual } from './components/hero/HeroVisual';
@@ -53,14 +53,6 @@ export const App: React.FC = () => {
   const [isPaletteOpen, setIsPaletteOpen] = useState(false);
   const [activeCaseStudyId, setActiveCaseStudyId] = useState<string | null>(null);
 
-  // Scroll Progress (21st.dev smooth progress bar)
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   // Sync theme changes to documentElement
   useEffect(() => {
     if (isDark) {
@@ -80,12 +72,6 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full bg-bg text-body transition-colors duration-200 overflow-x-hidden">
-      {/* 21st.dev Smooth Reading Scroll Progress Bar */}
-      <motion.div
-        style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-emerald-500 via-teal-400 to-indigo-500 z-[100] origin-left pointer-events-none"
-      />
-
       {/* Mobile Top Header (on <1280px) */}
       <MobileHeader
         isDark={isDark}
