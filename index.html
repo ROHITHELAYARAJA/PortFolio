@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohith E — Software Developer / AI & ML Engineer</title>
+    <meta name="description" content="Software Developer and AI & ML Engineer building backend systems, practical AI products, developer tools, and scalable applications." />
+    <meta name="keywords" content="Rohith E, Software Developer, AI Engineer, Backend Developer, Spring Boot, Java, Next.js, React, TypeScript, Supabase, PostgreSQL, Open Source, Portfolio" />
+    <meta name="author" content="Rohith E" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rohith-e.dev" />
+    <meta property="og:title" content="Rohith E — Software Developer / AI & ML Engineer" />
+    <meta property="og:description" content="I build backend systems, AI products, developer tools, and practical software." />
+    <meta property="og:image" content="/assets/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rohith E — Software Developer / AI & ML Engineer" />
+    <meta name="twitter:description" content="I build backend systems, AI products, developer tools, and practical software." />
+    <meta name="twitter:image" content="/assets/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/rdx-logo.png" />
+    <link rel="apple-touch-icon" href="/assets/rdx-logo.png" />
+
+    <!-- Google Fonts & Fontshare for Cabinet Grotesk, Instrument Serif, Geist Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,700,800,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+    <!-- Anti-flash theme script -->
+    <script>
+      (function() {
+        try {
+          var t = localStorage.getItem('theme');
+          var isDark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Schema.org ProfilePage markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Rohith E — Software Developer / AI & ML Engineer",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Rohith E",
+          "jobTitle": "Software Developer / AI & ML Engineer",
+          "description": "I build backend systems, AI products, developer tools, and practical software.",
+          "knowsAbout": [
+            "Spring Boot", "Java", "Next.js", "React", "TypeScript",
+            "Supabase", "PostgreSQL", "Machine Learning", "System Architecture",
+            "Open Source"
+          ],
+          "sameAs": [
+            "https://github.com/ROHITHELAYARAJA",
+            "https://www.linkedin.com/in/rohith-elayaraja/",
+            "https://leetcode.com/u/ROHITHELAYARAJA/"
+          ]
+        }
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-bg text-body antialiased selection:bg-neutral-800 selection:text-white dark:selection:bg-neutral-200 dark:selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
