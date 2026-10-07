@@ -1,0 +1,133 @@
+import React from 'react';
+import { Github, Linkedin, Code2, Mail } from 'lucide-react';
+import { SamuraiDuelStrip } from '../playful/SamuraiDuelStrip';
+import { RdxLogo } from '../ui/RdxLogo';
+
+interface FooterProps {
+  onOpenContact: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
+  return (
+    <footer className="mt-16 flex flex-col gap-10 border-t border-dashed border-line pt-10">
+      {/* 10s Choreographed Samurai Duel Strip & Video Exporter */}
+      <div className="w-full">
+        <SamuraiDuelStrip />
+      </div>
+
+      {/* Brand & Identity Header in Footer */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-hairline/70">
+        <div className="flex items-center gap-3">
+          <RdxLogo className="h-8 w-auto" />
+          <div>
+            <h3 className="font-cabinet text-[20px] font-bold text-strong tracking-tight">Rohith E</h3>
+            <p className="font-mono text-[12px] text-ink-soft">Software Developer · AI & ML Engineer</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={onOpenContact}
+          className="rounded-full bg-strong px-4 py-2 font-cabinet text-[13px] font-bold text-bg hover:opacity-90 transition-opacity shadow-sm"
+        >
+          Get in Touch ↗
+        </button>
+      </div>
+
+      {/* Main Footer Links Columns */}
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 pt-2">
+        {/* NAVIGATE */}
+        <div className="flex flex-col gap-2.5">
+          <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
+            Navigate
+          </p>
+          <nav className="flex flex-col gap-2 font-cabinet text-[15px] text-nav">
+            <a href="#" className="hover:text-strong transition-colors">Home</a>
+            <a href="#about" className="hover:text-strong transition-colors">About</a>
+            <a href="#experience" className="hover:text-strong transition-colors">Experience</a>
+            <a href="#github" className="hover:text-strong transition-colors">GitHub</a>
+            <a href="#open-source" className="hover:text-strong transition-colors">Open Source</a>
+            <a href="#projects" className="hover:text-strong transition-colors">Projects</a>
+            <a href="#engineering-lab" className="hover:text-strong transition-colors">Engineering Lab</a>
+            <a href="#writing" className="hover:text-strong transition-colors">Writing</a>
+          </nav>
+        </div>
+
+        {/* PROJECTS & SYSTEMS */}
+        <div className="flex flex-col gap-2.5">
+          <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
+            Featured Systems
+          </p>
+          <nav className="flex flex-col gap-2 font-cabinet text-[15px] text-nav">
+            <a href="https://github.com/ROHITHELAYARAJA/Virtual-Labs" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Virtual Labs</a>
+            <a href="https://github.com/ROHITHELAYARAJA/Student-AI-Assistant" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Blast AI</a>
+            <a href="https://github.com/ROHITHELAYARAJA/Bank-Management-System" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Bank Management System</a>
+            <a href="https://github.com/abacusai/abacusai-bot/pull/70" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">AbacusAI Bot PR #70</a>
+          </nav>
+        </div>
+
+        {/* CONNECT */}
+        <div className="flex flex-col gap-2.5">
+          <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
+            Connect
+          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            {/* GitHub (36x36px icon button) */}
+            <a
+              href="https://github.com/ROHITHELAYARAJA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#181717] dark:hover:text-[#FFFFFF] hover:-translate-y-0.5"
+            >
+              <Github className="size-4" />
+            </a>
+
+            {/* LeetCode (36x36px icon button) */}
+            <a
+              href="https://leetcode.com/Shinchan_2007"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LeetCode Profile (Shinchan_2007)"
+              title="LeetCode (Shinchan_2007)"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#FFA116] hover:-translate-y-0.5"
+            >
+              <Code2 className="size-4" />
+            </a>
+
+            {/* Email (36x36px icon button) */}
+            <a
+              href="mailto:e.rohit3130@gmail.com"
+              aria-label="Email Rohith"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#EA4335] hover:-translate-y-0.5"
+            >
+              <Mail className="size-4" />
+            </a>
+          </div>
+
+          <p className="mt-2 font-mono text-[12px] text-ink-soft">
+            e.rohit3130@gmail.com
+          </p>
+        </div>
+
+        {/* STATUS & PHILOSOPHY */}
+        <div className="flex flex-col gap-2.5">
+          <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
+            Engineering Standard
+          </p>
+          <p className="font-cabinet text-[13px] leading-relaxed text-ink-soft">
+            Third-year B.E. AI & DS student at VSB Engineering College. Engineered with strict data contracts, bounded token budgets, and zero-insecurity standards.
+          </p>
+          <span className="font-mono text-[11px] text-ink-soft mt-1">
+            Built with React & Tailwind CSS
+          </span>
+        </div>
+      </div>
+
+      {/* Bottom Copyright & Location */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-6 pb-12 font-mono text-[12px] text-ink-soft">
+        <p>© {new Date().getFullYear()} Rohith E. All rights reserved.</p>
+        <p>Namakkal, Tamil Nadu, India · UTC+05:30</p>
+      </div>
+    </footer>
+  );
+};
