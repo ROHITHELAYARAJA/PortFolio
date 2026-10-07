@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-ink: #494949;
+  --color-ink-soft: #6F6F6F;
+  --color-strong: #111111;
+  --color-body: rgba(0, 0, 0, 0.70);
+  --color-nav: rgba(35, 35, 35, 0.73);
+  --color-line: #DCDCDC;
+  --color-hairline: #D8D8D8;
+  --color-btn-border: #B7B7B7;
+  --color-subtle: rgba(0, 0, 0, 0.03);
+  --color-subtle-strong: rgba(0, 0, 0, 0.06);
+
+  --font-cabinet: 'Cabinet Grotesk', system-ui, -apple-system, sans-serif;
+  --font-instrument: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+
+  color-scheme: light;
+}
+
+.dark {
+  --color-bg: #0E0E11;
+  --color-surface: #17171B;
+  --color-ink: #EDEDED;
+  --color-ink-soft: #9A9A9A;
+  --color-strong: #F5F5F5;
+  --color-body: rgba(255, 255, 255, 0.72);
+  --color-nav: rgba(235, 235, 235, 0.70);
+  --color-line: #26262B;
+  --color-hairline: #2A2A30;
+  --color-btn-border: #3A3A42;
+  --color-subtle: rgba(255, 255, 255, 0.05);
+  --color-subtle-strong: rgba(255, 255, 255, 0.09);
+
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-cabinet);
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-strong);
+  outline-offset: 2px;
+}
+
+/* Crisp pixel rendering utility for playful elements */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-line);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Metallic Typography & Vibrant Color Palette (Inspired by Image 4 & RDX Palette) */
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-metallic-silver {
+  background: linear-gradient(135deg, #0f172a 0%, #475569 25%, #94a3b8 50%, #64748b 75%, #1e293b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-metallic-silver {
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 25%, #ffffff 50%, #94a3b8 75%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.15));
+}
+
+.text-metallic-bronze {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 25%, #fb923c 50%, #f97316 75%, #9a3412 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 6s ease infinite;
+}
+
+.text-metallic-purple {
+  background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 30%, #c084fc 60%, #7c3aed 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 7s ease infinite;
+}
+
+.text-metallic-sky {
+  background: linear-gradient(135deg, #0369a1 0%, #0284c7 30%, #38bdf8 60%, #0ea5e9 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 6s ease infinite;
+}
+
+.card-rdx-orange {
+  background: linear-gradient(135deg, #FF453A 0%, #FF5A36 50%, #E63925 100%);
+  box-shadow: 0 14px 35px -10px rgba(255, 69, 58, 0.35);
+}
+
+.card-warm-cream {
+  background-color: #FAF7F2;
+  border-color: #EFE8DD;
+}
+
+.dark .card-warm-cream {
+  background-color: #1A1A1F;
+  border-color: #2A2A33;
+}
