@@ -21,8 +21,14 @@ export const ROBotCompanion: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   // Position and animation physics refs (resting at bottom right corner initially)
-  const targetPos = useRef({ x: typeof window !== 'undefined' ? window.innerWidth - 85 : 300, y: typeof window !== 'undefined' ? window.innerHeight - 85 : 500 });
-  const currentPos = useRef({ x: typeof window !== 'undefined' ? window.innerWidth - 85 : 300, y: typeof window !== 'undefined' ? window.innerHeight - 85 : 500 });
+  const targetPos = useRef({
+    x: typeof window !== 'undefined' ? window.innerWidth - 85 : 300,
+    y: typeof window !== 'undefined' ? window.innerHeight - 85 : 500,
+  });
+  const currentPos = useRef({
+    x: typeof window !== 'undefined' ? window.innerWidth - 85 : 300,
+    y: typeof window !== 'undefined' ? window.innerHeight - 85 : 500,
+  });
   const lastFrameTime = useRef(performance.now());
   const rafId = useRef<number | null>(null);
   const isInitialized = useRef(true);
@@ -57,12 +63,11 @@ export const ROBotCompanion: React.FC = () => {
 
     initDefaultPos();
 
-    // Mouse movement listener - targets the cursor point precisely
+    // Mouse movement listener - targets older comfortable companion offset beside cursor
     const handleMouseMove = (e: MouseEvent) => {
-      // Center cat's base directly at the cursor position
-      targetPos.current = { x: e.clientX - 16, y: e.clientY - 32 };
+      targetPos.current = { x: e.clientX + 16, y: e.clientY + 18 };
       if (!isInitialized.current) {
-        currentPos.current = { x: e.clientX - 16, y: e.clientY - 32 };
+        currentPos.current = { x: e.clientX + 16, y: e.clientY + 18 };
         if (containerRef.current) {
           containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
         }
@@ -71,13 +76,13 @@ export const ROBotCompanion: React.FC = () => {
       }
     };
 
-    // Touch event listener for mobile devices - targets the tapped point precisely
+    // Touch event listener for mobile devices - targets older comfortable offset
     const handleTouch = (e: TouchEvent) => {
       if (e.touches && e.touches.length > 0) {
         const touch = e.touches[0];
-        targetPos.current = { x: touch.clientX - 16, y: touch.clientY - 32 };
+        targetPos.current = { x: touch.clientX + 14, y: touch.clientY + 16 };
         if (!isInitialized.current) {
-          currentPos.current = { x: touch.clientX - 16, y: touch.clientY - 32 };
+          currentPos.current = { x: touch.clientX + 14, y: touch.clientY + 16 };
           if (containerRef.current) {
             containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
           }
@@ -91,12 +96,12 @@ export const ROBotCompanion: React.FC = () => {
     window.addEventListener('touchstart', handleTouch, { passive: true });
     window.addEventListener('touchmove', handleTouch, { passive: true });
 
-    // Slow, graceful, time-based animation physics
-    const WALK_FRAME_INTERVAL = 120; // 120ms per frame for a natural, relaxed walking cadence
+    // Slow running cadence & relaxed animation physics
+    const RUN_FRAME_INTERVAL = 115; // 115ms per frame for a graceful, slow running gait
+    const DEADZONE = 18; // Settles beside cursor rather than snapping exactly onto the pointer
     let lastTime = performance.now();
 
     const loop = (now: number) => {
-      // Delta time in seconds (clamped to 0.5s to avoid huge jumps while supporting background tabs)
       const dt = Math.min(0.5, (now - lastTime) / 1000);
       lastTime = now;
 
@@ -104,18 +109,13 @@ export const ROBotCompanion: React.FC = () => {
       const dy = targetPos.current.y - currentPos.current.y;
       const dist = Math.hypot(dx, dy);
 
-      if (dist > 1.5) {
-        // Slow, calm walking speed (100px/s to 240px/s with smooth easing)
-        const speed = Math.min(220, Math.max(40, dist * 2.2));
+      if (dist > DEADZONE) {
+        // Slowly running cat speed: smooth, gentle easing (calm trot capped at ~120px/s)
+        const speed = Math.min(125, Math.max(30, (dist - DEADZONE) * 1.25));
         const travel = speed * dt;
 
-        if (travel >= dist) {
-          currentPos.current.x = targetPos.current.x;
-          currentPos.current.y = targetPos.current.y;
-        } else {
-          currentPos.current.x += (dx / dist) * travel;
-          currentPos.current.y += (dy / dist) * travel;
-        }
+        currentPos.current.x += (dx / dist) * travel;
+        currentPos.current.y += (dy / dist) * travel;
 
         // Apply hardware-accelerated transform directly
         if (containerRef.current) {
@@ -128,7 +128,7 @@ export const ROBotCompanion: React.FC = () => {
         }
 
         // Smooth facing direction with hysteresis
-        if (Math.abs(dx) > 2.0) {
+        if (Math.abs(dx) > 3.0) {
           const newFacingLeft = dx < 0;
           if (newFacingLeft !== facingLeftRef.current) {
             facingLeftRef.current = newFacingLeft;
@@ -136,20 +136,13 @@ export const ROBotCompanion: React.FC = () => {
           }
         }
 
-        // Advance walking sprite frames at relaxed intervals
-        if (now - lastFrameTime.current > WALK_FRAME_INTERVAL) {
+        // Advance running sprite frames at relaxed slow-run intervals
+        if (now - lastFrameTime.current > RUN_FRAME_INTERVAL) {
           setCurrentFrame((prev) => (prev + 1) % CAT_FRAMES.length);
           lastFrameTime.current = now;
         }
       } else {
-        // EXACT POINT REACHED: Snap to the indicated point and stop completely
-        currentPos.current.x = targetPos.current.x;
-        currentPos.current.y = targetPos.current.y;
-        if (containerRef.current) {
-          containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
-        }
-
-        // Stop walking and immediately sit in resting stance
+        // Settled peacefully at older offset near pointer without pointer snapping
         if (isRunningRef.current) {
           isRunningRef.current = false;
           setIsRunning(false);
@@ -210,4 +203,3 @@ export const ROBotCompanion: React.FC = () => {
     </div>
   );
 };
-
