@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Search, Sun, Moon, ArrowUpRight, Mail } from 'lucide-react';
-import { AUTHOR_INFO } from '../../data/portfolioData';
+import { Menu, X, Search, Sun, Moon, Mail } from 'lucide-react';
 import { RdxLogo } from '../ui/RdxLogo';
 
 interface MobileHeaderProps {
@@ -18,7 +17,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close drawer on Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsOpen(false);
@@ -27,7 +25,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Lock body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -53,15 +50,12 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
   return (
     <div className="xl:hidden w-full border-b border-hairline bg-surface/90 backdrop-blur-md sticky top-0 z-40 px-4 py-3 sm:px-6">
       <div className="mx-auto flex max-w-[880px] items-center justify-between">
-        {/* Brand */}
         <a href="#home" className="flex items-center gap-2 font-cabinet text-[18px] font-bold text-strong tracking-tight">
           <RdxLogo className="h-5 w-auto" />
           <span>Rohith E</span>
         </a>
 
-        {/* Action Controls */}
         <div className="flex items-center gap-2">
-          {/* Search Trigger */}
           <button
             type="button"
             onClick={onOpenPalette}
@@ -71,7 +65,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             <Search className="size-4" />
           </button>
 
-          {/* Theme Toggle */}
           <button
             type="button"
             onClick={onToggleTheme}
@@ -81,7 +74,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
 
-          {/* Mobile Drawer Toggle */}
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
@@ -93,17 +85,14 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
         </div>
       </div>
 
-      {/* Slide-in Mobile Drawer */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex justify-end">
-          {/* Backdrop */}
           <div
             className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
             onClick={() => setIsOpen(false)}
             aria-hidden="true"
           />
 
-          {/* Drawer Panel (slides from right, max 85vw or 320px) */}
           <div className="relative z-10 flex h-full w-[300px] max-w-[85vw] flex-col justify-between border-l border-hairline bg-surface p-6 shadow-2xl overflow-y-auto">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-hairline">
@@ -118,7 +107,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
                 </button>
               </div>
 
-              {/* Navigation Links */}
               <nav className="mt-6 flex flex-col gap-3">
                 {navLinks.map((item) => (
                   <a
@@ -133,7 +121,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
               </nav>
             </div>
 
-            {/* Bottom Actions in Drawer */}
             <div className="mt-8 pt-6 border-t border-hairline flex flex-col gap-3">
               <button
                 type="button"

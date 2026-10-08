@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useHeroApi } from '../../hooks/useHeroApi';
-import { ExternalLink, RefreshCw, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { RefreshCw, ArrowUpRight } from 'lucide-react';
 import { RdxLogo } from '../ui/RdxLogo';
 
 interface HeroProfileProps {
@@ -13,7 +13,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorNodeRef = useRef<OscillatorNode | null>(null);
 
-  // Equalizer sound synthesis (Web Audio API - creates gentle ambient lo-fi chord chime)
   const toggleSound = () => {
     if (isPlayingMusic) {
       if (oscillatorNodeRef.current) {
@@ -29,11 +28,10 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
         const ctx = new AudioCtx();
         audioContextRef.current = ctx;
 
-        // Create warm ambient synth chord
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(261.63, ctx.currentTime); // C4
+        osc.frequency.setValueAtTime(261.63, ctx.currentTime);
 
         gain.gain.setValueAtTime(0.001, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.04, ctx.currentTime + 0.3);
@@ -51,7 +49,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
     }
   };
 
-  // Cleanup audio on unmount
   useEffect(() => {
     return () => {
       if (oscillatorNodeRef.current) {
@@ -64,17 +61,13 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
 
   return (
     <div className="relative mt-8 flex flex-col gap-6">
-      {/* Top Identity Row: Brand Emblem + Name & Subtitle on left, Social Links Pill on right/below */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between xl:gap-8">
-        {/* Emblem and Name Group */}
         <div className="flex items-center gap-3.5 sm:gap-5">
-          {/* Official Brand Emblem Badge (Proportional on mobile & desktop) */}
           <div className="relative size-[76px] sm:size-[116px] xl:size-[136px] shrink-0 flex items-center justify-center rounded-[18px] sm:rounded-[26px] xl:rounded-[28px] border border-hairline/90 bg-surface shadow-sm p-3 sm:p-4 group transition-transform duration-300 hover:scale-105">
             <div className="absolute inset-0 rounded-[18px] sm:rounded-[26px] xl:rounded-[28px] bg-gradient-to-tr from-[#FF4D36]/10 via-[#8B5CF6]/10 to-[#0EA5E9]/10 opacity-70 group-hover:opacity-100 transition-opacity" />
             <RdxLogo className="relative z-10 h-9 w-auto sm:h-14 xl:h-16" />
           </div>
 
-          {/* Name and Designation with Clean, High-Contrast Typography */}
           <div className="flex flex-col gap-1 sm:gap-1.5 min-w-0">
             <h1 className="font-sans text-[30px] font-bold leading-tight tracking-[-0.5px] text-strong sm:text-[38px] xl:text-[44px] truncate">
               {profile.name}
@@ -85,7 +78,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
               <span className="text-strong font-semibold">AI & ML Engineer</span>
             </div>
 
-            {/* Thoughtful Brand Tags inspired by Image 4 */}
             <div className="mt-1 flex flex-wrap items-center gap-1.5 sm:gap-2">
               <span className="inline-flex items-center gap-1 rounded-full bg-[#FF4D36]/10 px-2 py-0.5 font-mono text-[9.5px] sm:text-[10px] font-semibold text-[#FF4D36] border border-[#FF4D36]/25 whitespace-nowrap">
                 <span className="size-1 rounded-full bg-[#FF4D36]" />
@@ -101,10 +93,8 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
           </div>
         </div>
 
-        {/* Social Links Pill (Matching Reference: 50px height, rounded-[47px], bordered pill) */}
         <div className="w-fit">
           <div className="flex h-[50px] w-fit items-center gap-[14px] rounded-[47px] border border-[#595959]/50 dark:border-zinc-700 bg-surface px-[18px] shadow-sm transition-all hover:border-btn-border">
-            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/rohith-elayaraja/"
               target="_blank"
@@ -125,7 +115,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
               </svg>
             </a>
 
-            {/* GitHub */}
             <a
               href="https://github.com/ROHITHELAYARAJA"
               target="_blank"
@@ -146,7 +135,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
               </svg>
             </a>
 
-            {/* LeetCode (Authentic orange symbol) */}
             <a
               href="https://leetcode.com/Shinchan_2007"
               target="_blank"
@@ -167,7 +155,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
               </svg>
             </a>
 
-            {/* Instagram (Brand Pink/Magenta) */}
             <a
               href="https://www.instagram.com/"
               target="_blank"
@@ -188,7 +175,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
               </svg>
             </a>
 
-            {/* YouTube (Brand Red) */}
             <a
               href="https://www.youtube.com/"
               target="_blank"
@@ -209,7 +195,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
               </svg>
             </a>
 
-            {/* X / Twitter (Brand Black / Dark White) */}
             <a
               href="https://x.com/"
               target="_blank"
@@ -233,14 +218,11 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
         </div>
       </div>
 
-      {/* Bio Section (Matching Screenshot) */}
       <div id="about" className="relative mt-2 max-w-[62ch] space-y-4 font-cabinet text-[16px] leading-relaxed text-body sm:text-[18px] xl:text-[19px]">
-        {/* Intro sentence */}
         <p className="font-normal text-strong">
           {profile.bioIntro}
         </p>
 
-        {/* Bullet points */}
         <div className="space-y-1 text-[15px] sm:text-[16px] text-ink-soft">
           {profile.bioBullets
             .filter((bullet) => !bullet.toLowerCase().includes('currently building'))
@@ -250,7 +232,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
                 <span>{bullet}</span>
               </p>
             ))}
-          {/* Currently building line */}
           <p className="flex items-start gap-2">
             <span className="text-strong select-none font-bold">•</span>
             <span>
@@ -267,7 +248,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
           </p>
         </div>
 
-        {/* API Source of Truth Status Pill & Direct Endpoints */}
         <div className="pt-2 flex flex-wrap items-center gap-2 sm:gap-3 pr-14 sm:pr-0">
           <div className="inline-flex items-center gap-1.5 rounded-full border border-hairline bg-subtle px-3 py-1 text-[11px] font-mono text-ink-soft">
             <span className={`size-2 rounded-full ${isLive ? 'bg-emerald-500' : 'bg-amber-500'}`} />
@@ -282,7 +262,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
             </button>
           </div>
 
-          {/* Direct API Endpoints Links */}
           <div className="flex items-center gap-1.5 font-mono text-[10.5px]">
             <a
               href="/api/home.json"
@@ -314,7 +293,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
         </div>
       </div>
 
-      {/* Bottom-right Floating Audio Equalizer Button (||||) matching reference */}
       <div className="absolute right-0 bottom-0 z-30 sm:right-2 sm:bottom-1">
         <button
           type="button"
@@ -323,7 +301,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
           title={isPlayingMusic ? 'Audio Playing (Click to mute)' : 'Ambient Equalizer (Click to play)'}
           className="flex size-10 items-center justify-center rounded-full border border-hairline bg-surface/90 text-ink-soft shadow-md backdrop-blur-md transition-all hover:bg-surface hover:text-strong hover:scale-105 active:scale-95"
         >
-          {/* 4 Vertical Equalizer Bars matching reference: |||| */}
           <div className="flex items-center justify-center gap-[3px] h-4">
             <span
               className={`w-[2.5px] rounded-full bg-current transition-all duration-300 ${

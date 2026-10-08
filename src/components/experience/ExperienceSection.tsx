@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { ChevronDown, Layers, Terminal } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import {
   EXPERIENCE_ITEMS,
   EDUCATION_DATA,
   CERTIFICATIONS_DATA,
-  type ExperienceItem,
 } from '../../data/portfolioData';
 import { TechnologiesToolsSection } from '../skills/TechnologiesToolsSection';
 
 export const ExperienceSection: React.FC = () => {
-  // First item open by default like the reference site
   const [openId, setOpenId] = useState<string | null>(EXPERIENCE_ITEMS[0]?.id || null);
 
   const toggleAccordion = (id: string) => {
@@ -18,14 +16,12 @@ export const ExperienceSection: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      {/* Experience Accordion List */}
       <div className="flex flex-col divide-y divide-hairline">
         {EXPERIENCE_ITEMS.map((item) => {
           const isOpen = openId === item.id;
 
           return (
             <div key={item.id} className="py-6 first:pt-0 last:pb-0">
-              {/* Header Accordion Button */}
               <button
                 type="button"
                 onClick={() => toggleAccordion(item.id)}
@@ -64,7 +60,6 @@ export const ExperienceSection: React.FC = () => {
                 </div>
               </button>
 
-              {/* Expandable Body */}
               <div
                 className={`grid transition-all duration-300 ease-out ${
                   isOpen ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0'
@@ -72,7 +67,6 @@ export const ExperienceSection: React.FC = () => {
               >
                 <div className="overflow-hidden">
                   <div className="border-t border-hairline pt-5">
-                    {/* Technologies & Tools */}
                     <h4 className="font-cabinet text-[15px] font-semibold text-strong">
                       Technologies & Tools
                     </h4>
@@ -90,7 +84,6 @@ export const ExperienceSection: React.FC = () => {
                       ))}
                     </div>
 
-                    {/* What I've done bullets */}
                     <h4 className="mt-6 font-cabinet text-[15px] font-semibold text-strong">
                       What I've done
                     </h4>
@@ -115,7 +108,6 @@ export const ExperienceSection: React.FC = () => {
         })}
       </div>
 
-      {/* Education Card (Grounded in Verified Resume) */}
       <div className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface p-6 sm:p-7 shadow-md">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-hairline/60 pb-3">
           <div className="flex items-center gap-2">
@@ -153,10 +145,8 @@ export const ExperienceSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Redesigned Technologies & Tools Section */}
       <TechnologiesToolsSection />
 
-      {/* Achievements & Certifications */}
       <div className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface p-6 sm:p-7 shadow-md">
         <div className="border-b border-hairline/60 pb-3">
           <h3 className="font-cabinet text-[18px] font-bold text-strong sm:text-[20px]">

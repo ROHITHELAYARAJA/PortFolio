@@ -9,11 +9,9 @@ import {
   Mail,
   Copy,
   Check,
-  Code2,
   FileText,
   CornerDownLeft,
 } from 'lucide-react';
-import { FEATURED_PROJECTS } from '../../data/portfolioData';
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -35,7 +33,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   isOpen,
   onClose,
   onSelectProject,
-  onOpenContact,
 }) => {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -43,7 +40,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
-  // Focus input when opened
   useEffect(() => {
     if (isOpen) {
       setQuery('');
@@ -52,15 +48,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     }
   }, [isOpen]);
 
-  // Global key listener for Ctrl+K
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         if (isOpen) {
           onClose();
-        } else {
-          // Open handled by parent or state
         }
       }
     };
@@ -68,9 +61,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Define All Available Items
   const items: PaletteItem[] = [
-    // NAVIGATION
     {
       id: 'nav-home',
       label: 'Home',
@@ -163,8 +154,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         onClose();
       },
     },
-
-    // PROJECTS
     {
       id: 'proj-vlabs',
       label: 'Virtual Labs',
@@ -209,8 +198,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         onClose();
       },
     },
-
-    // ACTIONS
     {
       id: 'act-copy-email',
       label: 'Copy Email Address',
@@ -269,17 +256,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     },
   ];
 
-  // Filter items based on query
   const filteredItems = items.filter((item) =>
     item.label.toLowerCase().includes(query.toLowerCase()) ||
     item.category.toLowerCase().includes(query.toLowerCase()) ||
     (item.hint && item.hint.toLowerCase().includes(query.toLowerCase()))
   );
 
-  // Group filtered items by category
   const groupedCategories = ['Navigation', 'Projects', 'Actions'] as const;
 
-  // Keyboard navigation inside list
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
@@ -307,19 +291,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       aria-label="Command search palette"
       className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16 sm:p-6 sm:pt-24"
     >
-      {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/50 backdrop-blur-md transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Palette Modal Box */}
       <div
         className="relative z-10 flex w-full max-w-[620px] flex-col overflow-hidden rounded-2xl border border-hairline bg-surface shadow-2xl transition-all"
         onKeyDown={handleKeyDown}
       >
-        {/* Search Input Bar */}
         <div className="flex items-center gap-3 border-b border-hairline px-4 py-3.5 sm:px-5">
           <Search className="size-5 shrink-0 text-ink-soft" />
           <input
@@ -346,7 +327,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           </button>
         </div>
 
-        {/* Results List */}
         <div
           ref={listRef}
           className="max-h-[380px] overflow-y-auto p-2 sm:p-3 divide-y divide-hairline/40"
@@ -412,7 +392,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           )}
         </div>
 
-        {/* Footer Shortcut Legend */}
         <div className="flex items-center justify-between border-t border-hairline bg-subtle/50 px-4 py-2.5 font-mono text-[11px] text-ink-soft">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">

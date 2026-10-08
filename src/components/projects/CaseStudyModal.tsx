@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, Github, CheckCircle, ShieldAlert, Cpu, Database, Layers, ArrowRight } from 'lucide-react';
-import { FEATURED_PROJECTS, type ProjectItem } from '../../data/portfolioData';
+import { X, ExternalLink, Github, ShieldAlert, Cpu, Layers } from 'lucide-react';
+import { FEATURED_PROJECTS } from '../../data/portfolioData';
 
 interface CaseStudyModalProps {
   projectId: string | null;
@@ -10,7 +10,6 @@ interface CaseStudyModalProps {
 export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClose }) => {
   const project = FEATURED_PROJECTS.find((p) => p.id === projectId);
 
-  // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -34,16 +33,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
       aria-label={`${project.title} Case Study`}
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
     >
-      {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/60 backdrop-blur-md transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Modal Dialog Content */}
       <div className="relative z-10 my-auto flex w-full max-w-[840px] max-h-[90vh] flex-col overflow-hidden rounded-[24px] border border-hairline bg-surface shadow-2xl">
-        {/* Sticky Header */}
         <div className="flex items-center justify-between border-b border-hairline bg-surface/95 px-6 py-4 backdrop-blur-sm sticky top-0 z-20">
           <div>
             <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-soft">
@@ -64,15 +60,12 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
           </button>
         </div>
 
-        {/* Scrollable Body */}
         <div className="overflow-y-auto p-6 sm:p-8 space-y-8">
-          {/* Summary Banner */}
           <div className="rounded-2xl border border-hairline bg-subtle p-5 sm:p-6">
             <p className="font-cabinet text-[16px] sm:text-[18px] font-medium leading-relaxed text-strong">
               {project.summary}
             </p>
 
-            {/* Quick Metrics */}
             {project.stats && (
               <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {project.stats.map((s, idx) => (
@@ -85,7 +78,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
             )}
           </div>
 
-          {/* Links Bar */}
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={project.repoUrl}
@@ -111,7 +103,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
             )}
           </div>
 
-          {/* The Problem */}
           <div>
             <h3 className="font-cabinet text-[17px] font-bold text-strong uppercase tracking-wider flex items-center gap-2">
               <ShieldAlert className="size-4 text-rose-500" />
@@ -122,7 +113,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
             </p>
           </div>
 
-          {/* Architecture & Engineering Decisions */}
           <div>
             <h3 className="font-cabinet text-[17px] font-bold text-strong uppercase tracking-wider flex items-center gap-2">
               <Cpu className="size-4 text-emerald-500" />
@@ -145,7 +135,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
             </div>
           </div>
 
-          {/* Core Features */}
           <div>
             <h3 className="font-cabinet text-[17px] font-bold text-strong uppercase tracking-wider flex items-center gap-2">
               <Layers className="size-4 text-sky-500" />
@@ -163,7 +152,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
             </ul>
           </div>
 
-          {/* Challenges & Results */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-hairline bg-surface p-5">
               <h4 className="font-cabinet text-[15px] font-bold text-strong">
@@ -194,7 +182,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
             </div>
           </div>
 
-          {/* Technologies Used */}
           <div>
             <h3 className="font-cabinet text-[15px] font-bold text-strong uppercase tracking-wider">
               Technology Stack
@@ -212,7 +199,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ projectId, onClo
           </div>
         </div>
 
-        {/* Modal Footer */}
         <div className="flex items-center justify-between border-t border-hairline bg-subtle/50 px-6 py-3 font-mono text-[12px] text-ink-soft">
           <span>Esc to close</span>
           <button

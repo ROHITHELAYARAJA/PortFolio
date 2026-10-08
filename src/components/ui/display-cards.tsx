@@ -32,7 +32,6 @@ function DisplayCard({
         className
       )}
     >
-      {/* Header: Terminal Icon + Title */}
       <div className="flex items-center gap-3">
         <span className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800/80 shadow-xs">
           {icon}
@@ -42,12 +41,10 @@ function DisplayCard({
         </h4>
       </div>
 
-      {/* Main Metric / Description */}
       <p className="text-base sm:text-lg font-semibold text-strong leading-snug my-2">
         {description}
       </p>
 
-      {/* Footer: Tech Stack Pill + Click to Inspect */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-hairline/60 pt-3 text-xs sm:text-sm font-mono">
         <span className="text-ink-soft shrink-0">
           {date}
@@ -89,7 +86,6 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
   const cardList = cards || defaultCards;
   const total = cardList.length;
 
-  // Auto-advance one card at a time with smooth transition
   useEffect(() => {
     if (isPaused || total <= 1) return;
     const timer = setInterval(() => {
@@ -116,14 +112,11 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Enlarged 3D Stage: Only the first card is visible and sharp, back cards are heavily blurred out */}
       <div className="relative min-h-[240px] sm:min-h-[270px] w-full max-w-[520px] flex items-center justify-center px-3 sm:px-0">
         {cardList.map((cardProps, index) => {
           const diff = (index - activeIndex + total) % total;
           const isFront = diff === 0;
 
-          // Only the first card is visible and interactive
-          // Background cards are fully blurred into ghost silhouettes
           let transformClass = "translate-x-0 translate-y-0 z-30 scale-100 opacity-100 filter-none pointer-events-auto";
           if (diff === 1) {
             transformClass = "translate-x-6 sm:translate-x-8 translate-y-5 sm:translate-y-6 z-20 scale-[0.96] opacity-30 filter blur-[8px] sm:blur-[10px] pointer-events-none";
@@ -154,7 +147,6 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
         })}
       </div>
 
-      {/* Clean Navigation Bar: Prev / Dots / Next */}
       <div className="flex items-center gap-3 font-mono text-xs text-ink-soft mt-1">
         <button
           type="button"

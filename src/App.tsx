@@ -14,7 +14,6 @@ import { CommandPalette } from './components/palette/CommandPalette';
 import { CaseStudyModal } from './components/projects/CaseStudyModal';
 import { ROBotCompanion } from './components/playful/ROBotCompanion';
 
-// 21st.dev inspired scroll reveal animation wrapper
 const ScrollSection: React.FC<{
   children: React.ReactNode;
   id?: string;
@@ -35,7 +34,6 @@ const ScrollSection: React.FC<{
 };
 
 export const App: React.FC = () => {
-  // Theme state: defaults to white (light theme) unless explicitly set to 'dark'
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark';
@@ -43,11 +41,9 @@ export const App: React.FC = () => {
     return false;
   });
 
-  // Modals state
   const [isPaletteOpen, setIsPaletteOpen] = useState(false);
   const [activeCaseStudyId, setActiveCaseStudyId] = useState<string | null>(null);
 
-  // Sync theme changes to documentElement
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
@@ -65,7 +61,6 @@ export const App: React.FC = () => {
     window.history.replaceState(null, '', '#contact');
   };
 
-  // Synchronize browser URL hash with current section in view
   useEffect(() => {
     const sectionIds = [
       'home',
@@ -104,7 +99,6 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full bg-bg text-body transition-colors duration-200 overflow-x-hidden">
-      {/* Mobile Top Header (on <1280px) */}
       <MobileHeader
         isDark={isDark}
         onToggleTheme={toggleTheme}
@@ -112,26 +106,15 @@ export const App: React.FC = () => {
         onOpenContact={handleOpenContact}
       />
 
-      {/* Main Page Layout Container: 
-          Set to 100% fluid window scaling (w-full max-w-[1728px] mx-auto)
-          so every development component fits cleanly without clipping or overflow */}
       <main className="relative mx-auto w-full max-w-[880px] px-4 pb-24 pt-4 sm:px-6 md:px-8 xl:w-full xl:max-w-[1600px] 2xl:max-w-[1728px] xl:px-6 2xl:px-8 xl:pt-10">
-        
-        {/* SECTION 1: HERO & SIDEBAR */}
         <section id="home" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left spacer column on desktop */}
           <div className="hidden xl:block" />
 
-          {/* Central Hero Column */}
           <div className="xl:px-8 2xl:px-[33px]">
-            {/* Looping Project Visual Banner (Hero video loop with PiP support) */}
             <HeroVisual />
-
-            {/* Profile Avatar, Title, Social Pill, Bio, Audio Equalizer (Source of Truth API) */}
             <HeroProfile onOpenContact={handleOpenContact} />
           </div>
 
-          {/* Right Sticky Sidebar Column on Desktop */}
           <div className="hidden xl:block xl:pl-6 2xl:pl-8">
             <DesktopSidebar
               isDark={isDark}
@@ -144,9 +127,7 @@ export const App: React.FC = () => {
 
         <hr className="my-10 border-0 border-t border-dashed border-line" />
 
-        {/* SECTION 2: EXPERIENCE */}
         <ScrollSection id="experience" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left Editorial Label */}
           <div className="xl:pr-6 xl:pt-2">
             <h2 className="font-cabinet text-[26px] font-bold tracking-[-1.5px] text-strong sm:text-[30px]">
               Experience
@@ -156,20 +137,16 @@ export const App: React.FC = () => {
             </p>
           </div>
 
-          {/* Main Experience Accordion */}
           <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
             <ExperienceSection />
           </div>
 
-          {/* Right Column Spacer */}
           <div className="hidden xl:block" />
         </ScrollSection>
 
         <hr className="my-10 border-0 border-t border-dashed border-line" />
 
-        {/* SECTION 3: ON GITHUB */}
         <ScrollSection id="github" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left Editorial Label */}
           <div className="xl:pr-6 xl:pt-2">
             <h2 className="font-instrument text-[36px] font-normal italic leading-tight tracking-[-0.4px] text-strong sm:text-[44px]">
               On GitHub
@@ -184,20 +161,16 @@ export const App: React.FC = () => {
             </a>
           </div>
 
-          {/* Main GitHub Heatmap & Repos */}
           <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
             <GitHubSection />
           </div>
 
-          {/* Right Column Spacer */}
           <div className="hidden xl:block" />
         </ScrollSection>
 
         <hr className="my-10 border-0 border-t border-dashed border-line" />
 
-        {/* SECTION 4: OPEN SOURCE */}
         <ScrollSection id="open-source" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left Editorial Label */}
           <div className="xl:pr-6 xl:pt-2">
             <h2 className="font-instrument text-[36px] font-normal italic leading-tight tracking-[-0.4px] text-strong sm:text-[44px]">
               Open source
@@ -207,20 +180,16 @@ export const App: React.FC = () => {
             </p>
           </div>
 
-          {/* Main Open Source Content */}
           <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
             <OpenSourceSection />
           </div>
 
-          {/* Right Column Spacer */}
           <div className="hidden xl:block" />
         </ScrollSection>
 
         <hr className="my-10 border-0 border-t border-dashed border-line" />
 
-        {/* SECTION 5: FEATURED PROJECTS */}
         <ScrollSection id="projects" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left Editorial Label */}
           <div className="xl:pr-6 xl:pt-2">
             <h2 className="font-instrument text-[36px] font-normal italic leading-tight tracking-[-0.4px] text-strong sm:text-[44px]">
               Projects
@@ -230,20 +199,16 @@ export const App: React.FC = () => {
             </p>
           </div>
 
-          {/* Main Projects List */}
           <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
             <ProjectsSection onOpenCaseStudy={(id) => setActiveCaseStudyId(id)} />
           </div>
 
-          {/* Right Column Spacer */}
           <div className="hidden xl:block" />
         </ScrollSection>
 
         <hr className="my-10 border-0 border-t border-dashed border-line" />
 
-        {/* SECTION 6: CONTACT */}
         <ScrollSection id="contact" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left Editorial Label */}
           <div className="xl:pr-6 xl:pt-2">
             <h2 className="font-instrument text-[36px] font-normal italic leading-tight tracking-[-0.4px] text-strong sm:text-[44px]">
               Get in Touch
@@ -253,16 +218,13 @@ export const App: React.FC = () => {
             </p>
           </div>
 
-          {/* Main Contact Content */}
           <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
             <ContactSection />
           </div>
 
-          {/* Right Column Spacer */}
           <div className="hidden xl:block" />
         </ScrollSection>
 
-        {/* FOOTER */}
         <div className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
           <div className="hidden xl:block" />
           <div className="xl:px-8 2xl:px-[33px]">
@@ -272,7 +234,6 @@ export const App: React.FC = () => {
         </div>
       </main>
 
-      {/* COMMAND PALETTE (CTRL+K) */}
       <CommandPalette
         isOpen={isPaletteOpen}
         onClose={() => setIsPaletteOpen(false)}
@@ -280,15 +241,12 @@ export const App: React.FC = () => {
         onOpenContact={handleOpenContact}
       />
 
-      {/* DEDICATED CASE STUDY MODAL */}
       <CaseStudyModal
         projectId={activeCaseStudyId}
         onClose={() => setActiveCaseStudyId(null)}
       />
 
-      {/* SMOOTH PLAYFUL CAT COMPANION CURSOR FOLLOWER */}
       <ROBotCompanion />
-
     </div>
   );
 };

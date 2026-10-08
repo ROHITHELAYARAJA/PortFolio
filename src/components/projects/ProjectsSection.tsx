@@ -13,7 +13,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStud
           key={project.id}
           className="group relative rounded-[22px] border border-hairline bg-surface p-6 sm:p-7 transition-all duration-200 hover:border-btn-border hover:shadow-sm"
         >
-          {/* Top meta row: Category & index */}
           <div className="flex items-center justify-between gap-3 pb-3 border-b border-hairline/60">
             <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-soft">
               {project.category}
@@ -23,17 +22,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStud
             </span>
           </div>
 
-          {/* Project Name */}
           <h3 className="mt-3.5 font-cabinet text-[21px] font-bold tracking-tight text-strong sm:text-[23px] group-hover:text-ink transition-colors">
             {project.title}
           </h3>
 
-          {/* One-line description */}
           <p className="mt-2 font-cabinet text-[15px] leading-relaxed text-body sm:text-[16px] max-w-[70ch]">
             {project.summary}
           </p>
 
-          {/* 3–5 technology keywords */}
           <div className="mt-4 flex flex-wrap gap-2">
             {project.primaryTech.slice(0, 5).map((tech) => (
               <span
@@ -45,7 +41,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStud
             ))}
           </div>
 
-          {/* GitHub · Live Demo · Read More */}
           <div className="mt-5 flex flex-wrap items-center gap-2.5 border-t border-hairline/60 pt-3.5 font-cabinet text-[14px] font-semibold text-ink-soft">
             <a
               href={project.repoUrl}

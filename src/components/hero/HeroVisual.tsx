@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Volume2, VolumeX, Maximize2, ExternalLink } from 'lucide-react';
+import { Volume2, VolumeX } from 'lucide-react';
 import { useHeroApi } from '../../hooks/useHeroApi';
 
 export const HeroVisual: React.FC = () => {
@@ -9,16 +9,10 @@ export const HeroVisual: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isPipActive, setIsPipActive] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [pipSupported, setPipSupported] = useState(true);
 
   const videoSrc = profile?.heroVideoUrl || '/assets/hero-loop.mp4';
 
   useEffect(() => {
-    // Check if Picture-in-Picture is supported in the current browser
-    if (typeof document !== 'undefined' && !('pictureInPictureEnabled' in document)) {
-      setPipSupported(false);
-    }
-
     const videoEl = videoRef.current;
     if (!videoEl) return;
 
@@ -45,9 +39,7 @@ export const HeroVisual: React.FC = () => {
         await videoRef.current.requestPictureInPicture();
         setIsPipActive(true);
       }
-    } catch (err) {
-      console.warn('PiP request failed, falling back to fullscreen:', err);
-      // Fallback to fullscreen if PiP fails
+    } catch {
       if (videoRef.current) {
         if (!document.fullscreenElement) {
           videoRef.current.requestFullscreen().catch(() => {});
@@ -83,7 +75,6 @@ export const HeroVisual: React.FC = () => {
       onClick={togglePlay}
       className="group relative aspect-[3/2] w-full cursor-pointer overflow-hidden rounded-[18px] border border-hairline bg-neutral-950 shadow-sm sm:aspect-[21/9] xl:aspect-[1047/278] select-none"
     >
-      {/* Video Element (Hero Loop) */}
       <video
         ref={videoRef}
         src={videoSrc}
@@ -99,7 +90,6 @@ export const HeroVisual: React.FC = () => {
         aria-label="Developer hero animation loop"
       />
 
-      {/* Picture-in-Picture / Expand Button Overlay (Matching Screenshot Center Position) */}
       <div className="pointer-events-none absolute inset-x-0 top-3 flex justify-center sm:top-4 z-20">
         <button
           type="button"
@@ -108,7 +98,6 @@ export const HeroVisual: React.FC = () => {
           aria-label={isPipActive ? 'Exit Picture-in-Picture' : 'Open Picture-in-Picture'}
           className="pointer-events-auto flex size-8 sm:size-9 items-center justify-center rounded-[8px] bg-black/55 text-white/90 backdrop-blur-md transition-all hover:scale-105 hover:bg-black/75 hover:text-white border border-white/15 shadow-md active:scale-95"
         >
-          {/* Custom Picture-in-Picture Icon matching reference */}
           <svg
             stroke="currentColor"
             fill="none"
@@ -118,18 +107,14 @@ export const HeroVisual: React.FC = () => {
             strokeLinejoin="round"
             className="size-4"
           >
-            {/* Outer screen */}
             <rect x="2" y="3" width="20" height="15" rx="2" />
-            {/* Small PiP window */}
             <rect x="13" y="9" width="7" height="6" rx="1" fill="currentColor" fillOpacity="0.25" />
-            {/* Corner outward indicator */}
             <polyline points="7 10 7 7 10 7" />
             <line x1="7" y1="7" x2="11" y2="11" />
           </svg>
         </button>
       </div>
 
-      {/* Sound mute / unmute button in bottom right of video on hover */}
       <button
         type="button"
         onClick={toggleMute}
@@ -139,7 +124,6 @@ export const HeroVisual: React.FC = () => {
         {isMuted ? <VolumeX className="size-3.5" /> : <Volume2 className="size-3.5" />}
       </button>
 
-      {/* If video paused indicator */}
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[1px]">
           <span className="rounded-full bg-black/60 px-3 py-1 font-mono text-xs text-white">

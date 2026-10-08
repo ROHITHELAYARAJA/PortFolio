@@ -6,7 +6,6 @@ export const VirtualLabLivePreview: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  // 6 sequential execution steps for JVM Call-stack AST Tracer
   const traceSteps = [
     {
       line: 1,
@@ -58,7 +57,6 @@ export const VirtualLabLivePreview: React.FC = () => {
     },
   ];
 
-  // Auto-play stepper for seamless visual preview
   useEffect(() => {
     if (!isPlaying) return;
     const timer = setInterval(() => {
@@ -71,17 +69,14 @@ export const VirtualLabLivePreview: React.FC = () => {
 
   return (
     <div className="mt-6 overflow-hidden rounded-2xl border border-hairline/80 bg-neutral-900 text-neutral-100 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] transition-all">
-      {/* Top Browser Window Header with HTTPS indicator */}
       <div className="flex items-center justify-between border-b border-neutral-800 bg-neutral-950/80 px-3 sm:px-4 py-2.5 backdrop-blur-md">
         <div className="flex items-center gap-2 min-w-0">
-          {/* Mac-style Window Controls */}
           <div className="flex items-center gap-1.5 shrink-0">
             <span className="size-2 rounded-full bg-rose-500/80" />
             <span className="size-2 rounded-full bg-amber-500/80" />
             <span className="size-2 rounded-full bg-emerald-500/80" />
           </div>
 
-          {/* Browser Address Bar with Lock and Live Tag */}
           <div className="flex items-center gap-1.5 rounded-md border border-neutral-800 bg-neutral-900/90 px-2.5 py-1 font-mono text-[10px] sm:text-[11px] text-neutral-300 min-w-0">
             <span className="size-1.5 rounded-full bg-emerald-400 shrink-0" />
             <span className="text-emerald-400 shrink-0">https://</span>
@@ -89,7 +84,6 @@ export const VirtualLabLivePreview: React.FC = () => {
           </div>
         </div>
 
-        {/* Live Link Button to Virtual Labs GitHub */}
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 ml-2">
           <span className="hidden sm:inline-block rounded-full bg-emerald-500/20 px-2 py-0.5 font-mono text-[10px] font-semibold text-emerald-400">
             500–600 Students
@@ -106,7 +100,6 @@ export const VirtualLabLivePreview: React.FC = () => {
         </div>
       </div>
 
-      {/* 4-Part Pedagogical Navigation Bar (Smoothly scrollable on mobile with zero truncation) */}
       <div className="flex overflow-x-auto no-scrollbar whitespace-nowrap border-b border-neutral-800 bg-neutral-950/40 text-[11.5px] sm:text-[12px] font-mono scroll-smooth">
         <button
           onClick={() => setActiveTab('simulation')}
@@ -143,10 +136,8 @@ export const VirtualLabLivePreview: React.FC = () => {
         </button>
       </div>
 
-      {/* Main Interactive Interactive Body */}
       {activeTab === 'simulation' && (
         <div className="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-neutral-800">
-          {/* Left: AST Java Code Execution Panel (7 cols) */}
           <div className="p-4 md:col-span-7 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-2 text-[11px] font-mono text-neutral-400">
@@ -157,7 +148,6 @@ export const VirtualLabLivePreview: React.FC = () => {
                 <span>Step {currentStep + 1} of {traceSteps.length}</span>
               </div>
 
-              {/* Java Source Code with Line Highlighting */}
               <div className="rounded-lg bg-neutral-950 p-3 font-mono text-[12px] leading-relaxed border border-neutral-800/80">
                 <div className={`px-2 py-0.5 rounded ${activeState.highlightLine === 1 ? 'bg-emerald-950/80 text-emerald-300 font-bold border-l-2 border-emerald-400' : 'text-neutral-400'}`}>
                   <span className="text-neutral-600 select-none mr-2">1</span>public int fib(int n) &#123;
@@ -173,14 +163,12 @@ export const VirtualLabLivePreview: React.FC = () => {
                 </div>
               </div>
 
-              {/* Execution State Note */}
               <div className="mt-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-2.5 font-mono text-[11px] text-neutral-300">
                 <span className="text-emerald-400 font-bold">JVM TRACE: </span>
                 <span>{activeState.note}</span>
               </div>
             </div>
 
-            {/* Step Controls Bar */}
             <div className="mt-4 flex items-center justify-between border-t border-neutral-800 pt-3">
               <div className="flex items-center gap-2">
                 <button
@@ -209,7 +197,6 @@ export const VirtualLabLivePreview: React.FC = () => {
                 </button>
               </div>
 
-              {/* Progress Indicator Dots */}
               <div className="flex items-center gap-1">
                 {traceSteps.map((_, idx) => (
                   <span
@@ -224,14 +211,12 @@ export const VirtualLabLivePreview: React.FC = () => {
             </div>
           </div>
 
-          {/* Right: Runtime Call-Stack & Heap Telemetry (5 cols) */}
           <div className="p-4 md:col-span-5 bg-neutral-950/40 flex flex-col justify-between">
             <div>
               <p className="font-mono text-[11px] font-semibold text-neutral-400 uppercase tracking-wider">
                 Call Stack Frames (LIFO)
               </p>
 
-              {/* Stack visualization with animated boxes */}
               <div className="mt-2.5 flex flex-col-reverse gap-1.5">
                 {activeState.stack.map((frame, fIdx) => (
                   <div
@@ -245,7 +230,6 @@ export const VirtualLabLivePreview: React.FC = () => {
               </div>
             </div>
 
-            {/* Heap Telemetry Box */}
             <div className="mt-4 rounded-lg border border-neutral-800 bg-neutral-950 p-3 font-mono text-[11px]">
               <p className="text-neutral-400 text-[10px] uppercase tracking-wider">Heap Memory & State</p>
               <p className="mt-1 text-neutral-200">{activeState.heap}</p>

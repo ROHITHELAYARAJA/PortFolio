@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ExternalLink, Github, Linkedin, Code2, FileText } from 'lucide-react';
+import { Mail, Copy, Check, ExternalLink, Github, Linkedin, Code2 } from 'lucide-react';
 import { AUTHOR_INFO } from '../../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -23,7 +23,6 @@ export const ContactSection: React.FC = () => {
           Open to software engineering roles, high-impact backend systems, AI applications, and select technical consulting.
         </p>
 
-        {/* 1-Click Copy Email Pill */}
         <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="flex items-center justify-between sm:justify-start gap-2 rounded-xl border border-hairline bg-subtle px-3.5 py-2.5">
             <div className="flex items-center gap-2 min-w-0">
@@ -49,7 +48,6 @@ export const ContactSection: React.FC = () => {
           </a>
         </div>
 
-        {/* Connect Channels */}
         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3 border-t border-hairline/60 pt-6">
           <a
             href="https://github.com/ROHITHELAYARAJA"

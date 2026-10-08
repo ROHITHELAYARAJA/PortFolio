@@ -1,6 +1,5 @@
 import React from 'react';
-import { Search, Sun, Moon, ArrowUpRight, FileText, Mail } from 'lucide-react';
-import { AUTHOR_INFO } from '../../data/portfolioData';
+import { Search, Sun, Moon, FileText, Mail } from 'lucide-react';
 import { RdxLogo } from '../ui/RdxLogo';
 
 interface SidebarProps {
@@ -18,7 +17,6 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
 }) => {
   return (
     <aside className="hidden xl:flex xl:flex-col xl:pl-[28px] xl:pr-4 sticky top-10 self-start">
-      {/* Brand Logo Header */}
       <div className="mb-4 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2.5 group">
           <RdxLogo className="h-6 w-auto group-hover:scale-105 transition-transform" />
@@ -26,9 +24,7 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
         </a>
       </div>
 
-      {/* Search & Theme Controls Row */}
       <div className="flex items-center gap-3">
-        {/* Search Command Palette Trigger */}
         <button
           type="button"
           onClick={onOpenPalette}
@@ -47,7 +43,6 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
           </span>
         </button>
 
-        {/* Dark/Light Mode Switcher */}
         <button
           type="button"
           onClick={onToggleTheme}
@@ -58,7 +53,6 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
         </button>
       </div>
 
-      {/* INDEX NAVIGATION */}
       <div className="mt-8 flex flex-col">
         <p className="font-cabinet text-[20px] font-semibold text-strong tracking-tight">Index</p>
         <nav className="mt-3 flex flex-col gap-2">
@@ -113,7 +107,6 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
         </nav>
       </div>
 
-      {/* CTA ACTION BUTTON */}
       <div className="mt-8 flex flex-col gap-2.5">
         <button
           type="button"

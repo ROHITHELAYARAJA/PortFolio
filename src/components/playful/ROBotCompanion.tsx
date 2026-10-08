@@ -11,7 +11,7 @@ const CAT_FRAMES = [
   '/assets/cat/frame-7.png',
 ];
 
-const CAT_HALF_SIZE = 20; // Half of 40px cat sprite so center aligns exactly with pointer
+const CAT_HALF_SIZE = 20;
 
 export const ROBotCompanion: React.FC = () => {
   const [currentFrame, setCurrentFrame] = useState(0);
@@ -19,10 +19,8 @@ export const ROBotCompanion: React.FC = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
-  // Direct DOM container ref for 100% hardware-accelerated 60/120fps transforms without React state lag
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // Position and animation physics refs
   const targetPos = useRef({
     x: typeof window !== 'undefined' ? window.innerWidth - 70 : 300,
     y: typeof window !== 'undefined' ? window.innerHeight - 70 : 500,
@@ -37,7 +35,6 @@ export const ROBotCompanion: React.FC = () => {
   const isRunningRef = useRef(false);
   const facingLeftRef = useRef(false);
 
-  // Preload all 8 high-resolution cat animation frames
   useEffect(() => {
     CAT_FRAMES.forEach((src) => {
       const img = new Image();
@@ -46,13 +43,11 @@ export const ROBotCompanion: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Respect user's motion preferences
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setIsVisible(false);
       return;
     }
 
-    // Default resting position
     const initDefaultPos = () => {
       const initX = Math.max(20, window.innerWidth - 70);
       const initY = Math.max(20, window.innerHeight - 70);
@@ -65,7 +60,6 @@ export const ROBotCompanion: React.FC = () => {
 
     initDefaultPos();
 
-    // Mouse movement listener - targets the exact pointer position (centered on cursor)
     const handleMouseMove = (e: MouseEvent) => {
       targetPos.current = {
         x: e.clientX - CAT_HALF_SIZE,
@@ -78,7 +72,6 @@ export const ROBotCompanion: React.FC = () => {
       }
     };
 
-    // Touch event listener for mobile devices
     const handleTouch = (e: TouchEvent) => {
       if (e.touches && e.touches.length > 0) {
         const touch = e.touches[0];
@@ -98,9 +91,8 @@ export const ROBotCompanion: React.FC = () => {
     window.addEventListener('touchstart', handleTouch, { passive: true });
     window.addEventListener('touchmove', handleTouch, { passive: true });
 
-    // Animation physics constants
-    const FRAME_DURATION = 80; // 80ms per frame for a brisk, natural running cycle (~12.5 fps)
-    const STOP_DISTANCE = 4; // Distance in pixels to stop cleanly at the pointer
+    const FRAME_DURATION = 80;
+    const STOP_DISTANCE = 4;
 
     let lastTime = performance.now();
 
@@ -113,25 +105,21 @@ export const ROBotCompanion: React.FC = () => {
       const dist = Math.hypot(dx, dy);
 
       if (dist > STOP_DISTANCE) {
-        // Move towards the pointer: smooth speed scaling with distance (up to 320px/s)
         const speed = Math.min(320, Math.max(70, dist * 3.2));
         const travel = Math.min(dist, speed * dt);
 
         currentPos.current.x += (dx / dist) * travel;
         currentPos.current.y += (dy / dist) * travel;
 
-        // Apply hardware-accelerated transform directly
         if (containerRef.current) {
           containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
         }
 
-        // Running state
         if (!isRunningRef.current) {
           isRunningRef.current = true;
           setIsRunning(true);
         }
 
-        // Face direction of movement
         if (Math.abs(dx) > 1.5) {
           const newFacingLeft = dx < 0;
           if (newFacingLeft !== facingLeftRef.current) {
@@ -140,13 +128,11 @@ export const ROBotCompanion: React.FC = () => {
           }
         }
 
-        // Cycle through running sprite frames while moving
         if (now - lastFrameTime.current > FRAME_DURATION) {
           setCurrentFrame((prev) => (prev + 1) % CAT_FRAMES.length);
           lastFrameTime.current = now;
         }
       } else {
-        // Reached the pointer exactly: STOP!
         currentPos.current.x = targetPos.current.x;
         currentPos.current.y = targetPos.current.y;
 
@@ -159,7 +145,6 @@ export const ROBotCompanion: React.FC = () => {
           setIsRunning(false);
         }
 
-        // Stop on standing/resting frame
         setCurrentFrame(0);
       }
 
@@ -194,14 +179,12 @@ export const ROBotCompanion: React.FC = () => {
           facingLeft ? '-scale-x-100' : 'scale-x-100'
         }`}
       >
-        {/* Soft ground shadow beneath the cat */}
         <div
           className={`absolute -bottom-1 left-1/2 -translate-x-1/2 h-1.5 rounded-full bg-black/15 dark:bg-black/35 blur-[1.5px] transition-all duration-200 ${
             isRunning ? 'w-8 sm:w-9 scale-x-110 opacity-70' : 'w-6 sm:w-7 scale-x-95 opacity-50'
           }`}
         />
 
-        {/* Pixel-art Cat Sprite: runs toward pointer, stops cleanly on frame 0 upon arrival */}
         <div className="relative flex items-center justify-center">
           <img
             src={CAT_FRAMES[currentFrame]}

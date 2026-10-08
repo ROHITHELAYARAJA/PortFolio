@@ -9,7 +9,6 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
   return (
     <footer className="mt-16 flex flex-col gap-10 border-t border-dashed border-line pt-10">
-      {/* Brand & Identity Header in Footer */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-hairline/70">
         <div className="flex items-center gap-3">
           <RdxLogo className="h-8 w-auto" />
@@ -27,9 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
         </button>
       </div>
 
-      {/* Main Footer Links Columns */}
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 pt-2">
-        {/* NAVIGATE */}
         <div className="flex flex-col gap-2.5">
           <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
             Navigate
@@ -46,7 +43,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
           </nav>
         </div>
 
-        {/* PROJECTS & SYSTEMS */}
         <div className="flex flex-col gap-2.5">
           <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
             Featured Systems
@@ -60,13 +56,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
           </nav>
         </div>
 
-        {/* CONNECT */}
         <div className="flex flex-col gap-2.5">
           <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
             Connect
           </p>
           <div className="flex flex-wrap items-center gap-2">
-            {/* GitHub (36x36px icon button) */}
             <a
               href="https://github.com/ROHITHELAYARAJA"
               target="_blank"
@@ -77,7 +71,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               <Github className="size-4" />
             </a>
 
-            {/* LinkedIn (36x36px icon button) */}
             <a
               href="https://linkedin.com/in/rohith-elayaraja"
               target="_blank"
@@ -88,7 +81,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               <Linkedin className="size-4" />
             </a>
 
-            {/* LeetCode (36x36px icon button) */}
             <a
               href="https://leetcode.com/u/Rohith_Elayaraja"
               target="_blank"
@@ -99,7 +91,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               <Code2 className="size-4" />
             </a>
 
-            {/* Email (36x36px icon button) */}
             <a
               href="mailto:e.rohit3130@gmail.com"
               aria-label="Email Rohith"
@@ -114,7 +105,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
           </p>
         </div>
 
-        {/* STATUS & PHILOSOPHY */}
         <div className="flex flex-col gap-2.5">
           <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
             Engineering Standard
@@ -128,7 +118,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
         </div>
       </div>
 
-      {/* Bottom Copyright & Location */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-6 pb-12 font-mono text-[12px] text-ink-soft">
         <p>© {new Date().getFullYear()} Rohith E. All rights reserved.</p>
         <p>Namakkal, Tamil Nadu, India · UTC+05:30</p>
