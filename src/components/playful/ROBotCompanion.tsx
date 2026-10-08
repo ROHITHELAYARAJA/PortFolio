@@ -11,8 +11,6 @@ const CAT_FRAMES = [
   '/assets/cat/frame-7.png',
 ];
 
-const CAT_HALF_SIZE = 20;
-
 export const ROBotCompanion: React.FC = () => {
   const [currentFrame, setCurrentFrame] = useState(0);
   const [facingLeft, setFacingLeft] = useState(false);
@@ -61,9 +59,14 @@ export const ROBotCompanion: React.FC = () => {
     initDefaultPos();
 
     const handleMouseMove = (e: MouseEvent) => {
+      const isNearRight = e.clientX + 50 > window.innerWidth;
+      const isNearBottom = e.clientY + 50 > window.innerHeight;
+      const offsetX = isNearRight ? -44 : 20;
+      const offsetY = isNearBottom ? -42 : 16;
+
       targetPos.current = {
-        x: e.clientX - CAT_HALF_SIZE,
-        y: e.clientY - CAT_HALF_SIZE,
+        x: e.clientX + offsetX,
+        y: e.clientY + offsetY,
       };
 
       if (!isInitialized.current) {
@@ -75,9 +78,14 @@ export const ROBotCompanion: React.FC = () => {
     const handleTouch = (e: TouchEvent) => {
       if (e.touches && e.touches.length > 0) {
         const touch = e.touches[0];
+        const isNearRight = touch.clientX + 50 > window.innerWidth;
+        const isNearBottom = touch.clientY + 50 > window.innerHeight;
+        const offsetX = isNearRight ? -44 : 20;
+        const offsetY = isNearBottom ? -42 : 16;
+
         targetPos.current = {
-          x: touch.clientX - CAT_HALF_SIZE,
-          y: touch.clientY - CAT_HALF_SIZE,
+          x: touch.clientX + offsetX,
+          y: touch.clientY + offsetY,
         };
 
         if (!isInitialized.current) {

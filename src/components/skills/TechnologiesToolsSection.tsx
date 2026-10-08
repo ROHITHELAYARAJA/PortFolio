@@ -33,9 +33,9 @@ const TECH_CATEGORIES: TechCategory[] = [
     skills: [
       { name: 'Java', description: 'Core Java & Java 21' },
       { name: 'Python', description: 'Scripting & AI Tooling' },
-      { name: 'JavaScript', description: 'ES6+ & Web Standards' },
-      { name: 'TypeScript', description: 'Type-Safe Development' },
-      { name: 'SQL', description: 'Relational Query Language' },
+      { name: 'JavaScript', description: 'ES6+ & Modern Web' },
+      { name: 'TypeScript', description: 'Type-Safe Architecture' },
+      { name: 'SQL', description: 'Relational Database Queries' },
     ],
   },
   {
@@ -44,8 +44,8 @@ const TECH_CATEGORIES: TechCategory[] = [
     icon: <Layout className="size-4 text-[#0EA5E9]" />,
     badgeCount: 5,
     skills: [
-      { name: 'HTML5', description: 'Semantic HTML' },
-      { name: 'CSS3', description: 'Modern CSS & Flexbox/Grid' },
+      { name: 'HTML5', description: 'Semantic Markup' },
+      { name: 'CSS3', description: 'Modern CSS & Flex/Grid' },
       { name: 'React', description: 'Component Architecture' },
       { name: 'Next.js', description: 'App Router & SSR' },
       { name: 'Tailwind CSS', description: 'Utility-First Styling' },
@@ -59,7 +59,7 @@ const TECH_CATEGORIES: TechCategory[] = [
     skills: [
       { name: 'Spring Boot', description: 'Enterprise REST APIs' },
       { name: 'REST APIs', description: 'API Design & Integration' },
-      { name: 'JDBC', description: 'Direct Database Connectivity' },
+      { name: 'JDBC', description: 'Atomic Data Persistence' },
       { name: 'Express.js', description: 'Node.js Backend Framework' },
     ],
   },
@@ -69,70 +69,76 @@ const TECH_CATEGORIES: TechCategory[] = [
     icon: <Database className="size-4 text-[#F59E0B]" />,
     badgeCount: 5,
     skills: [
-      { name: 'MySQL', description: 'Relational DBMS' },
-      { name: 'PostgreSQL', description: 'Enterprise SQL' },
+      { name: 'MySQL', description: 'Relational Database' },
+      { name: 'PostgreSQL', description: 'Enterprise Relational DB' },
       { name: 'Supabase', description: 'Postgres & Row Level Security' },
       { name: 'Firebase', description: 'NoSQL & Realtime Auth' },
-      { name: 'SQLite', description: 'Embedded Relational Database' },
+      { name: 'SQLite', description: 'Embedded Relational DB' },
     ],
   },
   {
     id: 'cloud-and-devops',
     title: 'Cloud & DevOps',
     icon: <Cloud className="size-4 text-[#6366F1]" />,
-    badgeCount: 6,
+    badgeCount: 11,
     skills: [
-      { name: 'AWS (EC2, S3, Bedrock)', description: 'Amazon Web Services' },
-      { name: 'Docker', description: 'Containerization & Sandboxing' },
-      { name: 'Git', description: 'Distributed Version Control' },
-      { name: 'GitHub Actions', description: 'CI/CD Automation Pipelines' },
-      { name: 'Vercel', description: 'Edge Deployment Platform' },
+      { name: 'AWS', description: 'Amazon Web Services' },
+      { name: 'EC2', description: 'Elastic Compute Cloud' },
+      { name: 'S3', description: 'Simple Storage Service' },
+      { name: 'RDS', description: 'Relational Database Service' },
+      { name: 'IAM', description: 'Identity & Access Management' },
+      { name: 'Docker', description: 'Containerization' },
+      { name: 'GitHub Actions', description: 'CI/CD Pipelines' },
+      { name: 'Linux', description: 'Unix Systems & CLI' },
+      { name: 'Vercel', description: 'Edge Deployment' },
+      { name: 'Netlify', description: 'Static Web Hosting' },
+      { name: 'Render', description: 'Cloud App Hosting' },
     ],
   },
   {
-    id: 'ai-and-data-science',
-    title: 'AI & Data Science',
+    id: 'ai-and-data',
+    title: 'AI & Data',
     icon: <Sparkles className="size-4 text-[#EC4899]" />,
-    badgeCount: 6,
+    badgeCount: 4,
     skills: [
-      { name: 'Machine Learning', description: 'Algorithms & Model Evaluation' },
-      { name: 'Generative AI', description: 'LLMs & Multi-modal Systems' },
-      { name: 'Prompt Engineering', description: 'Zero/Few-Shot & System Tuning' },
-      { name: 'Pandas', description: 'Data Manipulation & Analysis' },
-      { name: 'NumPy', description: 'Numerical Computing Array Lib' },
+      { name: 'Python', description: 'AI & Data Science' },
+      { name: 'NumPy', description: 'Numerical Computing' },
+      { name: 'AI Model Integration', description: 'Model Orchestration' },
       { name: 'LLM APIs', description: 'Bedrock & Gemini APIs' },
     ],
   },
   {
-    id: 'developer-tools-and-methods',
-    title: 'Developer Tools & Methods',
+    id: 'developer-and-testing-tools',
+    title: 'Developer & Testing Tools',
     icon: <Wrench className="size-4 text-[#8B5CF6]" />,
-    badgeCount: 5,
+    badgeCount: 7,
     skills: [
-      { name: 'VS Code', description: 'Primary Development Environment' },
-      { name: 'IntelliJ IDEA', description: 'Enterprise Java Development' },
-      { name: 'Postman', description: 'API Testing & Documentation' },
-      { name: 'Agile / Scrum', description: 'Iterative Sprint Delivery' },
-      { name: 'CI/CD', description: 'Automated Build & Release' },
+      { name: 'Git', description: 'Version Control' },
+      { name: 'GitHub', description: 'Collaboration & Repos' },
+      { name: 'Postman', description: 'API Testing' },
+      { name: 'Maven', description: 'Java Build Lifecycle' },
+      { name: 'JUnit', description: 'Java Unit Testing' },
+      { name: 'Jasmine', description: 'Frontend Testing' },
+      { name: 'Figma', description: 'UI/UX Design' },
     ],
   },
   {
-    id: 'core-computer-science',
-    title: 'Core Computer Science',
+    id: 'computer-science-fundamentals',
+    title: 'Computer Science Fundamentals',
     icon: <BookOpen className="size-4 text-[#14B8A6]" />,
     badgeCount: 5,
     skills: [
       { name: 'Data Structures & Algorithms', description: '315+ LeetCode Solved' },
-      { name: 'OOP', description: 'Object-Oriented Architecture' },
-      { name: 'DBMS', description: 'Database Relational Normalization' },
-      { name: 'Operating Systems', description: 'Concurrency & Process Scheduling' },
+      { name: 'Object-Oriented Programming', description: 'OOP Architecture' },
+      { name: 'Database Management Systems', description: 'DBMS & Normalization' },
+      { name: 'Operating Systems', description: 'Concurrency & Memory' },
       { name: 'Computer Networks', description: 'TCP/IP, HTTP & DNS' },
     ],
   },
 ];
 
 export const TechnologiesToolsSection: React.FC = () => {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>('frontend-development');
 
   const toggleCategory = (id: string) => {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -193,8 +199,12 @@ export const TechnologiesToolsSection: React.FC = () => {
                     role="region"
                     aria-labelledby={`tech-header-${category.id}`}
                     initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: 'auto',
+                      opacity: 1,
+                      transitionEnd: { overflow: 'visible' },
+                    }}
+                    exit={{ height: 0, opacity: 0, overflow: 'hidden' }}
                     transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                     className="overflow-hidden"
                   >
@@ -203,16 +213,15 @@ export const TechnologiesToolsSection: React.FC = () => {
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: -4, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeOut' }}
-                      className="pt-4 pb-2 pl-2 sm:pl-3"
+                      className="pt-7 pb-2.5 pl-2 sm:pl-3"
                     >
                       <div className="flex flex-wrap gap-2.5">
                         {category.skills.map((skill) => (
                           <div
                             key={skill.name}
-                            title={skill.name}
-                            className="group/chip relative flex items-center gap-2 rounded-xl border border-hairline bg-subtle/60 px-3 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-btn-border hover:bg-subtle-strong hover:shadow-sm"
+                            className="group/chip relative flex items-center gap-2 rounded-xl border border-hairline bg-subtle/60 px-3 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-btn-border hover:bg-subtle-strong hover:shadow-xs"
                           >
-                            <div className="flex size-5 shrink-0 items-center justify-center">
+                            <div className="flex size-5 shrink-0 items-center justify-center transition-transform duration-200 group-hover/chip:scale-110">
                               <TechIcon name={skill.name} className="size-4" />
                             </div>
 
@@ -222,9 +231,10 @@ export const TechnologiesToolsSection: React.FC = () => {
 
                             <div
                               role="tooltip"
-                              className="pointer-events-none absolute -top-7 left-1/2 z-30 -translate-x-1/2 opacity-0 transition-opacity duration-200 group-hover/chip:opacity-100 whitespace-nowrap rounded-md border border-hairline bg-surface px-2 py-0.5 font-mono text-[10px] font-medium text-strong shadow-md"
+                              className="pointer-events-none absolute -top-8 left-1/2 z-40 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover/chip:opacity-100 whitespace-nowrap rounded-md border border-hairline bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold text-strong shadow-lg"
                             >
                               {skill.name}
+                              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 size-2 rotate-45 border-b border-r border-hairline bg-surface" />
                             </div>
                           </div>
                         ))}
