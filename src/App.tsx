@@ -62,7 +62,45 @@ export const App: React.FC = () => {
 
   const handleOpenContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    window.history.replaceState(null, '', '#contact');
   };
+
+  // Synchronize browser URL hash with current section in view
+  useEffect(() => {
+    const sectionIds = [
+      'home',
+      'about',
+      'experience',
+      'technologies-and-tools',
+      'github',
+      'open-source',
+      'projects',
+      'contact',
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((entry) => entry.isIntersecting);
+        if (visible && visible.target.id) {
+          const newHash = `#${visible.target.id}`;
+          if (window.location.hash !== newHash) {
+            window.history.replaceState(null, '', newHash);
+          }
+        }
+      },
+      {
+        rootMargin: '-10% 0px -70% 0px',
+        threshold: 0,
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen w-full bg-bg text-body transition-colors duration-200 overflow-x-hidden">
@@ -80,7 +118,7 @@ export const App: React.FC = () => {
       <main className="relative mx-auto w-full max-w-[880px] px-4 pb-24 pt-4 sm:px-6 md:px-8 xl:w-full xl:max-w-[1600px] 2xl:max-w-[1728px] xl:px-6 2xl:px-8 xl:pt-10">
         
         {/* SECTION 1: HERO & SIDEBAR */}
-        <section className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
+        <section id="home" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
           {/* Left spacer column on desktop */}
           <div className="hidden xl:block" />
 

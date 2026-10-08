@@ -1,0 +1,136 @@
+{
+  "endpoint": "/api/all",
+  "status": "ok",
+  "author": {
+    "name": "Rohith E",
+    "title": "Software Developer / AI & ML Engineer",
+    "email": "e.rohit3130@gmail.com",
+    "github": "https://github.com/ROHITHELAYARAJA",
+    "linkedin": "https://www.linkedin.com/in/rohith-elayaraja/",
+    "leetcode": "https://leetcode.com/Shinchan_2007",
+    "education": "B.E. AI & DS (2022-2026), VSB Engineering College, Karur (CGPA: 8.00/10)"
+  },
+  "projects": [
+    {
+      "id": "virtual-labs",
+      "title": "Virtual Labs",
+      "category": "Full-Stack Platform",
+      "summary": "Multi-tenant engineering learning platform with interactive simulations and in-browser code visualizers.",
+      "technologies": ["Next.js", "Spring Boot", "Java 21", "PostgreSQL", "Tailwind CSS"],
+      "github": "https://github.com/ROHITHELAYARAJA/Virtual-Labs",
+      "architecture": "Next.js client communicating via JWT Bearer tokens with a Spring Boot REST API backed by Supabase PostgreSQL with tenant-isolated Row Level Security."
+    },
+    {
+      "id": "blast-ai",
+      "title": "Blast AI",
+      "category": "AI Application",
+      "summary": "Document-aware AI study assistant that converts textbooks and notes into structured summaries, active-recall flashcards, and quizzes.",
+      "technologies": ["React", "TypeScript", "AWS Bedrock", "SQLite", "Tailwind CSS"],
+      "github": "https://github.com/ROHITHELAYARAJA/Student-AI-Assistant",
+      "liveUrl": "http://blast-ai-by-rohith.s3-website-us-east-1.amazonaws.com"
+    },
+    {
+      "id": "bank-management-system",
+      "title": "Bank Management System",
+      "category": "Backend System",
+      "summary": "Banking transaction engine with ACID balance enforcement, concurrent session locks, and automated audit trails.",
+      "technologies": ["Java", "JDBC", "MySQL", "OOP", "ACID Transactions"],
+      "github": "https://github.com/ROHITHELAYARAJA/Bank-Management-System"
+    },
+    {
+      "id": "rohith-digital-x",
+      "title": "Rohith Digital X",
+      "category": "Digital Agency & Client Engineering",
+      "summary": "Production engineering initiative delivering responsive web platforms, client portals, and cloud integrations.",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Client Engineering"],
+      "liveUrl": "https://rohith-digital-x-xi.vercel.app"
+    },
+    {
+      "id": "abacusai-bot-pr70",
+      "title": "AbacusAI Bot PR #70",
+      "category": "Open Source Upstream",
+      "summary": "Merged open-source pull request resolving cross-platform terminal execution and path-escaping regressions on Windows.",
+      "technologies": ["TypeScript", "Node.js", "Security Guardrails", "Windows API"],
+      "github": "https://github.com/abacusai/abacusai-bot/pull/70",
+      "status": "Merged upstream into master"
+    }
+  ],
+  "technologies": [
+    {
+      "category": "Programming Languages",
+      "items": ["Java", "Python", "JavaScript", "TypeScript", "SQL"]
+    },
+    {
+      "category": "Frontend Development",
+      "items": ["HTML5", "CSS3", "React", "Next.js", "Tailwind CSS"]
+    },
+    {
+      "category": "Backend Development",
+      "items": ["Spring Boot", "REST APIs", "JDBC", "Express.js"]
+    },
+    {
+      "category": "Databases",
+      "items": ["MySQL", "PostgreSQL", "Supabase", "Firebase", "SQLite"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "items": ["AWS (EC2, S3, Bedrock)", "Docker", "Git", "GitHub Actions", "Vercel"]
+    },
+    {
+      "category": "AI & Data Science",
+      "items": ["Machine Learning", "Generative AI", "Prompt Engineering", "Pandas", "NumPy", "LLM APIs"]
+    },
+    {
+      "category": "Developer Tools & Methods",
+      "items": ["VS Code", "IntelliJ IDEA", "Postman", "Agile / Scrum", "CI/CD"]
+    },
+    {
+      "category": "Core Computer Science",
+      "items": ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Computer Networks"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Rohith Digital X",
+      "role": "Founder & Software Developer",
+      "period": "Jan 2024 – Present",
+      "location": "Namakkal, India",
+      "status": "Ongoing",
+      "highlights": [
+        "Delivered 3 production websites with sub-second page loads and mobile-responsive layouts.",
+        "Built custom client ordering pipelines leading to reported ~30% revenue uplift for Cake Lover Namakkal.",
+        "Designed reusable UI component systems deployed on Vercel with zero downtime."
+      ]
+    },
+    {
+      "company": "Virtual Labs Platform",
+      "role": "Lead Architect & Full-Stack Developer",
+      "period": "Jun 2024 – Present",
+      "location": "Karur, India",
+      "status": "Ongoing",
+      "highlights": [
+        "Built Next.js 14 frontend and Spring Boot 3 microservice backend supporting 12 engineering laboratories.",
+        "Engineered browser AST code runner illustrating recursion call-stacks and memory allocation.",
+        "Integrated Supabase PostgreSQL with tenant-isolated Row Level Security policies."
+      ]
+    }
+  ],
+  "navigationEndpoints": {
+    "home": "#home",
+    "about": "#about",
+    "experience": "#experience",
+    "technologies": "#technologies-and-tools",
+    "github": "#github",
+    "openSource": "#open-source",
+    "projects": "#projects",
+    "contact": "#contact"
+  },
+  "apiEndpoints": {
+    "all": "/api/all.json",
+    "home": "/api/home.json",
+    "profile": "/api/profile.json",
+    "portfolio": "/api/portfolio.json",
+    "index": "/api/index.json"
+  },
+  "syncedAt": "2026-10-08T10:25:00Z"
+}

@@ -1,0 +1,74 @@
+{
+  "endpoint": "/api/home",
+  "status": "ok",
+  "author": {
+    "name": "Rohith E",
+    "title": "Software Developer / AI & ML Engineer",
+    "status": "Available for Engineering & AI Roles / Freelance",
+    "location": "Namakkal, Tamil Nadu, India",
+    "education": "B.E. Artificial Intelligence & Data Science, VSB Engineering College (CGPA: 8.00/10)",
+    "avatarUrl": "/assets/profile.png",
+    "heroVideoUrl": "/assets/hero-loop.mp4"
+  },
+  "bio": {
+    "intro": "Third-year B.E. Artificial Intelligence & Data Science student building high-performance backend systems, practical AI products, developer tools, and scalable applications.",
+    "bullets": [
+      "Backend & full-stack development with Java, Spring Boot, React, TypeScript, SQL, and AWS.",
+      "Solved 315+ DSA problems on LeetCode (Shinchan_2007); AWS Certified Cloud Practitioner & Google AI Professional.",
+      "Delivered 3 production websites via Rohith Digital X including Cake Lover Namakkal (~30% reported revenue growth)."
+    ],
+    "currentlyBuilding": {
+      "name": "Virtual Labs & Blast AI",
+      "url": "https://github.com/ROHITHELAYARAJA/Virtual-Labs",
+      "description": "Multi-tenant cloud engineering simulation platform"
+    }
+  },
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/rohith-elayaraja/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/ROHITHELAYARAJA",
+      "icon": "github"
+    },
+    {
+      "name": "LeetCode",
+      "url": "https://leetcode.com/Shinchan_2007",
+      "icon": "leetcode"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:e.rohit3130@gmail.com",
+      "icon": "mail"
+    }
+  ],
+  "quickStats": {
+    "leetcodeSolved": "315+",
+    "publicRepos": 25,
+    "mergedUpstreamPrs": 1,
+    "certifications": [
+      "AWS Certified Cloud Practitioner",
+      "Google AI Professional"
+    ]
+  },
+  "navigationEndpoints": {
+    "home": "#home",
+    "about": "#about",
+    "experience": "#experience",
+    "technologies": "#technologies-and-tools",
+    "github": "#github",
+    "openSource": "#open-source",
+    "projects": "#projects",
+    "contact": "#contact"
+  },
+  "relatedApiEndpoints": {
+    "all": "/api/all.json",
+    "profile": "/api/profile.json",
+    "portfolio": "/api/portfolio.json",
+    "root": "/api/index.json"
+  },
+  "syncedAt": "2026-10-08T10:25:00Z"
+}

@@ -78,7 +78,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       icon: <Compass className="size-4 text-ink-soft" />,
       hint: 'Top of page',
       action: () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', '#home');
         onClose();
       },
     },
@@ -90,6 +91,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       hint: 'Bio & Focus',
       action: () => {
         document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', '#about');
         onClose();
       },
     },
@@ -101,6 +103,19 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       hint: 'Career & Freelance',
       action: () => {
         document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', '#experience');
+        onClose();
+      },
+    },
+    {
+      id: 'nav-tech',
+      label: 'Technologies & Tools',
+      category: 'Navigation',
+      icon: <Compass className="size-4 text-ink-soft" />,
+      hint: 'Skills & Proficiencies',
+      action: () => {
+        document.getElementById('technologies-and-tools')?.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', '#technologies-and-tools');
         onClose();
       },
     },

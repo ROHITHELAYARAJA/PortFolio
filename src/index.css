@@ -16,6 +16,7 @@
   --color-subtle: rgba(0, 0, 0, 0.03);
   --color-subtle-strong: rgba(0, 0, 0, 0.06);
 
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --font-cabinet: 'Cabinet Grotesk', system-ui, -apple-system, sans-serif;
   --font-instrument: 'Instrument Serif', Georgia, serif;
   --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;

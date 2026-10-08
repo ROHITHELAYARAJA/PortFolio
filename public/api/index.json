@@ -1,0 +1,24 @@
+{
+  "api": "Rohith E Developer Portfolio API",
+  "version": "1.0.0",
+  "author": "Rohith E",
+  "description": "Programmatic API endpoints for Rohith E portfolio data, verified systems, technical competencies, and navigation.",
+  "endpoints": {
+    "home": "/api/home.json",
+    "all": "/api/all.json",
+    "profile": "/api/profile.json",
+    "portfolio": "/api/portfolio.json"
+  },
+  "navigationAnchors": {
+    "home": "#home",
+    "about": "#about",
+    "experience": "#experience",
+    "technologies": "#technologies-and-tools",
+    "github": "#github",
+    "openSource": "#open-source",
+    "projects": "#projects",
+    "contact": "#contact"
+  },
+  "status": "online",
+  "syncedAt": "2026-10-08T10:25:00Z"
+}

@@ -35,9 +35,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             Navigate
           </p>
           <nav className="flex flex-col gap-2 font-cabinet text-[15px] text-nav">
-            <a href="#" className="hover:text-strong transition-colors">Home</a>
+            <a href="#home" className="hover:text-strong transition-colors">Home</a>
             <a href="#about" className="hover:text-strong transition-colors">About</a>
             <a href="#experience" className="hover:text-strong transition-colors">Experience</a>
+            <a href="#technologies-and-tools" className="hover:text-strong transition-colors">Technologies & Tools</a>
             <a href="#github" className="hover:text-strong transition-colors">GitHub</a>
             <a href="#open-source" className="hover:text-strong transition-colors">Open Source</a>
             <a href="#projects" className="hover:text-strong transition-colors">Projects</a>

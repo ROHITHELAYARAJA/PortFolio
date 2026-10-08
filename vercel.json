@@ -1,7 +1,28 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/api",
+      "destination": "/api/index.json"
+    },
+    {
+      "source": "/api/home",
+      "destination": "/api/home.json"
+    },
+    {
+      "source": "/api/all",
+      "destination": "/api/all.json"
+    },
+    {
+      "source": "/api/profile",
+      "destination": "/api/profile.json"
+    },
+    {
+      "source": "/api/portfolio",
+      "destination": "/api/portfolio.json"
+    },
+    {
+      "source": "/((?!api/|assets/|favicon\\.png|.*\\..*).*)",
       "destination": "/index.html"
     }
   ]

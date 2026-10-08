@@ -20,7 +20,7 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
     <aside className="hidden xl:flex xl:flex-col xl:pl-[28px] xl:pr-4 sticky top-10 self-start">
       {/* Brand Logo Header */}
       <div className="mb-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 group">
+        <a href="#home" className="flex items-center gap-2.5 group">
           <RdxLogo className="h-6 w-auto group-hover:scale-105 transition-transform" />
           <span className="font-cabinet text-[17px] font-bold text-strong tracking-tight">Rohith E</span>
         </a>
@@ -63,7 +63,7 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
         <p className="font-cabinet text-[20px] font-semibold text-strong tracking-tight">Index</p>
         <nav className="mt-3 flex flex-col gap-2">
           <a
-            href="#"
+            href="#home"
             className="w-fit font-cabinet text-[17px] text-nav transition-colors hover:text-strong"
           >
             Home
@@ -79,6 +79,12 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
             className="w-fit font-cabinet text-[17px] text-nav transition-colors hover:text-strong"
           >
             Experience
+          </a>
+          <a
+            href="#technologies-and-tools"
+            className="w-fit font-cabinet text-[17px] text-nav transition-colors hover:text-strong"
+          >
+            Technologies & Tools
           </a>
           <a
             href="#github"

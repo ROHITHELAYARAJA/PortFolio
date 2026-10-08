@@ -40,9 +40,10 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
   }, [isOpen]);
 
   const navLinks = [
-    { label: 'Home', href: '#' },
+    { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
+    { label: 'Technologies & Tools', href: '#technologies-and-tools' },
     { label: 'GitHub', href: '#github' },
     { label: 'Open Source', href: '#open-source' },
     { label: 'Projects', href: '#projects' },
@@ -53,7 +54,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
     <div className="xl:hidden w-full border-b border-hairline bg-surface/90 backdrop-blur-md sticky top-0 z-40 px-4 py-3 sm:px-6">
       <div className="mx-auto flex max-w-[880px] items-center justify-between">
         {/* Brand */}
-        <a href="#" className="flex items-center gap-2 font-cabinet text-[18px] font-bold text-strong tracking-tight">
+        <a href="#home" className="flex items-center gap-2 font-cabinet text-[18px] font-bold text-strong tracking-tight">
           <RdxLogo className="h-5 w-auto" />
           <span>Rohith E</span>
         </a>

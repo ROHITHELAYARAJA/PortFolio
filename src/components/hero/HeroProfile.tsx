@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useHeroApi } from '../../hooks/useHeroApi';
-import { ExternalLink, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, RefreshCw, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { RdxLogo } from '../ui/RdxLogo';
 
 interface HeroProfileProps {
@@ -74,15 +74,15 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
             <RdxLogo className="relative z-10 h-9 w-auto sm:h-14 xl:h-16" />
           </div>
 
-          {/* Name and Designation with Metallic and Color Accents */}
+          {/* Name and Designation with Clean, High-Contrast Typography */}
           <div className="flex flex-col gap-1 sm:gap-1.5 min-w-0">
-            <h1 className="font-cabinet text-[26px] font-black leading-tight tracking-[-1.3px] text-metallic-silver sm:text-[34px] sm:tracking-[-1.6px] xl:text-[40px] xl:tracking-[-1.8px] truncate">
+            <h1 className="font-sans text-[30px] font-bold leading-tight tracking-[-0.5px] text-strong sm:text-[38px] xl:text-[44px] truncate">
               {profile.name}
             </h1>
-            <div className="flex flex-wrap items-center gap-1.5 font-cabinet text-[15px] sm:text-[18px] xl:text-[20px]">
-              <span className="text-metallic-sky font-bold">Software Developer</span>
+            <div className="flex flex-wrap items-center gap-1.5 font-sans text-[15px] sm:text-[17px] xl:text-[19px]">
+              <span className="text-strong font-semibold">Software Developer</span>
               <span className="text-neutral-400 dark:text-zinc-500 font-light select-none">/</span>
-              <span className="text-metallic-purple font-bold">AI & ML Engineer</span>
+              <span className="text-strong font-semibold">AI & ML Engineer</span>
             </div>
 
             {/* Thoughtful Brand Tags inspired by Image 4 */}
@@ -267,8 +267,8 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
           </p>
         </div>
 
-        {/* API Source of Truth Status Pill */}
-        <div className="pt-2 flex flex-wrap items-center gap-3 pr-14 sm:pr-0">
+        {/* API Source of Truth Status Pill & Direct Endpoints */}
+        <div className="pt-2 flex flex-wrap items-center gap-2 sm:gap-3 pr-14 sm:pr-0">
           <div className="inline-flex items-center gap-1.5 rounded-full border border-hairline bg-subtle px-3 py-1 text-[11px] font-mono text-ink-soft">
             <span className={`size-2 rounded-full ${isLive ? 'bg-emerald-500' : 'bg-amber-500'}`} />
             <span>API Source of Truth: {isLive ? 'Live Synchronized' : 'Verified Cache'}</span>
@@ -280,6 +280,30 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
             >
               <RefreshCw className={`size-3 ${loading ? 'animate-spin' : ''}`} />
             </button>
+          </div>
+
+          {/* Direct API Endpoints Links */}
+          <div className="flex items-center gap-1.5 font-mono text-[10.5px]">
+            <a
+              href="/api/home.json"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open Home Page API Endpoint (JSON)"
+              className="inline-flex items-center gap-1 rounded-full border border-hairline bg-surface px-2.5 py-0.5 text-ink-soft hover:text-strong hover:border-btn-border transition-colors shadow-2xs"
+            >
+              <span>/api/home</span>
+              <ArrowUpRight className="size-2.5 opacity-70" />
+            </a>
+            <a
+              href="/api/all.json"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open Complete Portfolio API Endpoint (JSON)"
+              className="inline-flex items-center gap-1 rounded-full border border-hairline bg-surface px-2.5 py-0.5 text-ink-soft hover:text-strong hover:border-btn-border transition-colors shadow-2xs"
+            >
+              <span>/api/all</span>
+              <ArrowUpRight className="size-2.5 opacity-70" />
+            </a>
           </div>
 
           {profile.githubStats && (
