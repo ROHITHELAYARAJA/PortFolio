@@ -115,153 +115,123 @@ export const FEATURED_PROJECTS: ProjectItem[] = [
   {
     id: 'virtual-labs',
     slug: 'virtual-labs',
-    title: 'Virtual Labs — Engineering Learning Platform',
+    title: 'Virtual Labs',
     category: 'Full-Stack Platform',
-    summary: 'Multi-tenant cloud laboratory and continuous simulation ecosystem engineered for 500–600 engineering students across 4 academic years and 12 core laboratories.',
-    primaryTech: ['Next.js', 'TypeScript', 'React', 'Spring Boot', 'Java 21', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    summary: 'Multi-tenant engineering learning platform with interactive simulations and in-browser code visualizers.',
+    primaryTech: ['Next.js', 'Spring Boot', 'Java 21', 'PostgreSQL', 'Tailwind CSS'],
     repoUrl: 'https://github.com/ROHITHELAYARAJA/Virtual-Labs',
-    stats: [
-      { label: 'Target Students', value: '500–600' },
-      { label: 'Core Labs', value: '12 Modules' },
-      { label: 'Curriculum', value: '4 Academic Years' },
-      { label: 'Backend', value: 'Spring Boot 3.3' },
-    ],
     featured: true,
     highlights: [
-      'Multi-tenant routing (/c/[collegeSlug]) supporting dedicated institutional syllabi and isolated cohorts',
-      'In-browser AST visualizer and JVM execution call-stack tracing engine for Data Structures and Algorithms',
-      '4-part pedagogical workflow: Theory/Video → Interactive Simulation → JVM Execution Tracer → Challenge Quiz',
-      'Spring Boot 3 REST API backend with dual Supabase JWT and Firebase Admin token authentication filters',
-      'Real-time student progress telemetry, faculty assessment gradebooks, and automated PDF certification'
+      'Multi-tenant routing supporting dedicated institutional syllabi and isolated cohorts',
+      'In-browser AST visualizer and JVM execution call-stack tracing engine for Data Structures',
+      'Spring Boot 3 REST API backend with Supabase PostgreSQL and Row Level Security'
     ],
-    architectureSummary: 'Next.js 15 App Router client communicating via JWT Bearer tokens with an enterprise Spring Boot 3.3.2 REST API (:8080/api/v1) backed by Supabase PostgreSQL multi-tenant schema with isolated Row Level Security policies.',
-    problem: 'Traditional engineering colleges face physical lab scheduling bottlenecks, limited hardware, and lack of visual code tracing, leading to superficial student comprehension of core algorithmic workflows.',
-    solution: 'Designed and deployed an integrated cloud learning hub featuring zero-installation in-browser simulators, JVM call-stack tracing, and faculty analytics aligned with Anna University and AICTE outcome frameworks.',
+    architectureSummary: 'Next.js client communicating via JWT Bearer tokens with a Spring Boot REST API backed by Supabase PostgreSQL with tenant-isolated Row Level Security.',
+    problem: 'Engineering colleges face physical lab scheduling bottlenecks and lack visual code tracing for algorithmic comprehension.',
+    solution: 'Designed and deployed an integrated learning hub with in-browser simulators, JVM call-stack tracing, and faculty analytics.',
     decisions: [
-      'Adopted Spring Boot 3.3 with Spring Data JPA for mission-critical student assessment evaluations and grading invariants.',
-      'Selected Supabase PostgreSQL with tenant-based foreign keys and RLS policies for instant institutional data segregation.',
-      'Built custom AST-based step runner to visualize memory heap allocation and recursion call-stacks directly in the browser without server compute load.'
+      'Adopted Spring Boot 3.3 for student assessment evaluations and grading invariants.',
+      'Selected Supabase PostgreSQL with tenant-based foreign keys and RLS policies for institutional data segregation.',
+      'Built custom AST-based step runner to visualize memory heap allocation and recursion call-stacks directly in the browser.'
     ],
     challenges: [
-      'Orchestrating concurrent simulation states across 500+ student sessions without introducing heavy WebSocket backend infrastructure.',
-      'Maintaining backward compatibility with multiple college grading rubrics and custom laboratory manuals.'
+      'Orchestrating concurrent simulation states without heavy WebSocket backend infrastructure.',
+      'Maintaining compatibility with multiple college grading rubrics and custom laboratory manuals.'
     ],
     results: [
-      'Deployed 12 full laboratory courses covering Data Structures, Operating Systems, Computer Networks, and Machine Learning.',
-      'Eliminated software installation hurdles for hundreds of student machines across college computer centers.'
+      'Deployed interactive laboratory courses covering Data Structures and Operating Systems.',
+      'Eliminated manual software installation hurdles across college computer centers.'
     ],
   },
   {
     id: 'blast-ai',
     slug: 'blast-ai',
-    title: 'Blast AI — Student AI Assistant & Study Workspace',
-    category: 'AI Application & Developer Tool',
-    summary: 'Modern, branded study workspace that transforms dense textbooks, PDFs, and lecture notes into structured notes, active recall flashcards, practice quizzes, and document-aware AI tutoring.',
-    primaryTech: ['React', 'TypeScript', 'Express', 'SQLite', 'AWS Bedrock', 'AWS S3', 'Tailwind CSS'],
+    title: 'Blast AI',
+    category: 'AI Application',
+    summary: 'Document-aware AI study assistant that converts textbooks and notes into structured summaries, active-recall flashcards, and quizzes.',
+    primaryTech: ['React', 'TypeScript', 'AWS Bedrock', 'SQLite', 'Tailwind CSS'],
     repoUrl: 'https://github.com/ROHITHELAYARAJA/Student-AI-Assistant',
     liveUrl: 'http://blast-ai-by-rohith.s3-website-us-east-1.amazonaws.com',
-    stats: [
-      { label: 'PDF Limit', value: '10 MB / 80 pgs' },
-      { label: 'Storage', value: 'SQLite WAL' },
-      { label: 'Deployment', value: 'AWS S3 + Cloud' },
-      { label: 'Routing', value: 'Fallback LLM' },
-    ],
     featured: true,
     highlights: [
-      'Validated input handling for searchable PDFs up to 10 MB and 80 pages, TXT, and Markdown files',
-      'Document-aware interactive tutoring engine that generates summaries, concept breakdowns, and verification questions',
-      'Deterministic generation schemas outputting structured Markdown notes, flashcards, and multiple-choice quizzes',
-      'In-Region AI model routing with automatic task decomposition and validated fallback handling',
-      'Local guest session workflow with seamless account promotion and SQLite WAL persistence'
+      'Document parsing for searchable PDFs, text, and markdown files',
+      'Document-aware tutoring generating concept breakdowns and verification questions',
+      'Deterministic generation schemas producing flashcards and multiple-choice quizzes'
     ],
-    architectureSummary: 'React TypeScript frontend communicating with an Express backend using SQLite WAL storage for fast local session management, integrated with AWS Bedrock model pipelines and deployed on AWS S3.',
-    problem: 'Students are overwhelmed by dense, unstructured 80-page academic documents and generic LLM chat interfaces that hallucinate without grounded source citations.',
-    solution: 'Engineered a specialized document workspace that parses text into bounded token chunks, executes strict structured generation schemas, and presents dedicated interactive study cards.',
+    architectureSummary: 'React TypeScript frontend communicating with an Express backend using SQLite WAL storage, integrated with AWS Bedrock and deployed on AWS S3.',
+    problem: 'Students are overwhelmed by dense academic documents and generic LLM interfaces that lack grounded source citations.',
+    solution: 'Engineered a specialized document workspace that parses text into bounded chunks, executes structured generation schemas, and presents interactive study tools.',
     decisions: [
-      'Enforced hard document limits (10 MB / 80 pages) to ensure bounded memory execution and prevent server OOM crashes.',
-      'Separated content generation into discrete, auditable JSON schema pipelines rather than open-ended conversational text.'
+      'Enforced bounded document size limits to ensure stable execution.',
+      'Separated content generation into discrete, auditable JSON schema pipelines.'
     ],
     challenges: [
-      'Handling PDF stream extraction edge cases with malformed page trees without third-party cloud OCR fees.',
-      'Designing graceful offline fallbacks and mocked AI test suites to verify workflows without consuming API quotas.'
+      'Handling PDF stream extraction edge cases without third-party cloud OCR fees.',
+      'Designing reliable fallback handling and test suites to verify workflows.'
     ],
     results: [
-      'Comprehensive study workspace featuring automated flashcards, quizzes, and live speech synthesis playback.',
-      'Packaged and verified end-to-end integration test suite running on zero-cost mocked environments.'
+      'Study workspace featuring automated flashcards, quizzes, and live speech synthesis playback.',
+      'Verified integration test suite running on mocked environments.'
     ],
   },
   {
     id: 'bank-management-system',
     slug: 'bank-management-system',
-    title: 'Bank Management System — Core Banking Engine',
-    category: 'Backend System & Database Architecture',
-    summary: 'A robust, transaction-safe core banking backend engineered with Java, JDBC, and MySQL featuring BCrypt credential hashing and atomic ACID commit/rollback controls.',
+    title: 'Bank Management System',
+    category: 'Backend System',
+    summary: 'Transaction-safe core banking backend with atomic ACID rollback controls, BCrypt password hashing, and MySQL persistence.',
     primaryTech: ['Java', 'JDBC', 'MySQL', 'BCrypt', 'Maven'],
     repoUrl: 'https://github.com/ROHITHELAYARAJA/Bank-Management-System',
-    stats: [
-      { label: 'Security', value: 'BCrypt Hashed' },
-      { label: 'SQL Defense', value: 'PreparedStatement' },
-      { label: 'Transactions', value: 'ACID Rollback' },
-      { label: 'Architecture', value: 'UI → Service → DAO' },
-    ],
     featured: true,
     highlights: [
-      'Layered 3-tier enterprise architecture cleanly separating Presentation, Business Service, and DAO persistence',
-      'Strict BCrypt password hashing ensuring zero plaintext credential exposure in the database',
-      'Atomic JDBC transaction handling with explicit connection.setAutoCommit(false), commit(), and rollback() on error',
-      'Enforced domain business rules: Savings accounts cannot drop below ₹0; Current accounts support overdraft up to ₹1,000',
-      'Parameterized PreparedStatement queries providing complete immunity against SQL injection vulnerabilities'
+      'Layered enterprise architecture separating Presentation, Business Service, and DAO layers',
+      'BCrypt password hashing ensuring zero plaintext credential exposure in the database',
+      'Atomic JDBC transaction handling with explicit commit and rollback boundaries'
     ],
-    architectureSummary: 'Clean MVC/DAO Java application: User Interaction Layer → Banking Business Service → DAO Data Access Layer → MySQL Relational Database with strict isolation levels.',
-    problem: 'Beginner database projects frequently use unhashed passwords, raw string concatenation leading to SQL injection, and non-transactional balance updates that cause silent double-spending or money loss during crashes.',
-    solution: 'Built a disciplined banking backend that treats every balance change as an atomic financial transaction with rollback guarantees, strict input sanitization, and BCrypt salt hashing.',
+    architectureSummary: 'Clean MVC/DAO Java application separating Presentation, Banking Service, and MySQL Data Access with transaction isolation.',
+    problem: 'Database applications often suffer from plaintext credentials, SQL injection vectors, and non-transactional balance mutations causing data corruption.',
+    solution: 'Built a disciplined banking backend that treats balance mutations as atomic financial transactions with rollback guarantees and BCrypt security.',
     decisions: [
-      'Employed pure JDBC over heavy ORM frameworks to maintain precise control over transaction boundaries and SQL execution plans.',
-      'Established immutable Account and Transaction data transfer objects to prevent unintended state mutations.'
+      'Employed pure JDBC to maintain precise control over transaction boundaries and SQL execution.',
+      'Established immutable Account and Transaction data transfer objects to prevent state leakage.'
     ],
     challenges: [
-      'Ensuring simultaneous debits and credits in inter-account fund transfers either both succeed or completely roll back in failure states.',
-      'Handling overdraft limits cleanly without exposing negative balance anomalies across account types.'
+      'Ensuring simultaneous debits and credits in inter-account fund transfers atomically commit or roll back.',
+      'Handling overdraft limits cleanly without exposing negative balance anomalies.'
     ],
     results: [
-      'Zero-compromise security posture with PreparedStatement queries and BCrypt encryption.',
-      'Rock-solid transaction consistency verified through multi-scenario failure and rollback tests.'
+      'Secure architecture using PreparedStatement parameterization and BCrypt encryption.',
+      'Consistent transaction handling verified through multi-scenario failure and rollback tests.'
     ],
   },
   {
     id: 'rohith-digital-x',
     slug: 'rohith-digital-x',
-    title: 'Rohith Digital X — Client Systems & Web Deployments',
-    category: 'Production Client Engineering',
-    summary: 'Production freelance software development engineering tailored high-converting web applications, WhatsApp e-commerce ordering flows, and digital storefronts for verified regional businesses.',
-    primaryTech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Cloudinary', 'Vercel Edge'],
+    title: 'Rohith Digital X',
+    category: 'Client Systems',
+    summary: 'Production client web applications and localized digital storefronts featuring direct WhatsApp cart checkout flows.',
+    primaryTech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Vercel'],
     repoUrl: 'https://github.com/ROHITHELAYARAJA',
-    stats: [
-      { label: 'Load Times', value: '<0.5s Initial' },
-      { label: 'Lighthouse', value: '95–100 Scores' },
-      { label: 'Ordering', value: 'Direct WhatsApp' },
-      { label: 'SEO', value: 'Local Search' },
-    ],
+    liveUrl: 'https://rohith-digital-x-xi.vercel.app',
     featured: false,
     highlights: [
-      'Cake Lover Namakkal: High-performance online bakery ordering catalog with automated WhatsApp order payloads',
-      'Anis Creation: Custom fashion, boutique, and embroidery digital portfolio with category browsing and lead captures',
-      'End-to-end client lifecycle: requirement scoping, UX architecture, frontend engineering, edge CDN deployment',
-      'Strict Core Web Vitals optimization achieving 95+ scores across Performance, Accessibility, and SEO'
+      'Online bakery ordering catalog with automated WhatsApp cart payloads',
+      'Digital agency and portfolio websites with responsive service showcases',
+      'Full delivery lifecycle from requirements to edge CDN deployment'
     ],
-    architectureSummary: 'Lightweight Vite and React frontends deployed on global CDN edges with progressive image streaming and localized SEO optimization.',
-    problem: 'Local business clients suffered from slow, expensive, and fragile WordPress stores that frustrated mobile users and lost inbound sales inquiries.',
-    solution: 'Engineered sub-second React storefronts with 1-click WhatsApp cart checkout flows that require zero account sign-up friction for customers.',
+    architectureSummary: 'Lightweight Vite and React frontends deployed on global CDN edges with progressive image streaming and localized SEO.',
+    problem: 'Local business clients suffered from slow, complex platforms that frustrated mobile users and lost inbound inquiries.',
+    solution: 'Engineered fast React storefronts with direct WhatsApp cart checkout flows that eliminate friction for customers.',
     decisions: [
-      'Bypassed complex payment gateway signups in favor of direct WhatsApp cart payload generation suited to regional shopping habits.',
-      'Enforced responsive fluid layouts optimized for budget Android devices and low-bandwidth connections.'
+      'Implemented direct WhatsApp cart payloads suited to regional shopping habits.',
+      'Enforced responsive layouts optimized for mobile devices and varied connection speeds.'
     ],
     challenges: [
-      'Balancing high-resolution bakery and fashion imagery with sub-500ms initial page load requirements.'
+      'Balancing high-resolution catalog imagery with fast initial page load requirements.'
     ],
     results: [
-      'Delivered production client websites with zero reported downtime and seamless mobile performance.',
-      'Significantly boosted client inquiry conversion rates through direct chat ordering.'
+      'Delivered production client websites with zero reported downtime and smooth mobile performance.',
+      'Improved client inquiry conversion rates through direct messaging ordering.'
     ],
   },
 ];
@@ -276,17 +246,11 @@ export const OPEN_SOURCE_CONTRIBUTION = {
   status: 'MERGED' as const,
   mergedDate: '2026',
   badge: 'MERGED UPSTREAM ✓',
-  summary: 'Resolved a critical Windows path canonicalization defect where 8.3 short paths caused valid temporary scratch operations to be rejected by security guardrails.',
-  problem: 'On Windows operating systems, the temporary directory path frequently resolved using an 8.3 short path representation (e.g., C:\\Users\\RUNNER~1\\...). Meanwhile, agent path-guardrails independently expanded target paths to their canonical long form. Because the string prefixes mismatched, legitimate scratch writes were falsely flagged as path traversals and blocked.',
-  solution: 'Implemented consistent path canonicalization across Windows temp-dir utilities, ensuring both short (8.3) and long representations are resolved to the identical canonical path prior to guardrail evaluation.',
-  verification: 'Authored regression test fixtures validating Windows 8.3 short path expansion, path traversal immunity, and cross-platform path equality.',
-  workflowSteps: [
-    { label: 'BUG DETECTED', desc: 'Legitimate scratch files blocked on Windows' },
-    { label: 'PATH MISMATCH', desc: 'RUNNER~1 short path vs canonical long path' },
-    { label: 'NORMALIZATION FIX', desc: 'Unified realpath resolution for 8.3 names' },
-    { label: 'REGRESSION TESTS', desc: 'Windows runner test suite passed cleanly' },
-    { label: 'MERGED UPSTREAM ✓', desc: 'Accepted & merged into upstream codebase' },
-  ],
+  summary: 'Normalized Windows 8.3 short paths against agent scratch-path security guardrails with regression test coverage.',
+  primaryTech: ['TypeScript', 'Node.js', 'Security Guardrails', 'Windows API'],
+  problem: 'On Windows operating systems, temporary directory paths frequently resolved using an 8.3 short path representation (RUNNER~1). Guardrails evaluated against canonical long paths, causing legitimate scratch operations to be rejected.',
+  solution: 'Implemented consistent path canonicalization across Windows temp-dir utilities, ensuring both representations resolve identically prior to guardrail checks.',
+  verification: 'Authored regression test fixtures validating Windows 8.3 short path expansion and cross-platform path equality.',
 };
 
 export interface EducationItem {

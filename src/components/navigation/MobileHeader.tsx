@@ -46,8 +46,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
     { label: 'GitHub', href: '#github' },
     { label: 'Open Source', href: '#open-source' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Engineering Lab', href: '#engineering-lab' },
-    { label: 'Writing', href: '#writing' },
     { label: 'Contact', href: '#contact' },
   ];
 

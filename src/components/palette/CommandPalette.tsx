@@ -138,28 +138,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       },
     },
     {
-      id: 'nav-lab',
-      label: 'Engineering Lab',
-      category: 'Navigation',
-      icon: <Code2 className="size-4 text-ink-soft" />,
-      hint: 'Architecture & Visualizers',
-      action: () => {
-        document.getElementById('engineering-lab')?.scrollIntoView({ behavior: 'smooth' });
-        onClose();
-      },
-    },
-    {
-      id: 'nav-writing',
-      label: 'Writing',
-      category: 'Navigation',
-      icon: <FileText className="size-4 text-ink-soft" />,
-      hint: 'Technical Articles',
-      action: () => {
-        document.getElementById('writing')?.scrollIntoView({ behavior: 'smooth' });
-        onClose();
-      },
-    },
-    {
       id: 'nav-contact',
       label: 'Contact',
       category: 'Navigation',
@@ -174,10 +152,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     // PROJECTS
     {
       id: 'proj-vlabs',
-      label: 'Virtual Labs — Engineering Learning Platform',
+      label: 'Virtual Labs',
       category: 'Projects',
       icon: <FolderGit2 className="size-4 text-emerald-400" />,
-      hint: 'Flagship · Case Study',
+      hint: 'Full-Stack Platform · Case Study',
       action: () => {
         onSelectProject('virtual-labs');
         onClose();
@@ -185,10 +163,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     },
     {
       id: 'proj-blast',
-      label: 'Blast AI — Student AI Assistant',
+      label: 'Blast AI',
       category: 'Projects',
       icon: <FolderGit2 className="size-4 text-sky-400" />,
-      hint: 'PDF Tutor · Case Study',
+      hint: 'AI Application · Case Study',
       action: () => {
         onSelectProject('blast-ai');
         onClose();
@@ -199,7 +177,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       label: 'Bank Management System',
       category: 'Projects',
       icon: <FolderGit2 className="size-4 text-amber-400" />,
-      hint: 'Java JDBC · Case Study',
+      hint: 'Backend System · Case Study',
       action: () => {
         onSelectProject('bank-management-system');
         onClose();
@@ -207,10 +185,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     },
     {
       id: 'proj-rdx',
-      label: 'Rohith Digital X Client Deployments',
+      label: 'Rohith Digital X',
       category: 'Projects',
       icon: <FolderGit2 className="size-4 text-zinc-400" />,
-      hint: 'Production Storefronts',
+      hint: 'Client Systems · Case Study',
       action: () => {
         onSelectProject('rohith-digital-x');
         onClose();

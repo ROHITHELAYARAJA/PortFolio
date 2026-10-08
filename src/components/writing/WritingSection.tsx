@@ -3,9 +3,15 @@ import { ArrowUpRight, BookOpen, Clock, Calendar } from 'lucide-react';
 import { ARTICLES_DATA } from '../../data/portfolioData';
 
 export const WritingSection: React.FC = () => {
+  const publishedArticles = ARTICLES_DATA.filter((article) => article.status === 'Published');
+
+  if (publishedArticles.length === 0) {
+    return null;
+  }
+
   return (
     <div className="flex flex-col gap-5">
-      {ARTICLES_DATA.map((article) => (
+      {publishedArticles.map((article) => (
         <article
           key={article.id}
           className="group relative flex flex-col justify-between rounded-2xl border border-hairline bg-surface p-6 transition-all hover:border-btn-border hover:shadow-sm"

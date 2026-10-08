@@ -99,18 +99,6 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
             Projects
           </a>
           <a
-            href="#engineering-lab"
-            className="w-fit font-cabinet text-[17px] text-nav transition-colors hover:text-strong"
-          >
-            Engineering Lab
-          </a>
-          <a
-            href="#writing"
-            className="w-fit font-cabinet text-[17px] text-nav transition-colors hover:text-strong"
-          >
-            Writing
-          </a>
-          <a
             href="#contact"
             className="w-fit font-cabinet text-[17px] text-nav transition-colors hover:text-strong"
           >

@@ -8,8 +8,6 @@ import { ExperienceSection } from './components/experience/ExperienceSection';
 import { GitHubSection } from './components/github/GitHubSection';
 import { OpenSourceSection } from './components/opensource/OpenSourceSection';
 import { ProjectsSection } from './components/projects/ProjectsSection';
-import { EngineeringLabSection } from './components/lab/EngineeringLabSection';
-import { WritingSection } from './components/writing/WritingSection';
 import { ContactSection } from './components/contact/ContactSection';
 import { Footer } from './components/layout/Footer';
 import { CommandPalette } from './components/palette/CommandPalette';
@@ -209,53 +207,7 @@ export const App: React.FC = () => {
 
         <hr className="my-10 border-0 border-t border-dashed border-line" />
 
-        {/* SECTION 6: ENGINEERING LAB */}
-        <ScrollSection id="engineering-lab" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left Editorial Label */}
-          <div className="xl:pr-6 xl:pt-2">
-            <h2 className="font-cabinet text-[26px] font-bold tracking-[-1.5px] text-strong sm:text-[30px]">
-              Engineering Lab
-            </h2>
-            <p className="mt-1 font-mono text-[12px] text-[#0EA5E9] font-semibold hidden xl:block">
-              Explorations & Architecture
-            </p>
-          </div>
-
-          {/* Main Engineering Lab Grid */}
-          <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
-            <EngineeringLabSection />
-          </div>
-
-          {/* Right Column Spacer */}
-          <div className="hidden xl:block" />
-        </ScrollSection>
-
-        <hr className="my-10 border-0 border-t border-dashed border-line" />
-
-        {/* SECTION 7: WRITING */}
-        <ScrollSection id="writing" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
-          {/* Left Editorial Label */}
-          <div className="xl:pr-6 xl:pt-2">
-            <h2 className="font-instrument text-[36px] font-normal italic leading-tight tracking-[-0.4px] text-strong sm:text-[44px]">
-              Latest writing
-            </h2>
-            <p className="mt-1 font-mono text-[12px] text-[#8B5CF6] font-semibold hidden xl:block">
-              Essays & Engineering Notes
-            </p>
-          </div>
-
-          {/* Main Writing Content */}
-          <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
-            <WritingSection />
-          </div>
-
-          {/* Right Column Spacer */}
-          <div className="hidden xl:block" />
-        </ScrollSection>
-
-        <hr className="my-10 border-0 border-t border-dashed border-line" />
-
-        {/* SECTION 8: CONTACT */}
+        {/* SECTION 6: CONTACT */}
         <ScrollSection id="contact" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
           {/* Left Editorial Label */}
           <div className="xl:pr-6 xl:pt-2">

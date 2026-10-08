@@ -41,8 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <a href="#github" className="hover:text-strong transition-colors">GitHub</a>
             <a href="#open-source" className="hover:text-strong transition-colors">Open Source</a>
             <a href="#projects" className="hover:text-strong transition-colors">Projects</a>
-            <a href="#engineering-lab" className="hover:text-strong transition-colors">Engineering Lab</a>
-            <a href="#writing" className="hover:text-strong transition-colors">Writing</a>
+            <a href="#contact" className="hover:text-strong transition-colors">Contact</a>
           </nav>
         </div>
 
@@ -55,6 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <a href="https://github.com/ROHITHELAYARAJA/Virtual-Labs" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Virtual Labs</a>
             <a href="https://github.com/ROHITHELAYARAJA/Student-AI-Assistant" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Blast AI</a>
             <a href="https://github.com/ROHITHELAYARAJA/Bank-Management-System" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Bank Management System</a>
+            <a href="https://rohith-digital-x-xi.vercel.app" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Rohith Digital X</a>
             <a href="https://github.com/abacusai/abacusai-bot/pull/70" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">AbacusAI Bot PR #70</a>
           </nav>
         </div>
