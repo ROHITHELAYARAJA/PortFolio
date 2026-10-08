@@ -35,14 +35,10 @@ const ScrollSection: React.FC<{
 };
 
 export const App: React.FC = () => {
-  // Theme state
+  // Theme state: defaults to white (light theme) unless explicitly set to 'dark'
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
-      return (
-        localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      );
+      return localStorage.getItem('theme') === 'dark';
     }
     return false;
   });
