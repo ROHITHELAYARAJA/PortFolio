@@ -110,19 +110,14 @@ export const FALLBACK_PROFILE_DATA: HeroProfileApiResponse = {
     '12 Core Engineering Laboratories deployed in Virtual Labs',
     'Blast AI Study Platform AWS Bedrock integration'
   ],
-  apiSource: 'Portfolio Verified Engine API (Source of Truth)',
+  apiSource: 'Portfolio Verified Engine API',
   syncedAt: new Date().toISOString()
 };
 
-/**
- * Fetch portfolio data from internal API endpoint and GitHub API.
- * The API result is treated as the authoritative source of truth.
- */
 export async function fetchHeroProfileFromApi(): Promise<HeroProfileApiResponse> {
   let profileData: HeroProfileApiResponse = { ...FALLBACK_PROFILE_DATA };
 
   try {
-    // 1. Fetch internal API endpoint
     const res = await fetch('/api/profile.json', {
       headers: {
         'Accept': 'application/json',
@@ -138,7 +133,6 @@ export async function fetchHeroProfileFromApi(): Promise<HeroProfileApiResponse>
     console.warn('[API Client] Local API endpoint unreachable, falling back to cached baseline:', err);
   }
 
-  // 2. Fetch live GitHub metadata to enrich the profile as source of truth
   try {
     const ghRes = await fetch('https://api.github.com/users/ROHITHELAYARAJA', {
       headers: { 'Accept': 'application/vnd.github.v3+json' }

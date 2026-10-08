@@ -66,20 +66,17 @@ body {
   overflow-x: hidden;
 }
 
-/* Accessible focus ring */
 :focus-visible {
   outline: 2px solid var(--color-strong);
   outline-offset: 2px;
 }
 
-/* Crisp pixel rendering utility for playful elements */
 .pixel-art {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
 
-/* Custom minimal scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -98,7 +95,6 @@ body {
   background: var(--color-line);
 }
 
-/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -114,7 +110,6 @@ body {
   }
 }
 
-/* Metallic Typography & Vibrant Color Palette (Inspired by Image 4 & RDX Palette) */
 @keyframes text-shimmer {
   0% {
     background-position: 0% 50%;
