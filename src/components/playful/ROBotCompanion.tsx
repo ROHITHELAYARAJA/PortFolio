@@ -11,6 +11,8 @@ const CAT_FRAMES = [
   '/assets/cat/frame-7.png',
 ];
 
+const CAT_HALF_SIZE = 20; // Half of 40px cat sprite so center aligns exactly with pointer
+
 export const ROBotCompanion: React.FC = () => {
   const [currentFrame, setCurrentFrame] = useState(0);
   const [facingLeft, setFacingLeft] = useState(false);
@@ -20,18 +22,18 @@ export const ROBotCompanion: React.FC = () => {
   // Direct DOM container ref for 100% hardware-accelerated 60/120fps transforms without React state lag
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // Position and animation physics refs (resting at bottom right corner initially)
+  // Position and animation physics refs
   const targetPos = useRef({
-    x: typeof window !== 'undefined' ? window.innerWidth - 85 : 300,
-    y: typeof window !== 'undefined' ? window.innerHeight - 85 : 500,
+    x: typeof window !== 'undefined' ? window.innerWidth - 70 : 300,
+    y: typeof window !== 'undefined' ? window.innerHeight - 70 : 500,
   });
   const currentPos = useRef({
-    x: typeof window !== 'undefined' ? window.innerWidth - 85 : 300,
-    y: typeof window !== 'undefined' ? window.innerHeight - 85 : 500,
+    x: typeof window !== 'undefined' ? window.innerWidth - 70 : 300,
+    y: typeof window !== 'undefined' ? window.innerHeight - 70 : 500,
   });
   const lastFrameTime = useRef(performance.now());
   const rafId = useRef<number | null>(null);
-  const isInitialized = useRef(true);
+  const isInitialized = useRef(false);
   const isRunningRef = useRef(false);
   const facingLeftRef = useRef(false);
 
@@ -50,10 +52,10 @@ export const ROBotCompanion: React.FC = () => {
       return;
     }
 
-    // Default starting position (resting near bottom right corner)
+    // Default resting position
     const initDefaultPos = () => {
-      const initX = Math.max(20, window.innerWidth - 85);
-      const initY = Math.max(20, window.innerHeight - 85);
+      const initX = Math.max(20, window.innerWidth - 70);
+      const initY = Math.max(20, window.innerHeight - 70);
       currentPos.current = { x: initX, y: initY };
       targetPos.current = { x: initX, y: initY };
       if (containerRef.current) {
@@ -63,31 +65,31 @@ export const ROBotCompanion: React.FC = () => {
 
     initDefaultPos();
 
-    // Mouse movement listener - targets older comfortable companion offset beside cursor
+    // Mouse movement listener - targets the exact pointer position (centered on cursor)
     const handleMouseMove = (e: MouseEvent) => {
-      targetPos.current = { x: e.clientX + 16, y: e.clientY + 18 };
+      targetPos.current = {
+        x: e.clientX - CAT_HALF_SIZE,
+        y: e.clientY - CAT_HALF_SIZE,
+      };
+
       if (!isInitialized.current) {
-        currentPos.current = { x: e.clientX + 16, y: e.clientY + 18 };
-        if (containerRef.current) {
-          containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
-        }
-        setIsVisible(true);
         isInitialized.current = true;
+        setIsVisible(true);
       }
     };
 
-    // Touch event listener for mobile devices - targets older comfortable offset
+    // Touch event listener for mobile devices
     const handleTouch = (e: TouchEvent) => {
       if (e.touches && e.touches.length > 0) {
         const touch = e.touches[0];
-        targetPos.current = { x: touch.clientX + 14, y: touch.clientY + 16 };
+        targetPos.current = {
+          x: touch.clientX - CAT_HALF_SIZE,
+          y: touch.clientY - CAT_HALF_SIZE,
+        };
+
         if (!isInitialized.current) {
-          currentPos.current = { x: touch.clientX + 14, y: touch.clientY + 16 };
-          if (containerRef.current) {
-            containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
-          }
-          setIsVisible(true);
           isInitialized.current = true;
+          setIsVisible(true);
         }
       }
     };
@@ -96,23 +98,24 @@ export const ROBotCompanion: React.FC = () => {
     window.addEventListener('touchstart', handleTouch, { passive: true });
     window.addEventListener('touchmove', handleTouch, { passive: true });
 
-    // Slow running cadence & relaxed animation physics
-    const RUN_FRAME_INTERVAL = 115; // 115ms per frame for a graceful, slow running gait
-    const DEADZONE = 18; // Settles beside cursor rather than snapping exactly onto the pointer
+    // Animation physics constants
+    const FRAME_DURATION = 80; // 80ms per frame for a brisk, natural running cycle (~12.5 fps)
+    const STOP_DISTANCE = 4; // Distance in pixels to stop cleanly at the pointer
+
     let lastTime = performance.now();
 
     const loop = (now: number) => {
-      const dt = Math.min(0.5, (now - lastTime) / 1000);
+      const dt = Math.min(0.1, (now - lastTime) / 1000);
       lastTime = now;
 
       const dx = targetPos.current.x - currentPos.current.x;
       const dy = targetPos.current.y - currentPos.current.y;
       const dist = Math.hypot(dx, dy);
 
-      if (dist > DEADZONE) {
-        // Slowly running cat speed: smooth, gentle easing (calm trot capped at ~120px/s)
-        const speed = Math.min(125, Math.max(30, (dist - DEADZONE) * 1.25));
-        const travel = speed * dt;
+      if (dist > STOP_DISTANCE) {
+        // Move towards the pointer: smooth speed scaling with distance (up to 320px/s)
+        const speed = Math.min(320, Math.max(70, dist * 3.2));
+        const travel = Math.min(dist, speed * dt);
 
         currentPos.current.x += (dx / dist) * travel;
         currentPos.current.y += (dy / dist) * travel;
@@ -122,13 +125,14 @@ export const ROBotCompanion: React.FC = () => {
           containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
         }
 
+        // Running state
         if (!isRunningRef.current) {
           isRunningRef.current = true;
           setIsRunning(true);
         }
 
-        // Smooth facing direction with hysteresis
-        if (Math.abs(dx) > 3.0) {
+        // Face direction of movement
+        if (Math.abs(dx) > 1.5) {
           const newFacingLeft = dx < 0;
           if (newFacingLeft !== facingLeftRef.current) {
             facingLeftRef.current = newFacingLeft;
@@ -136,17 +140,26 @@ export const ROBotCompanion: React.FC = () => {
           }
         }
 
-        // Advance running sprite frames at relaxed slow-run intervals
-        if (now - lastFrameTime.current > RUN_FRAME_INTERVAL) {
+        // Cycle through running sprite frames while moving
+        if (now - lastFrameTime.current > FRAME_DURATION) {
           setCurrentFrame((prev) => (prev + 1) % CAT_FRAMES.length);
           lastFrameTime.current = now;
         }
       } else {
-        // Settled peacefully at older offset near pointer without pointer snapping
+        // Reached the pointer exactly: STOP!
+        currentPos.current.x = targetPos.current.x;
+        currentPos.current.y = targetPos.current.y;
+
+        if (containerRef.current) {
+          containerRef.current.style.transform = `translate3d(${currentPos.current.x}px, ${currentPos.current.y}px, 0)`;
+        }
+
         if (isRunningRef.current) {
           isRunningRef.current = false;
           setIsRunning(false);
         }
+
+        // Stop on standing/resting frame
         setCurrentFrame(0);
       }
 
@@ -177,24 +190,24 @@ export const ROBotCompanion: React.FC = () => {
       className="pointer-events-none fixed left-0 top-0 z-[60] select-none transition-opacity duration-300"
     >
       <div
-        className={`relative transition-transform duration-300 ease-out ${
+        className={`relative transition-transform duration-200 ease-out ${
           facingLeft ? '-scale-x-100' : 'scale-x-100'
         }`}
       >
         {/* Soft ground shadow beneath the cat */}
         <div
-          className={`absolute -bottom-1 left-1/2 -translate-x-1/2 h-1.5 rounded-full bg-black/15 dark:bg-black/35 blur-[1.5px] transition-all duration-300 ${
-            isRunning ? 'w-8 sm:w-9 scale-x-110 opacity-70' : 'w-6 sm:w-7 scale-x-95 opacity-60'
+          className={`absolute -bottom-1 left-1/2 -translate-x-1/2 h-1.5 rounded-full bg-black/15 dark:bg-black/35 blur-[1.5px] transition-all duration-200 ${
+            isRunning ? 'w-8 sm:w-9 scale-x-110 opacity-70' : 'w-6 sm:w-7 scale-x-95 opacity-50'
           }`}
         />
 
-        {/* Pixel-art Walking/Running Cat Sprite */}
+        {/* Pixel-art Cat Sprite: runs toward pointer, stops cleanly on frame 0 upon arrival */}
         <div className="relative flex items-center justify-center">
           <img
             src={CAT_FRAMES[currentFrame]}
             alt="Cat Companion"
             style={{ imageRendering: 'pixelated' }}
-            className={`h-10 sm:h-11 w-auto select-none pointer-events-none drop-shadow-md transition-transform duration-150 ${
+            className={`h-10 sm:h-11 w-auto select-none pointer-events-none drop-shadow-md transition-transform duration-100 ${
               isRunning ? 'translate-y-[-1px]' : ''
             }`}
           />
