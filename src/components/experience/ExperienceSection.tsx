@@ -3,10 +3,10 @@ import { ChevronDown, Layers, Terminal } from 'lucide-react';
 import {
   EXPERIENCE_ITEMS,
   EDUCATION_DATA,
-  TECHNICAL_SKILLS_DATA,
   CERTIFICATIONS_DATA,
   type ExperienceItem,
 } from '../../data/portfolioData';
+import { TechnologiesToolsSection } from '../skills/TechnologiesToolsSection';
 
 export const ExperienceSection: React.FC = () => {
   // First item open by default like the reference site
@@ -153,37 +153,8 @@ export const ExperienceSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Technical Skills Matrix */}
-      <div className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface p-6 sm:p-7 shadow-md">
-        <div className="border-b border-hairline/60 pb-3">
-          <h3 className="font-cabinet text-[18px] font-bold text-strong sm:text-[20px]">
-            Technical Skills Matrix
-          </h3>
-          <p className="font-mono text-[11px] text-ink-soft mt-0.5">
-            Verified backend, frontend, devops & database tooling
-          </p>
-        </div>
-
-        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {TECHNICAL_SKILLS_DATA.map((group) => (
-            <div key={group.category} className="rounded-xl border border-hairline/80 bg-subtle/50 p-3.5">
-              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
-                {group.category}
-              </span>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded border border-hairline bg-surface px-2 py-0.5 font-cabinet text-[12px] font-medium text-strong"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Redesigned Technologies & Tools Section */}
+      <TechnologiesToolsSection />
 
       {/* Achievements & Certifications */}
       <div className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface p-6 sm:p-7 shadow-md">
