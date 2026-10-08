@@ -138,15 +138,15 @@ const TECH_CATEGORIES: TechCategory[] = [
 ];
 
 export const TechnologiesToolsSection: React.FC = () => {
-  // Only one category expanded at a time; first category expanded by default
-  const [expandedId, setExpandedId] = useState<string | null>('programming-languages');
+  // Each category initially shows its title, icon, and chevron (all collapsed by default)
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleCategory = (id: string) => {
     setExpandedId((prev) => (prev === id ? null : id));
   };
 
   return (
-    <div className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface p-6 sm:p-7 shadow-sm transition-all duration-300">
+    <div id="technologies-and-tools" className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface p-6 sm:p-7 shadow-sm transition-all duration-300">
       {/* Section Header */}
       <div className="border-b border-hairline/60 pb-4">
         <h3 className="font-cabinet text-[20px] font-bold tracking-tight text-strong sm:text-[22px]">
@@ -216,12 +216,13 @@ export const TechnologiesToolsSection: React.FC = () => {
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: -4, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeOut' }}
-                      className="pt-3 pb-1 pl-2 sm:pl-3"
+                      className="pt-4 pb-2 pl-2 sm:pl-3"
                     >
                       <div className="flex flex-wrap gap-2.5">
                         {category.skills.map((skill) => (
                           <div
                             key={skill.name}
+                            title={skill.name}
                             className="group/chip relative flex items-center gap-2 rounded-xl border border-hairline bg-subtle/60 px-3 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-btn-border hover:bg-subtle-strong hover:shadow-sm"
                           >
                             {/* Official Tech Icon */}
@@ -235,14 +236,12 @@ export const TechnologiesToolsSection: React.FC = () => {
                             </span>
 
                             {/* Accessible Floating Tooltip on Hover */}
-                            {skill.description && (
-                              <div
-                                role="tooltip"
-                                className="pointer-events-none absolute -top-8 left-1/2 z-30 -translate-x-1/2 opacity-0 transition-opacity duration-200 group-hover/chip:opacity-100 whitespace-nowrap rounded-md border border-hairline bg-surface px-2 py-0.5 font-mono text-[10px] font-medium text-strong shadow-md"
-                              >
-                                {skill.description}
-                              </div>
-                            )}
+                            <div
+                              role="tooltip"
+                              className="pointer-events-none absolute -top-7 left-1/2 z-30 -translate-x-1/2 opacity-0 transition-opacity duration-200 group-hover/chip:opacity-100 whitespace-nowrap rounded-md border border-hairline bg-surface px-2 py-0.5 font-mono text-[10px] font-medium text-strong shadow-md"
+                            >
+                              {skill.name}
+                            </div>
                           </div>
                         ))}
                       </div>

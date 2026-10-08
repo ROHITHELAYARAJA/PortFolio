@@ -244,13 +244,36 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
       );
 
     case 'EC2':
-    case 'RDS':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <rect x="3" y="3" width="18" height="18" rx="3.5" stroke="#FF9900" strokeWidth="1.8" />
+          <path d="M8 8h8M8 12h8M8 16h5" stroke="#FF9900" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="16" cy="16" r="1.5" fill="#FF9900" />
+        </svg>
+      );
+
     case 'S3':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <path d="M4 7l8-4 8 4v10l-8 4-8-4V7z" stroke="#FF9900" strokeWidth="1.8" strokeLinejoin="round" />
+          <path d="M4 7l8 4 8-4M12 11v10" stroke="#FF9900" strokeWidth="1.5" />
+        </svg>
+      );
+
+    case 'RDS':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <ellipse cx="12" cy="6" rx="7" ry="3" stroke="#FF9900" strokeWidth="1.8" />
+          <path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6" stroke="#FF9900" strokeWidth="1.8" />
+        </svg>
+      );
+
     case 'IAM':
       return (
         <svg viewBox="0 0 24 24" className={className} fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="4" stroke="#FF9900" strokeWidth="1.8" />
-          <path d="M8 12h8M12 8v8" stroke="#FF9900" strokeWidth="1.8" strokeLinecap="round" />
+          <path d="M12 2l7 3.5v6c0 5-3.5 9-7 10.5-3.5-1.5-7-5.5-7-10.5v-6L12 2z" stroke="#FF9900" strokeWidth="1.8" strokeLinejoin="round" />
+          <circle cx="12" cy="10" r="2.5" stroke="#FF9900" strokeWidth="1.5" />
+          <path d="M9 16c0-1.8 1.3-3 3-3s3 1.2 3 3" stroke="#FF9900" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       );
 
@@ -401,14 +424,46 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
       );
 
     case 'Data Structures & Algorithms':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <circle cx="12" cy="5" r="2.5" stroke="#14B8A6" strokeWidth="1.8" />
+          <circle cx="6" cy="18" r="2.5" stroke="#14B8A6" strokeWidth="1.8" />
+          <circle cx="18" cy="18" r="2.5" stroke="#14B8A6" strokeWidth="1.8" />
+          <path d="M10.5 7l-3 8.5M13.5 7l3 8.5" stroke="#14B8A6" strokeWidth="1.6" />
+        </svg>
+      );
+
     case 'Object-Oriented Programming':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="#6366F1" strokeWidth="1.8" />
+          <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke="#6366F1" strokeWidth="1.5" />
+        </svg>
+      );
+
     case 'Database Management Systems':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <ellipse cx="12" cy="5" rx="7" ry="2.5" stroke="#F59E0B" strokeWidth="1.8" />
+          <path d="M5 5v5c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5M5 10v5c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-5M5 15v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" stroke="#F59E0B" strokeWidth="1.8" />
+        </svg>
+      );
+
     case 'Operating Systems':
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <rect x="5" y="5" width="14" height="14" rx="2" stroke="#EC4899" strokeWidth="1.8" />
+          <path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4" stroke="#EC4899" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="2.5" fill="#EC4899" />
+        </svg>
+      );
+
     case 'Computer Networks':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor">
-          <rect x="4" y="4" width="16" height="16" rx="3" strokeWidth="1.8" />
-          <path d="M9 9h6M9 13h4M9 17h6" strokeWidth="1.8" strokeLinecap="round" />
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <circle cx="12" cy="12" r="8.5" stroke="#0EA5E9" strokeWidth="1.8" />
+          <ellipse cx="12" cy="12" rx="4" ry="8.5" stroke="#0EA5E9" strokeWidth="1.5" />
+          <path d="M3.5 12h17M5.5 7h13M5.5 17h13" stroke="#0EA5E9" strokeWidth="1.5" />
         </svg>
       );
 
