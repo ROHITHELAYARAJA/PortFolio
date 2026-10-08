@@ -1,6 +1,5 @@
 import React from 'react';
 import { Github, Linkedin, Code2, Mail } from 'lucide-react';
-import { SamuraiDuelStrip } from '../playful/SamuraiDuelStrip';
 import { RdxLogo } from '../ui/RdxLogo';
 
 interface FooterProps {
@@ -10,11 +9,6 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
   return (
     <footer className="mt-16 flex flex-col gap-10 border-t border-dashed border-line pt-10">
-      {/* 10s Choreographed Samurai Duel Strip & Video Exporter */}
-      <div className="w-full">
-        <SamuraiDuelStrip />
-      </div>
-
       {/* Brand & Identity Header in Footer */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-hairline/70">
         <div className="flex items-center gap-3">
@@ -75,20 +69,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <a
               href="https://github.com/ROHITHELAYARAJA"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
               aria-label="GitHub Profile"
-              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#181717] dark:hover:text-[#FFFFFF] hover:-translate-y-0.5"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-strong hover:-translate-y-0.5"
             >
               <Github className="size-4" />
             </a>
 
+            {/* LinkedIn (36x36px icon button) */}
+            <a
+              href="https://linkedin.com/in/rohith-elayaraja"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn Profile"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#0A66C2] hover:-translate-y-0.5"
+            >
+              <Linkedin className="size-4" />
+            </a>
+
             {/* LeetCode (36x36px icon button) */}
             <a
-              href="https://leetcode.com/Shinchan_2007"
+              href="https://leetcode.com/u/Rohith_Elayaraja"
               target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LeetCode Profile (Shinchan_2007)"
-              title="LeetCode (Shinchan_2007)"
+              rel="noreferrer"
+              aria-label="LeetCode Profile"
               className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#FFA116] hover:-translate-y-0.5"
             >
               <Code2 className="size-4" />
