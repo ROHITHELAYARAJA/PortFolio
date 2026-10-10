@@ -1,81 +1,52 @@
 import React from 'react';
 import { FEATURED_PROJECTS } from '../../data/portfolioData';
+import { ArrowUpRight } from 'lucide-react';
 
 interface ProjectsSectionProps {
-  onOpenCaseStudy: (projectId: string) => void;
+  onOpenCaseStudy?: (projectId: string) => void;
 }
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenCaseStudy }) => {
+export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
   return (
-    <div className="flex flex-col gap-6">
-      {FEATURED_PROJECTS.map((project, index) => (
+    <div className="flex flex-col gap-3.5 sm:gap-4">
+      {FEATURED_PROJECTS.map((project) => (
         <article
           key={project.id}
-          className="group relative rounded-[22px] border border-hairline bg-surface p-6 sm:p-7 transition-all duration-200 hover:border-btn-border hover:shadow-sm"
+          className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-hairline/80 bg-surface p-4 sm:p-4.5 transition-all duration-200 hover:border-btn-border hover:bg-subtle/50 hover:shadow-xs"
         >
-          <div className="flex items-center justify-between gap-3 pb-3 border-b border-hairline/60">
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-soft">
-              {project.category}
-            </span>
-            <span className="font-mono text-[11px] text-ink-soft select-none">
-              0{index + 1}
-            </span>
+          <div className="min-w-0 flex-1">
+            <h3 className="font-sans text-[16.5px] sm:text-[17.5px] font-bold text-strong tracking-tight group-hover:text-ink transition-colors">
+              {project.title}
+            </h3>
+            <p className="mt-1 font-sans text-[13.5px] sm:text-[14px] text-ink-soft truncate max-w-[72ch]">
+              {project.summary}
+            </p>
           </div>
 
-          <h3 className="mt-3.5 font-cabinet text-[21px] font-bold tracking-tight text-strong sm:text-[23px] group-hover:text-ink transition-colors">
-            {project.title}
-          </h3>
-
-          <p className="mt-2 font-cabinet text-[15px] leading-relaxed text-body sm:text-[16px] max-w-[70ch]">
-            {project.summary}
-          </p>
-
-          <div className="mt-4 flex flex-wrap gap-2">
-            {project.primaryTech.slice(0, 5).map((tech) => (
-              <span
-                key={tech}
-                className="rounded-md border border-hairline bg-subtle/60 px-2.5 py-0.5 font-mono text-[11px] font-medium text-ink-soft"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-5 flex flex-wrap items-center gap-2.5 border-t border-hairline/60 pt-3.5 font-cabinet text-[14px] font-semibold text-ink-soft">
+          <div className="flex items-center gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-hairline/50">
             <a
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:text-strong transition-colors"
+              aria-label={`GitHub Repository for ${project.title}`}
+              className="inline-flex items-center gap-1 rounded-md border border-hairline bg-subtle/60 px-3 py-1 font-mono text-[12px] font-medium text-strong hover:bg-subtle hover:border-btn-border hover:text-[#0EA5E9] transition-all"
             >
               <span>GitHub</span>
-              <span className="text-[12px] opacity-70">↗</span>
+              <ArrowUpRight className="size-3.5 opacity-70 group-hover:opacity-100" />
             </a>
 
             {project.liveUrl && (
-              <>
-                <span className="text-hairline select-none">•</span>
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 hover:text-strong transition-colors"
-                >
-                  <span>Live Demo</span>
-                  <span className="text-[12px] opacity-70">↗</span>
-                </a>
-              </>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Live Demo for ${project.title}`}
+                className="inline-flex items-center gap-1 rounded-md border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 font-mono text-[12px] font-medium text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
+              >
+                <span>Live</span>
+                <ArrowUpRight className="size-3.5 opacity-70 group-hover:opacity-100" />
+              </a>
             )}
-
-            <span className="text-hairline select-none">•</span>
-            <button
-              type="button"
-              onClick={() => onOpenCaseStudy(project.id)}
-              className="inline-flex items-center gap-1 hover:text-strong transition-colors"
-            >
-              <span>Read More</span>
-              <span className="text-[12px] opacity-70">→</span>
-            </button>
           </div>
         </article>
       ))}

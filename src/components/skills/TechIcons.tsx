@@ -40,6 +40,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
       );
 
     case 'JavaScript':
+    case 'JS':
       return (
         <svg viewBox="0 0 24 24" className={className}>
           <rect width="24" height="24" rx="4" fill="#F7DF1E" />
@@ -51,6 +52,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
       );
 
     case 'TypeScript':
+    case 'TS':
       return (
         <svg viewBox="0 0 24 24" className={className}>
           <rect width="24" height="24" rx="4" fill="#3178C6" />
@@ -75,6 +77,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
       );
 
     case 'HTML5':
+    case 'HTML':
       return (
         <svg viewBox="0 0 24 24" className={className}>
           <path d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3z" fill="#E34F26" />
@@ -87,6 +90,7 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
       );
 
     case 'CSS3':
+    case 'CSS':
       return (
         <svg viewBox="0 0 24 24" className={className}>
           <path d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3z" fill="#1572B6" />
@@ -159,6 +163,22 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
           <rect x="3" y="4" width="18" height="16" rx="3" stroke="#E76F00" strokeWidth="1.8" />
           <path d="M7 9h10M7 13h6M7 17h4" stroke="#5382A1" strokeWidth="1.8" strokeLinecap="round" />
           <circle cx="16" cy="15" r="2" fill="#E76F00" />
+        </svg>
+      );
+
+    case 'Node.js':
+    case 'Node':
+      return (
+        <svg viewBox="0 0 24 24" className={className}>
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#339933" />
+          <path
+            d="M8.5 15.5c-.8-.5-1.2-1.2-1.2-2.1h1.5c0 .6.3 1 .8 1.3.4.2.9.2 1.4.1.5-.1.8-.4.8-.8 0-.3-.1-.5-.4-.7l-1.3-.5c-1-.4-1.6-.9-1.6-1.9 0-.9.5-1.6 1.4-1.9.9-.3 1.9-.3 2.8 0 .8.3 1.4.9 1.5 1.8h-1.5c-.1-.5-.4-.8-.8-.9-.4-.1-.9 0-1.2.2-.4.2-.6.5-.6.8 0 .3.2.5.5.7l1.2.5c1.1.4 1.7 1 1.7 2 0 .9-.5 1.7-1.4 2-.9.4-2.1.4-3.1-.1z"
+            fill="#FFF"
+          />
+          <path
+            d="M13.5 9.5h1.6v4.8c0 .6.2 1 .7 1 .3 0 .6-.1.8-.3l.4 1.1c-.5.4-1.2.5-1.9.4-.9-.2-1.6-.9-1.6-2V9.5z"
+            fill="#FFF"
+          />
         </svg>
       );
 

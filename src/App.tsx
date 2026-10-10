@@ -13,6 +13,7 @@ import { Footer } from './components/layout/Footer';
 import { CommandPalette } from './components/palette/CommandPalette';
 import { CaseStudyModal } from './components/projects/CaseStudyModal';
 import { ROBotCompanion } from './components/playful/ROBotCompanion';
+import { TechStackSection } from './components/skills/TechStackSection';
 
 const ScrollSection: React.FC<{
   children: React.ReactNode;
@@ -139,6 +140,25 @@ export const App: React.FC = () => {
 
           <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
             <ExperienceSection />
+          </div>
+
+          <div className="hidden xl:block" />
+        </ScrollSection>
+
+        <hr className="my-10 border-0 border-t border-dashed border-line" />
+
+        <ScrollSection id="technologies-and-tools" className="xl:grid xl:grid-cols-[280px_minmax(0,1fr)_300px] 2xl:grid-cols-[325px_minmax(0,1fr)_351px] xl:divide-x xl:divide-dashed xl:divide-line">
+          <div id="stack" className="xl:pr-6 xl:pt-2">
+            <h2 className="font-cabinet text-[26px] font-bold tracking-[-1.5px] text-strong sm:text-[30px]">
+              Stack
+            </h2>
+            <p className="mt-1 font-mono text-[12px] text-[#0EA5E9] font-semibold hidden xl:block">
+              Technologies & Tools
+            </p>
+          </div>
+
+          <div className="mt-4 xl:mt-0 xl:px-8 2xl:px-[33px]">
+            <TechStackSection />
           </div>
 
           <div className="hidden xl:block" />

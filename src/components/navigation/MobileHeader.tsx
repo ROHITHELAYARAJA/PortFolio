@@ -40,7 +40,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
-    { label: 'Technologies & Tools', href: '#technologies-and-tools' },
+    { label: 'Stack', href: '#technologies-and-tools' },
     { label: 'GitHub', href: '#github' },
     { label: 'Open Source', href: '#open-source' },
     { label: 'Projects', href: '#projects' },

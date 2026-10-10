@@ -5,7 +5,6 @@ import {
   EDUCATION_DATA,
   CERTIFICATIONS_DATA,
 } from '../../data/portfolioData';
-import { TechnologiesToolsSection } from '../skills/TechnologiesToolsSection';
 
 export const ExperienceSection: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(EXPERIENCE_ITEMS[0]?.id || null);
@@ -144,8 +143,6 @@ export const ExperienceSection: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <TechnologiesToolsSection />
 
       <div className="relative overflow-hidden rounded-[24px] border border-hairline bg-surface p-6 sm:p-7 shadow-md">
         <div className="border-b border-hairline/60 pb-3">

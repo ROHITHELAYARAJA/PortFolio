@@ -78,7 +78,7 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
             href="#technologies-and-tools"
             className="w-fit font-cabinet text-[17px] text-nav transition-colors hover:text-strong"
           >
-            Technologies & Tools
+            Stack
           </a>
           <a
             href="#github"
