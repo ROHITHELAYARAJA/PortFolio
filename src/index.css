@@ -174,15 +174,3 @@ body {
   border-color: #2A2A33;
 }
 
-@keyframes cat-idle {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(1.5px) scale(1.02, 0.98);
-  }
-}
-
-.animate-cat-idle {
-  animation: cat-idle 2.4s ease-in-out infinite;
-}

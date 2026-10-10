@@ -12,7 +12,6 @@ import { ContactSection } from './components/contact/ContactSection';
 import { Footer } from './components/layout/Footer';
 import { CommandPalette } from './components/palette/CommandPalette';
 import { CaseStudyModal } from './components/projects/CaseStudyModal';
-import { ROBotCompanion } from './components/playful/ROBotCompanion';
 import { TechStackSection } from './components/skills/TechStackSection';
 
 const ScrollSection: React.FC<{
@@ -265,8 +264,6 @@ export const App: React.FC = () => {
         projectId={activeCaseStudyId}
         onClose={() => setActiveCaseStudyId(null)}
       />
-
-      <ROBotCompanion />
     </div>
   );
 };
