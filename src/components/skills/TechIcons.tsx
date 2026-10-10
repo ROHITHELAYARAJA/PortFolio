@@ -114,11 +114,11 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
 
     case 'Next.js':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
-          <circle cx="12" cy="12" r="10" className="text-strong fill-current" />
+        <svg viewBox="0 0 24 24" className={className}>
+          <circle cx="12" cy="12" r="10" fill="#000" />
           <path
-            d="M15.5 8.5v7m-7-7v7l8.2-8.5"
-            stroke="var(--color-bg)"
+            d="M15.5 8v8m-7-8v8l8.2-8.5"
+            stroke="#FFF"
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -135,25 +135,40 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
 
     case 'Spring Boot':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none">
+        <svg viewBox="0 0 24 24" className={className}>
           <path
-            d="M12 2C6.5 2 2 6.5 2 12c0 4.2 2.6 7.8 6.3 9.3L12 16l3.7 5.3C19.4 19.8 22 16.2 22 12c0-5.5-4.5-10-10-10z"
+            d="M12 2.5l8 4.6v9.2l-8 4.6-8-4.6V7.1l8-4.6z"
             fill="#6DB33F"
           />
-          <path
-            d="M9 13l2.5-4.5h2L11 13h3l-4.5 5.5V14H8l1-1z"
+          <text
+            x="12"
+            y="15.8"
             fill="#FFF"
-          />
+            fontSize="10.5"
+            fontWeight="bold"
+            textAnchor="middle"
+            fontFamily="system-ui, -apple-system, sans-serif"
+          >
+            St
+          </text>
+        </svg>
+      );
+
+    case 'FastAPI':
+      return (
+        <svg viewBox="0 0 24 24" className={className}>
+          <circle cx="12" cy="12" r="10" fill="#059669" />
+          <path d="M12.5 4l-4 8.5h3.5l-1.5 7.5 6-9.5h-4l1-6.5z" fill="#FFF" />
         </svg>
       );
 
     case 'REST APIs':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor">
-          <circle cx="5" cy="12" r="3" stroke="#8B5CF6" strokeWidth="2" />
-          <circle cx="19" cy="6" r="3" stroke="#0EA5E9" strokeWidth="2" />
-          <circle cx="19" cy="18" r="3" stroke="#10B981" strokeWidth="2" />
-          <path d="M8 12h5m0 0l3-4.5M13 12l3 4.5" stroke="currentColor" strokeWidth="1.8" />
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <circle cx="6" cy="14" r="2.8" fill="#A855F7" />
+          <circle cx="18" cy="8" r="2.8" fill="#06B6D4" />
+          <circle cx="18" cy="18" r="2.8" fill="#10B981" />
+          <path d="M8.5 13l7-4M8.5 14.5l7 3" stroke="#CBD5E1" strokeWidth="1.8" strokeLinecap="round" />
         </svg>
       );
 
@@ -250,16 +265,16 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
       return (
         <svg viewBox="0 0 24 24" className={className}>
           <path
-            d="M6.5 10c0-1.7 1.3-3 3-3s3 1.3 3 3v4H11v-4c0-.8-.7-1.5-1.5-1.5S8 9.2 8 10v4H6.5v-4zm9.5-3h1.5v7H16v-7z"
-            fill="currentColor"
+            d="M5.5 10c0-1.7 1.3-3 3-3s3 1.3 3 3v4H10v-4c0-.8-.7-1.5-1.5-1.5S7 9.2 7 10v4H5.5v-4zm9.5-3h1.5v7H15v-7z"
+            fill="#FFF"
           />
           <path
-            d="M4 17.5c4 2 12 2 16 0"
+            d="M3.5 17.5c4.5 2 12.5 2 17 0"
             stroke="#FF9900"
             strokeWidth="2"
             strokeLinecap="round"
           />
-          <path d="M18 16l3 1.5-1.5 2.5" fill="#FF9900" />
+          <path d="M19 16l3 1.5-1.5 2.5" fill="#FF9900" />
         </svg>
       );
 
@@ -313,9 +328,14 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
 
     case 'GitHub Actions':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="none">
-          <circle cx="12" cy="12" r="9" stroke="#2088FF" strokeWidth="1.8" />
-          <path d="M12 7v5l3 3" stroke="#2088FF" strokeWidth="1.8" strokeLinecap="round" />
+        <svg viewBox="0 0 24 24" className={className}>
+          <circle cx="12" cy="12" r="10" fill="#2088FF" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 4.5a7.5 7.5 0 00-2.37 14.62c.38.07.5-.16.5-.37v-1.3c-2.09.45-2.53-1.01-2.53-1.01-.34-.87-.84-1.1-.84-1.1-.68-.47.05-.46.05-.46.75.05 1.15.77 1.15.77.67 1.15 1.76.82 2.19.63.07-.49.26-.82.47-1.01-1.67-.19-3.43-.84-3.43-3.71 0-.82.29-1.49.77-2.02-.08-.19-.33-.95.07-1.99 0 0 .63-.2 2.06.77a7.2 7.2 0 013.76 0c1.43-.97 2.06-.77 2.06-.77.4 1.04.15 1.8.07 1.99.48.53.77 1.2.77 2.02 0 2.88-1.76 3.52-3.44 3.7.27.23.51.69.51 1.39v2.06c0 .21.13.45.51.37A7.5 7.5 0 0012 4.5z"
+            fill="#FFF"
+          />
         </svg>
       );
 
@@ -332,8 +352,8 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
 
     case 'Vercel':
       return (
-        <svg viewBox="0 0 24 24" className={className} fill="currentColor">
-          <path d="M12 2L2 20h20L12 2z" />
+        <svg viewBox="0 0 24 24" className={className} fill="none">
+          <path d="M12 4L2 20h20L12 4z" fill="#FFF" />
         </svg>
       );
 
@@ -375,9 +395,12 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
     case 'Git':
       return (
         <svg viewBox="0 0 24 24" className={className}>
-          <rect width="24" height="24" rx="4" fill="#F05032" />
           <path
-            d="M17.5 11.5L12.5 6.5a1.4 1.4 0 00-2 0l-5 5a1.4 1.4 0 000 2l5 5a1.4 1.4 0 002 0l5-5a1.4 1.4 0 000-2zm-7 5.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm4-4a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
+            d="M12 2.2l9.3 9.3c.7.7.7 1.9 0 2.6L12 23.4a1.8 1.8 0 01-2.6 0L.1 14.1a1.8 1.8 0 010-2.6L9.4 2.2a1.8 1.8 0 012.6 0z"
+            fill="#F05032"
+          />
+          <path
+            d="M16 11.5l-4-4a1.2 1.2 0 00-1.7 0l-3.8 3.8a1.2 1.2 0 000 1.7l3.8 3.8a1.2 1.2 0 001.7 0l4-4a1.2 1.2 0 000-1.7zm-5.5 4.5a1.3 1.3 0 110-2.6 1.3 1.3 0 010 2.6zm3.5-3.5a1.3 1.3 0 110-2.6 1.3 1.3 0 010 2.6z"
             fill="#FFF"
           />
         </svg>
@@ -397,13 +420,25 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = 'size-4' }
     case 'Postman':
       return (
         <svg viewBox="0 0 24 24" className={className}>
-          <circle cx="12" cy="12" r="10" fill="#FF6C37" />
           <path
-            d="M7 13.5l3.5-3.5 2 2 4.5-4.5m-3 0h3v3"
+            d="M4 6a3 3 0 013-3h10a3 3 0 013 3v10a3 3 0 01-3 3H8l-4 3V6z"
+            fill="#334155"
+          />
+          <circle cx="12.5" cy="11.5" r="4.2" fill="#FF6C37" />
+        </svg>
+      );
+
+    case 'LeetCode':
+      return (
+        <svg viewBox="0 0 24 24" className={className}>
+          <circle cx="12" cy="12" r="10" fill="#FFA116" />
+          <path
+            d="M7.5 14.5l3-3 2.5 2.5 4.5-5.5m-3 0h3v3"
             stroke="#FFF"
-            strokeWidth="1.8"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            fill="none"
           />
         </svg>
       );
