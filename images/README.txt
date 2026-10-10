@@ -1,13 +1,9 @@
-Tech Stack SVG Bundle - Batch 1
+Tech Stack SVG Bundle - Batch 3
 
 Files:
-1. typescript.svg
-2. javascript.svg
-3. python.svg
-4. java.svg
-5. html5.svg
-6. css3.svg
-7. react.svg
-8. nextjs.svg
-9. tailwindcss.svg
-10. supabase.svg
+1. postman.svg
+2. githubactions.svg
+3. airtable.svg
+4. neon.svg
+5. chartjs.svg
+6. appwrite.svg
