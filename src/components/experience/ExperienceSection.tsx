@@ -89,7 +89,6 @@ export const ExperienceSection: React.FC = () => {
                     <ul className="mt-3 flex flex-col gap-2.5">
                       {item.achievements.map((achievement, idx) => {
                         const isLiveLine = achievement.includes('rohith-digital-x-xi.vercel.app');
-                        const isPrLine = achievement.includes('PR #70');
 
                         return (
                           <li
@@ -104,6 +103,15 @@ export const ExperienceSection: React.FC = () => {
                                 <>
                                   Live:{' '}
                                   <a
+                                    href="https://anis-creation.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-strong underline underline-offset-4 hover:text-[#10B981]"
+                                  >
+                                    anis-creation.vercel.app
+                                  </a>
+                                  {'  |  '}
+                                  <a
                                     href="https://rohith-digital-x-xi.vercel.app"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -111,19 +119,6 @@ export const ExperienceSection: React.FC = () => {
                                   >
                                     rohith-digital-x-xi.vercel.app
                                   </a>
-                                </>
-                              ) : isPrLine ? (
-                                <>
-                                  Added Windows regression tests for scratch-path handling; the fix was reviewed and merged upstream in{' '}
-                                  <a
-                                    href="https://github.com/abacusai/abacusai-bot/pull/70"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="font-medium text-strong underline underline-offset-4 hover:text-[#8B5CF6]"
-                                  >
-                                    PR #70
-                                  </a>
-                                  .
                                 </>
                               ) : (
                                 achievement

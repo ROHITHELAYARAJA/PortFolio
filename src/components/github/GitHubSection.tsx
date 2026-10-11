@@ -183,10 +183,10 @@ export const GitHubSection: React.FC = () => {
       borderAccent: 'group-hover:border-amber-500/50',
     },
     {
-      name: 'abacusai/abacusai-bot (PR #70)',
-      desc: 'Merged upstream fix normalizing Windows 8.3 scratch paths against guardrail boundary mismatches.',
+      name: 'abacusai/abacusai-bot',
+      desc: 'Merged upstream fix normalizing Windows 8.3 scratch paths against guardrail boundary mismatches (PR #70).',
       tech: 'TypeScript · Security Guardrails',
-      url: 'https://github.com/abacusai/abacusai-bot/pull/70',
+      url: 'https://github.com/abacusai/abacusai-bot',
       badge: 'Merged Upstream ✓',
       badgeClass: 'bg-[#8B5CF6]/10 text-[#8B5CF6] border-[#8B5CF6]/30',
       borderAccent: 'group-hover:border-[#8B5CF6]/50',

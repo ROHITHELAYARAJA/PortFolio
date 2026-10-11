@@ -103,10 +103,10 @@ export const AUTHOR_INFO = {
       brandColor: '#0070F3',
     },
     {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/rohith-elayaraja/',
-      icon: 'linkedin',
-      brandColor: '#0A66C2',
+      name: 'Anis Creation',
+      url: 'https://anis-creation.vercel.app',
+      icon: 'external-link',
+      brandColor: '#10B981',
     },
     {
       name: 'Email',
@@ -253,7 +253,7 @@ export const OPEN_SOURCE_CONTRIBUTION = {
   upstreamUrl: 'https://github.com/abacusai/abacusai-bot',
   prNumber: 70,
   prTitle: 'fix(agent): normalize Windows scratch paths for 8.3 short paths',
-  prUrl: 'https://github.com/abacusai/abacusai-bot/pull/70',
+  prUrl: 'https://github.com/abacusai/abacusai-bot',
   status: 'MERGED' as const,
   mergedDate: '2026',
   badge: 'MERGED UPSTREAM ✓',
@@ -352,7 +352,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       'Delivered 3 production websites for a local business, a digital marketing agency, and my own software portfolio, handling requirements, development, testing, deployment, and revisions.',
       'Built Cake Lover Namakkal\'s website to make products and ordering information easier to find; the client reported approximately 30% revenue growth after launch.',
       'Designed and launched the Anis Creation website for a Madurai digital marketing agency, with responsive service pages and clear contact and enquiry paths.',
-      'Live deployment: rohith-digital-x-xi.vercel.app.'
+      'Live: anis-creation.vercel.app | rohith-digital-x-xi.vercel.app'
     ],
   },
   {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Globe, Phone, Code2, Mail } from 'lucide-react';
+import { Github, Globe, Phone, Code2, Mail } from 'lucide-react';
 import { RdxLogo } from '../ui/RdxLogo';
 
 interface FooterProps {
@@ -52,7 +52,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <a href="https://github.com/ROHITHELAYARAJA/Student-AI-Assistant" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Blast AI</a>
             <a href="https://github.com/ROHITHELAYARAJA/Bank-Management-System" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Bank Management System</a>
             <a href="https://rohith-digital-x-xi.vercel.app" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Rohith Digital X</a>
-            <a href="https://github.com/abacusai/abacusai-bot/pull/70" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">AbacusAI Bot PR #70</a>
+            <a href="https://anis-creation.vercel.app" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Anis Creation</a>
+            <a href="https://github.com/abacusai/abacusai-bot" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">AbacusAI Bot</a>
           </nav>
         </div>
 
@@ -72,13 +73,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/rohith-elayaraja/"
+              href="https://anis-creation.vercel.app"
               target="_blank"
               rel="noreferrer"
-              aria-label="LinkedIn Profile"
-              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#0A66C2] hover:-translate-y-0.5"
+              aria-label="Anis Creation"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#10B981] hover:-translate-y-0.5"
             >
-              <Linkedin className="size-4" />
+              <Globe className="size-4" />
             </a>
 
             <a

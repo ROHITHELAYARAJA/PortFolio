@@ -51,21 +51,15 @@ export const OpenSourceSection: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 hover:text-strong transition-colors"
         >
-          <span>Upstream Repo</span>
+          <span>Upstream Repository</span>
           <span className="text-[12px] opacity-70">↗</span>
         </a>
 
         <span className="text-hairline select-none">•</span>
 
-        <a
-          href={oss.prUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 hover:text-strong transition-colors"
-        >
-          <span>Inspect Merged PR #70</span>
-          <span className="text-[12px] opacity-70">↗</span>
-        </a>
+        <span className="font-mono text-[12px] text-ink-soft">
+          Merged Upstream in PR #70
+        </span>
       </div>
     </article>
   );

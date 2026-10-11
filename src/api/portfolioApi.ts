@@ -78,11 +78,11 @@ export const FALLBACK_PROFILE_DATA: HeroProfileApiResponse = {
       darkColor: '#0070F3'
     },
     {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/rohith-elayaraja/',
-      icon: 'linkedin',
-      color: '#0A66C2',
-      darkColor: '#0A66C2'
+      name: 'Anis Creation',
+      url: 'https://anis-creation.vercel.app',
+      icon: 'globe',
+      color: '#10B981',
+      darkColor: '#10B981'
     },
     {
       name: 'Email',

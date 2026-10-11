@@ -25,11 +25,6 @@
   },
   "socials": [
     {
-      "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/rohith-elayaraja/",
-      "icon": "linkedin"
-    },
-    {
       "name": "GitHub",
       "url": "https://github.com/ROHITHELAYARAJA",
       "icon": "github"
@@ -38,6 +33,16 @@
       "name": "LeetCode",
       "url": "https://leetcode.com/Shinchan_2007",
       "icon": "leetcode"
+    },
+    {
+      "name": "Rohith Digital X",
+      "url": "https://rohith-digital-x-xi.vercel.app",
+      "icon": "globe"
+    },
+    {
+      "name": "Anis Creation",
+      "url": "https://anis-creation.vercel.app",
+      "icon": "globe"
     },
     {
       "name": "Email",

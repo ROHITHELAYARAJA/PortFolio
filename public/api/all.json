@@ -6,9 +6,10 @@
     "title": "Software Developer / AI & ML Engineer",
     "email": "e.rohit3130@gmail.com",
     "github": "https://github.com/ROHITHELAYARAJA",
-    "linkedin": "https://www.linkedin.com/in/rohith-elayaraja/",
     "leetcode": "https://leetcode.com/Shinchan_2007",
-    "education": "B.E. AI & DS (2022-2026), VSB Engineering College, Karur (CGPA: 8.00/10)"
+    "portfolio": "https://rohith-digital-x-xi.vercel.app",
+    "anisCreation": "https://anis-creation.vercel.app",
+    "education": "B.E. AI & DS (2024-2028), VSB Engineering College, Karur (CGPA: 8.00/10)"
   },
   "projects": [
     {
@@ -26,8 +27,7 @@
       "category": "AI Application",
       "summary": "Document-aware AI study assistant that converts textbooks and notes into structured summaries, active-recall flashcards, and quizzes.",
       "technologies": ["React", "TypeScript", "AWS Bedrock", "SQLite", "Tailwind CSS"],
-      "github": "https://github.com/ROHITHELAYARAJA/Student-AI-Assistant",
-      "liveUrl": "http://blast-ai-by-rohith.s3-website-us-east-1.amazonaws.com"
+      "github": "https://github.com/ROHITHELAYARAJA/Student-AI-Assistant"
     },
     {
       "id": "bank-management-system",
@@ -46,13 +46,21 @@
       "liveUrl": "https://rohith-digital-x-xi.vercel.app"
     },
     {
-      "id": "abacusai-bot-pr70",
-      "title": "AbacusAI Bot PR #70",
+      "id": "anis-creation",
+      "title": "Anis Creation",
+      "category": "Client Website",
+      "summary": "Digital marketing agency website with responsive service pages and clear contact and enquiry paths.",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+      "liveUrl": "https://anis-creation.vercel.app"
+    },
+    {
+      "id": "abacusai-bot",
+      "title": "AbacusAI Bot",
       "category": "Open Source Upstream",
-      "summary": "Merged open-source pull request resolving cross-platform terminal execution and path-escaping regressions on Windows.",
+      "summary": "Merged open-source pull request PR #70 resolving cross-platform terminal execution and path-escaping regressions on Windows.",
       "technologies": ["TypeScript", "Node.js", "Security Guardrails", "Windows API"],
-      "github": "https://github.com/abacusai/abacusai-bot/pull/70",
-      "status": "Merged upstream into master"
+      "github": "https://github.com/abacusai/abacusai-bot",
+      "status": "Merged upstream (PR #70)"
     }
   ],
   "technologies": [
