@@ -103,10 +103,10 @@ export const AUTHOR_INFO = {
       brandColor: '#0070F3',
     },
     {
-      name: 'Anis Creation',
-      url: 'https://anis-creation.vercel.app',
-      icon: 'external-link',
-      brandColor: '#10B981',
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/rohith-elayaraja/',
+      icon: 'linkedin',
+      brandColor: '#0A66C2',
     },
     {
       name: 'Email',
@@ -219,12 +219,12 @@ export const FEATURED_PROJECTS: ProjectItem[] = [
     id: 'rohith-digital-x',
     slug: 'rohith-digital-x',
     title: 'Rohith Digital X',
-    category: 'Client Systems',
+    category: 'Digital Client Systems',
     summary: 'Production client web applications and localized digital storefronts featuring direct WhatsApp cart checkout flows.',
     primaryTech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Vercel'],
     repoUrl: 'https://github.com/ROHITHELAYARAJA',
     liveUrl: 'https://rohith-digital-x-xi.vercel.app',
-    featured: false,
+    featured: true,
     highlights: [
       'Online bakery ordering catalog with automated WhatsApp cart payloads',
       'Digital agency and portfolio websites with responsive service showcases',
@@ -336,7 +336,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     id: 'rohith-digital-x',
     company: 'Rohith Digital X',
-    role: 'Freelance Software Developer',
+    role: 'Software Developer',
     period: 'Aug 2026 – Present',
     location: 'Namakkal & Madurai, Tamil Nadu · Remote',
     status: 'Ongoing',

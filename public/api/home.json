@@ -4,7 +4,7 @@
   "author": {
     "name": "Rohith E",
     "title": "Software Developer / AI & ML Engineer",
-    "status": "Available for Engineering & AI Roles / Freelance",
+    "status": "Available for Software Engineering & AI Roles",
     "location": "Namakkal, Tamil Nadu, India",
     "education": "B.E. Artificial Intelligence & Data Science, VSB Engineering College (CGPA: 8.00/10)",
     "avatarUrl": "/assets/profile.png",
@@ -40,9 +40,9 @@
       "icon": "globe"
     },
     {
-      "name": "Anis Creation",
-      "url": "https://anis-creation.vercel.app",
-      "icon": "globe"
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/rohith-elayaraja/",
+      "icon": "linkedin"
     },
     {
       "name": "Email",

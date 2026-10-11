@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ExternalLink, Github, Globe, Code2 } from 'lucide-react';
+import { Mail, Copy, Check, ExternalLink, Github, Linkedin, Globe, Code2 } from 'lucide-react';
 import { AUTHOR_INFO } from '../../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -63,16 +63,16 @@ export const ContactSection: React.FC = () => {
           </a>
 
           <a
-            href="https://anis-creation.vercel.app"
+            href="https://www.linkedin.com/in/rohith-elayaraja/"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between rounded-xl border border-hairline bg-subtle p-3.5 transition-all hover:border-btn-border hover:bg-surface"
           >
             <div className="flex items-center gap-2.5">
-              <Globe className="size-4 text-ink-soft group-hover:text-[#10B981]" />
-              <span className="font-cabinet text-[14px] font-bold text-strong">Anis Creation</span>
+              <Linkedin className="size-4 text-ink-soft group-hover:text-[#0A66C2]" />
+              <span className="font-cabinet text-[14px] font-bold text-strong">LinkedIn</span>
             </div>
-            <ExternalLink className="size-3.5 text-ink-soft group-hover:text-[#10B981]" />
+            <ExternalLink className="size-3.5 text-ink-soft group-hover:text-[#0A66C2]" />
           </a>
 
           <a
