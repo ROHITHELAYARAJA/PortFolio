@@ -4,7 +4,7 @@
   "subtitle": "Software Developer · Backend & Full-Stack",
   "avatarUrl": "/assets/profile.png",
   "heroVideoUrl": "/assets/hero-loop.mp4",
-  "heroBannerPoster": "/assets/hero-banner.png",
+  "heroBannerPoster": "/assets/profile.png",
   "bioIntro": "Third-year B.E. Artificial Intelligence & Data Science student at VSB Engineering College, Karur (CGPA: 8.00/10).",
   "bioBullets": [
     "Backend & full-stack development with Java, Spring Boot, React, TypeScript, SQL, and AWS.",

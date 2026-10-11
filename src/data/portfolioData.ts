@@ -70,7 +70,7 @@ export const AUTHOR_INFO = {
   location: 'Namakkal, Tamil Nadu, India',
   phone: '+91 96554 83130',
   email: 'e.rohit3130@gmail.com',
-  avatarUrl: '/assets/profile-avatar.png',
+  avatarUrl: '/assets/profile.png',
   heroSubtitle: 'Software Developer · Backend & Full-Stack Systems',
   tagline: 'Third-year B.E. Artificial Intelligence & Data Science student building backend systems, AI products, and client web applications.',
   bioParagraphs: [
