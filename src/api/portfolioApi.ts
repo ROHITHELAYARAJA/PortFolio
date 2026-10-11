@@ -72,7 +72,7 @@ export const FALLBACK_PROFILE_DATA: HeroProfileApiResponse = {
     },
     {
       name: 'LeetCode',
-      url: 'https://leetcode.com/u/ROHITHELAYARAJA/',
+      url: 'https://leetcode.com/Shinchan_2007',
       icon: 'leetcode',
       color: '#FFA116',
       darkColor: '#FFA116'

@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             </a>
 
             <a
-              href="https://leetcode.com/u/Rohith_Elayaraja"
+              href="https://leetcode.com/Shinchan_2007"
               target="_blank"
               rel="noreferrer"
               aria-label="LeetCode Profile"

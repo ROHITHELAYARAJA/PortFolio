@@ -203,9 +203,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       label: 'Copy Email Address',
       category: 'Actions',
       icon: copiedEmail ? <Check className="size-4 text-emerald-500" /> : <Copy className="size-4 text-ink-soft" />,
-      hint: 'e.rohith3130@gmail.com',
+      hint: 'e.rohit3130@gmail.com',
       action: () => {
-        navigator.clipboard.writeText('e.rohith3130@gmail.com');
+        navigator.clipboard.writeText('e.rohit3130@gmail.com');
         setCopiedEmail(true);
         setTimeout(() => setCopiedEmail(false), 2000);
       },
@@ -237,20 +237,20 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       label: 'Open LeetCode Profile',
       category: 'Actions',
       icon: <ExternalLink className="size-4 text-ink-soft" />,
-      hint: 'ROHITHELAYARAJA',
+      hint: 'Shinchan_2007',
       action: () => {
-        window.open('https://leetcode.com/u/ROHITHELAYARAJA/', '_blank');
+        window.open('https://leetcode.com/Shinchan_2007', '_blank');
         onClose();
       },
     },
     {
       id: 'act-resume',
-      label: 'Request Resume via Email',
+      label: 'View Resume (PDF)',
       category: 'Actions',
       icon: <FileText className="size-4 text-ink-soft" />,
-      hint: 'Send inquiry',
+      hint: 'Open PDF',
       action: () => {
-        window.location.href = 'mailto:e.rohith3130@gmail.com?subject=Resume%20Request%20-%20Rohith%20E';
+        window.open('/assets/Rohith_E_Resume.pdf', '_blank');
         onClose();
       },
     },

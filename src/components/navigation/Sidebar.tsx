@@ -118,11 +118,13 @@ export const DesktopSidebar: React.FC<SidebarProps> = ({
         </button>
 
         <a
-          href="mailto:e.rohith3130@gmail.com?subject=Resume%20Request%20-%20Rohith%20E"
+          href="/assets/Rohith_E_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex h-[38px] items-center justify-center gap-2 rounded-lg border border-hairline font-cabinet text-[14px] text-ink-soft transition-colors hover:text-strong hover:bg-subtle"
         >
           <FileText className="size-3.5" />
-          <span>Request Resume</span>
+          <span>View Resume</span>
         </a>
       </div>
     </aside>
