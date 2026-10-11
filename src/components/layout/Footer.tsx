@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/rohith-elayaraja/"
+              href="https://www.linkedin.com/in/rohith-e-sde/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn Profile"

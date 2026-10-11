@@ -79,7 +79,7 @@ export const FALLBACK_PROFILE_DATA: HeroProfileApiResponse = {
     },
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/rohith-elayaraja/',
+      url: 'https://www.linkedin.com/in/rohith-e-sde/',
       icon: 'linkedin',
       color: '#0A66C2',
       darkColor: '#0A66C2'

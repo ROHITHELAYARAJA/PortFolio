@@ -239,9 +239,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       label: 'Open LinkedIn Profile',
       category: 'Actions',
       icon: <ExternalLink className="size-4 text-ink-soft" />,
-      hint: 'rohith-elayaraja',
+      hint: 'rohith-e-sde',
       action: () => {
-        window.open('https://www.linkedin.com/in/rohith-elayaraja/', '_blank');
+        window.open('https://www.linkedin.com/in/rohith-e-sde/', '_blank');
         onClose();
       },
     },

@@ -104,7 +104,7 @@ export const AUTHOR_INFO = {
     },
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/rohith-elayaraja/',
+      url: 'https://www.linkedin.com/in/rohith-e-sde/',
       icon: 'linkedin',
       brandColor: '#0A66C2',
     },

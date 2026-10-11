@@ -246,7 +246,7 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/rohith-elayaraja/"
+          href="https://www.linkedin.com/in/rohith-e-sde/"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center justify-between rounded-xl border border-hairline/80 bg-surface p-3.5 sm:p-4 transition-all duration-200 hover:border-btn-border hover:bg-subtle/80 hover:shadow-xs"
@@ -262,7 +262,7 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
                 LinkedIn
               </div>
               <div className="font-mono text-[11.5px] text-ink-soft">
-                rohith-elayaraja
+                rohith-e-sde
               </div>
             </div>
           </div>
