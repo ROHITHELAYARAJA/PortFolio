@@ -103,10 +103,22 @@ export const AUTHOR_INFO = {
       brandColor: '#0070F3',
     },
     {
+      name: 'Anis Creation Live',
+      url: 'https://anis-creation.vercel.app',
+      icon: 'external-link',
+      brandColor: '#10B981',
+    },
+    {
       name: 'Email',
       url: 'mailto:e.rohit3130@gmail.com',
       icon: 'mail',
       brandColor: '#EA4335',
+    },
+    {
+      name: 'Phone',
+      url: 'tel:+919655483130',
+      icon: 'phone',
+      brandColor: '#10B981',
     },
   ],
 };
@@ -151,7 +163,6 @@ export const FEATURED_PROJECTS: ProjectItem[] = [
     summary: 'Document-aware AI study assistant that converts textbooks and notes into structured summaries, active-recall flashcards, and quizzes.',
     primaryTech: ['React', 'TypeScript', 'AWS Bedrock', 'SQLite', 'Tailwind CSS'],
     repoUrl: 'https://github.com/ROHITHELAYARAJA/Student-AI-Assistant',
-    liveUrl: 'http://blast-ai-by-rohith.s3-website-us-east-1.amazonaws.com',
     featured: true,
     highlights: [
       'Document parsing for searchable PDFs, text, and markdown files',

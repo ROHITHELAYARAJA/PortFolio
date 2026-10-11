@@ -159,12 +159,12 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
           <div className="flex items-center gap-2 sm:col-span-2">
             <Globe className="size-3.5 shrink-0 text-ink-soft" />
             <a
-              href="https://github.com/ROHITHELAYARAJA"
+              href="https://rohith-digital-x-xi.vercel.app"
               target="_blank"
               rel="noreferrer"
               className="text-strong hover:text-[#0EA5E9] hover:underline transition-colors"
             >
-              github.com/ROHITHELAYARAJA
+              rohith-digital-x-xi.vercel.app
             </a>
           </div>
         </div>
@@ -200,54 +200,6 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/rohith-elayaraja/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center justify-between rounded-xl border border-hairline/80 bg-surface p-3.5 sm:p-4 transition-all duration-200 hover:border-btn-border hover:bg-subtle/80 hover:shadow-xs"
-        >
-          <div className="flex items-center gap-3">
-            <div className="flex size-9 items-center justify-center rounded-lg border border-hairline bg-[#0A66C2]/10 text-[#0A66C2]">
-              <svg viewBox="0 0 24 24" className="size-5 fill-current">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-              </svg>
-            </div>
-            <div>
-              <div className="font-sans text-[14.5px] font-bold text-strong group-hover:text-ink transition-colors">
-                LinkedIn
-              </div>
-              <div className="font-mono text-[11.5px] text-ink-soft">
-                Rohith Elayaraja
-              </div>
-            </div>
-          </div>
-          <ArrowUpRight className="size-4 text-ink-soft group-hover:text-strong group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-        </a>
-
-        <a
-          href="https://x.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center justify-between rounded-xl border border-hairline/80 bg-surface p-3.5 sm:p-4 transition-all duration-200 hover:border-btn-border hover:bg-subtle/80 hover:shadow-xs"
-        >
-          <div className="flex items-center gap-3">
-            <div className="flex size-9 items-center justify-center rounded-lg border border-hairline bg-subtle text-strong">
-              <svg viewBox="0 0 24 24" className="size-4 fill-current">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </div>
-            <div>
-              <div className="font-sans text-[14.5px] font-bold text-strong group-hover:text-ink transition-colors">
-                X (Twitter)
-              </div>
-              <div className="font-mono text-[11.5px] text-ink-soft">
-                @ROHITHELAYARAJA
-              </div>
-            </div>
-          </div>
-          <ArrowUpRight className="size-4 text-ink-soft group-hover:text-strong group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-        </a>
-
-        <a
           href="https://leetcode.com/Shinchan_2007"
           target="_blank"
           rel="noopener noreferrer"
@@ -265,6 +217,50 @@ export const HeroProfile: React.FC<HeroProfileProps> = () => {
               </div>
               <div className="font-mono text-[11.5px] text-ink-soft">
                 Shinchan_2007 (315+ solved)
+              </div>
+            </div>
+          </div>
+          <ArrowUpRight className="size-4 text-ink-soft group-hover:text-strong group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+        </a>
+
+        <a
+          href="https://rohith-digital-x-xi.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center justify-between rounded-xl border border-hairline/80 bg-surface p-3.5 sm:p-4 transition-all duration-200 hover:border-btn-border hover:bg-subtle/80 hover:shadow-xs"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex size-9 items-center justify-center rounded-lg border border-hairline bg-[#0070F3]/10 text-[#0070F3]">
+              <Globe className="size-5" />
+            </div>
+            <div>
+              <div className="font-sans text-[14.5px] font-bold text-strong group-hover:text-ink transition-colors">
+                Rohith Digital X
+              </div>
+              <div className="font-mono text-[11.5px] text-ink-soft">
+                rohith-digital-x-xi.vercel.app
+              </div>
+            </div>
+          </div>
+          <ArrowUpRight className="size-4 text-ink-soft group-hover:text-strong group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+        </a>
+
+        <a
+          href="https://anis-creation.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center justify-between rounded-xl border border-hairline/80 bg-surface p-3.5 sm:p-4 transition-all duration-200 hover:border-btn-border hover:bg-subtle/80 hover:shadow-xs"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex size-9 items-center justify-center rounded-lg border border-hairline bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+              <Globe className="size-5" />
+            </div>
+            <div>
+              <div className="font-sans text-[14.5px] font-bold text-strong group-hover:text-ink transition-colors">
+                Anis Creation
+              </div>
+              <div className="font-mono text-[11.5px] text-ink-soft">
+                anis-creation.vercel.app
               </div>
             </div>
           </div>

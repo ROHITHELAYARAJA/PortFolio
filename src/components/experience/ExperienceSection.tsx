@@ -87,17 +87,60 @@ export const ExperienceSection: React.FC = () => {
                       What I've done
                     </h4>
                     <ul className="mt-3 flex flex-col gap-2.5">
-                      {item.achievements.map((achievement, idx) => (
-                        <li
-                          key={idx}
-                          className="flex gap-2.5 font-cabinet text-[15px] leading-relaxed text-body"
-                        >
-                          <span aria-hidden="true" className="mt-1.5 shrink-0 text-strong text-xs">
-                            •
-                          </span>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
+                      {item.achievements.map((achievement, idx) => {
+                        const isLiveLine = achievement.includes('anis-creation.vercel.app') || achievement.includes('rohith-digital-x-xi.vercel.app');
+                        const isPrLine = achievement.includes('PR #70');
+
+                        return (
+                          <li
+                            key={idx}
+                            className="flex gap-2.5 font-cabinet text-[15px] leading-relaxed text-body"
+                          >
+                            <span aria-hidden="true" className="mt-1.5 shrink-0 text-strong text-xs">
+                              •
+                            </span>
+                            <span>
+                              {isLiveLine ? (
+                                <>
+                                  Live:{' '}
+                                  <a
+                                    href="https://anis-creation.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-strong underline underline-offset-4 hover:text-[#0EA5E9]"
+                                  >
+                                    anis-creation.vercel.app
+                                  </a>
+                                  {' | '}
+                                  <a
+                                    href="https://rohith-digital-x-xi.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-strong underline underline-offset-4 hover:text-[#0EA5E9]"
+                                  >
+                                    rohith-digital-x-xi.vercel.app
+                                  </a>
+                                </>
+                              ) : isPrLine ? (
+                                <>
+                                  Added Windows regression tests for scratch-path handling; the fix was reviewed and merged upstream in{' '}
+                                  <a
+                                    href="https://github.com/abacusai/abacusai-bot/pull/70"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-medium text-strong underline underline-offset-4 hover:text-[#8B5CF6]"
+                                  >
+                                    PR #70
+                                  </a>
+                                  .
+                                </>
+                              ) : (
+                                achievement
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>

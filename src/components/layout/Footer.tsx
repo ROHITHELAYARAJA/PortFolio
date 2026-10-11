@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Code2, Mail } from 'lucide-react';
+import { Github, Globe, Phone, Code2, Mail } from 'lucide-react';
 import { RdxLogo } from '../ui/RdxLogo';
 
 interface FooterProps {
@@ -52,6 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <a href="https://github.com/ROHITHELAYARAJA/Student-AI-Assistant" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Blast AI</a>
             <a href="https://github.com/ROHITHELAYARAJA/Bank-Management-System" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Bank Management System</a>
             <a href="https://rohith-digital-x-xi.vercel.app" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Rohith Digital X</a>
+            <a href="https://anis-creation.vercel.app" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">Anis Creation</a>
             <a href="https://github.com/abacusai/abacusai-bot/pull/70" target="_blank" rel="noreferrer" className="hover:text-strong transition-colors">AbacusAI Bot PR #70</a>
           </nav>
         </div>
@@ -72,13 +73,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             </a>
 
             <a
-              href="https://linkedin.com/in/rohith-elayaraja"
+              href="https://rohith-digital-x-xi.vercel.app"
               target="_blank"
               rel="noreferrer"
-              aria-label="LinkedIn Profile"
-              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#0A66C2] hover:-translate-y-0.5"
+              aria-label="Rohith Digital X"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#0070F3] hover:-translate-y-0.5"
             >
-              <Linkedin className="size-4" />
+              <Globe className="size-4" />
             </a>
 
             <a
@@ -97,6 +98,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-[#EA4335] hover:-translate-y-0.5"
             >
               <Mail className="size-4" />
+            </a>
+
+            <a
+              href="tel:+919655483130"
+              aria-label="Call Rohith"
+              className="flex size-[36px] items-center justify-center rounded-lg border border-hairline bg-surface text-ink-soft transition-all hover:border-btn-border hover:text-emerald-500 hover:-translate-y-0.5"
+            >
+              <Phone className="size-4" />
             </a>
           </div>
 

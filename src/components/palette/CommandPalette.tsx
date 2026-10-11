@@ -11,6 +11,8 @@ import {
   Check,
   FileText,
   CornerDownLeft,
+  Globe,
+  Phone,
 } from 'lucide-react';
 
 interface CommandPaletteProps {
@@ -222,13 +224,35 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       },
     },
     {
-      id: 'act-linkedin',
-      label: 'Open LinkedIn Profile',
+      id: 'act-rdx',
+      label: 'Open Rohith Digital X (Live)',
       category: 'Actions',
-      icon: <ExternalLink className="size-4 text-ink-soft" />,
-      hint: 'rohith-elayaraja',
+      icon: <Globe className="size-4 text-ink-soft" />,
+      hint: 'rohith-digital-x-xi.vercel.app',
       action: () => {
-        window.open('https://www.linkedin.com/in/rohith-elayaraja/', '_blank');
+        window.open('https://rohith-digital-x-xi.vercel.app', '_blank');
+        onClose();
+      },
+    },
+    {
+      id: 'act-anis',
+      label: 'Open Anis Creation (Live)',
+      category: 'Actions',
+      icon: <Globe className="size-4 text-ink-soft" />,
+      hint: 'anis-creation.vercel.app',
+      action: () => {
+        window.open('https://anis-creation.vercel.app', '_blank');
+        onClose();
+      },
+    },
+    {
+      id: 'act-phone',
+      label: 'Call Rohith E (+91 96554 83130)',
+      category: 'Actions',
+      icon: <Phone className="size-4 text-ink-soft" />,
+      hint: '+91 96554 83130',
+      action: () => {
+        window.location.href = 'tel:+919655483130';
         onClose();
       },
     },
