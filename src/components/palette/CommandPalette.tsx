@@ -235,13 +235,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       },
     },
     {
-      id: 'act-anis',
-      label: 'Open Anis Creation (Live)',
+      id: 'act-linkedin',
+      label: 'Open LinkedIn Profile',
       category: 'Actions',
-      icon: <Globe className="size-4 text-ink-soft" />,
-      hint: 'anis-creation.vercel.app',
+      icon: <ExternalLink className="size-4 text-ink-soft" />,
+      hint: 'rohith-elayaraja',
       action: () => {
-        window.open('https://anis-creation.vercel.app', '_blank');
+        window.open('https://www.linkedin.com/in/rohith-elayaraja/', '_blank');
         onClose();
       },
     },

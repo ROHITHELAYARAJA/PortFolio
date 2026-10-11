@@ -103,10 +103,10 @@ export const AUTHOR_INFO = {
       brandColor: '#0070F3',
     },
     {
-      name: 'Anis Creation Live',
-      url: 'https://anis-creation.vercel.app',
-      icon: 'external-link',
-      brandColor: '#10B981',
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/rohith-elayaraja/',
+      icon: 'linkedin',
+      brandColor: '#0A66C2',
     },
     {
       name: 'Email',
@@ -352,7 +352,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       'Delivered 3 production websites for a local business, a digital marketing agency, and my own software portfolio, handling requirements, development, testing, deployment, and revisions.',
       'Built Cake Lover Namakkal\'s website to make products and ordering information easier to find; the client reported approximately 30% revenue growth after launch.',
       'Designed and launched the Anis Creation website for a Madurai digital marketing agency, with responsive service pages and clear contact and enquiry paths.',
-      'Live deployments: anis-creation.vercel.app and rohith-digital-x-xi.vercel.app.'
+      'Live deployment: rohith-digital-x-xi.vercel.app.'
     ],
   },
   {

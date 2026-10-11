@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ExternalLink, Github, Globe, Code2 } from 'lucide-react';
+import { Mail, Copy, Check, ExternalLink, Github, Linkedin, Globe, Code2 } from 'lucide-react';
 import { AUTHOR_INFO } from '../../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -48,7 +48,7 @@ export const ContactSection: React.FC = () => {
           </a>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3 border-t border-hairline/60 pt-6">
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 border-t border-hairline/60 pt-6">
           <a
             href="https://github.com/ROHITHELAYARAJA"
             target="_blank"
@@ -63,16 +63,16 @@ export const ContactSection: React.FC = () => {
           </a>
 
           <a
-            href="https://rohith-digital-x-xi.vercel.app"
+            href="https://www.linkedin.com/in/rohith-elayaraja/"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between rounded-xl border border-hairline bg-subtle p-3.5 transition-all hover:border-btn-border hover:bg-surface"
           >
             <div className="flex items-center gap-2.5">
-              <Globe className="size-4 text-ink-soft group-hover:text-[#0070F3]" />
-              <span className="font-cabinet text-[14px] font-bold text-strong">Rohith Digital X</span>
+              <Linkedin className="size-4 text-ink-soft group-hover:text-[#0A66C2]" />
+              <span className="font-cabinet text-[14px] font-bold text-strong">LinkedIn</span>
             </div>
-            <ExternalLink className="size-3.5 text-ink-soft group-hover:text-[#0070F3]" />
+            <ExternalLink className="size-3.5 text-ink-soft group-hover:text-[#0A66C2]" />
           </a>
 
           <a
@@ -86,6 +86,19 @@ export const ContactSection: React.FC = () => {
               <span className="font-cabinet text-[14px] font-bold text-strong">LeetCode</span>
             </div>
             <ExternalLink className="size-3.5 text-ink-soft group-hover:text-[#FFA116]" />
+          </a>
+
+          <a
+            href="https://rohith-digital-x-xi.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between rounded-xl border border-hairline bg-subtle p-3.5 transition-all hover:border-btn-border hover:bg-surface"
+          >
+            <div className="flex items-center gap-2.5">
+              <Globe className="size-4 text-ink-soft group-hover:text-[#0070F3]" />
+              <span className="font-cabinet text-[14px] font-bold text-strong">Rohith Digital X</span>
+            </div>
+            <ExternalLink className="size-3.5 text-ink-soft group-hover:text-[#0070F3]" />
           </a>
         </div>
       </div>

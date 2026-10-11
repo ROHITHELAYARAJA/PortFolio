@@ -88,7 +88,7 @@ export const ExperienceSection: React.FC = () => {
                     </h4>
                     <ul className="mt-3 flex flex-col gap-2.5">
                       {item.achievements.map((achievement, idx) => {
-                        const isLiveLine = achievement.includes('anis-creation.vercel.app') || achievement.includes('rohith-digital-x-xi.vercel.app');
+                        const isLiveLine = achievement.includes('rohith-digital-x-xi.vercel.app');
                         const isPrLine = achievement.includes('PR #70');
 
                         return (
@@ -103,15 +103,6 @@ export const ExperienceSection: React.FC = () => {
                               {isLiveLine ? (
                                 <>
                                   Live:{' '}
-                                  <a
-                                    href="https://anis-creation.vercel.app"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="font-medium text-strong underline underline-offset-4 hover:text-[#0EA5E9]"
-                                  >
-                                    anis-creation.vercel.app
-                                  </a>
-                                  {' | '}
                                   <a
                                     href="https://rohith-digital-x-xi.vercel.app"
                                     target="_blank"
